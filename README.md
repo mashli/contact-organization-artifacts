@@ -92,10 +92,10 @@ Please cite the published IJRR articles (DOI TBD). Until then, cite the Sage Tra
 submission titles above and this repository URL:
 
 ```text
-https://github.com/mashli/contact-organization-artifacts
+https://github.com/<ORG_OR_USER>/contact-organization-artifacts
 ```
 
-Replace `mashli` after the public repo is created, and update the Data
+Replace `<ORG_OR_USER>` after the public repo is created, and update the Data
 availability statement in both manuscripts to the same URL (and Zenodo DOI if used).
 
 ---
