@@ -1,0 +1,239 @@
+{
+  "thresholds": [
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    12.0
+  ],
+  "geometries": [
+    {
+      "geometry": "cylinder",
+      "n_episodes_total": 192,
+      "thresholds": [
+        {
+          "frac_loaded": 0.739,
+          "mean_loaded_dwell": 4.7,
+          "mean_grazing_dwell": 1.66,
+          "dwell_ratio": 2.831,
+          "switch_rate": 0.0211,
+          "P1": true,
+          "P2": true,
+          "P3": true,
+          "P4": false,
+          "n_switches": 26,
+          "n_at_boundary": 11,
+          "n_episodes": 192
+        },
+        {
+          "frac_loaded": 0.678,
+          "mean_loaded_dwell": 4.29,
+          "mean_grazing_dwell": 2.04,
+          "dwell_ratio": 2.099,
+          "switch_rate": 0.039,
+          "P1": true,
+          "P2": true,
+          "P3": true,
+          "P4": false,
+          "n_switches": 48,
+          "n_at_boundary": 9,
+          "n_episodes": 192
+        },
+        {
+          "frac_loaded": 0.561,
+          "mean_loaded_dwell": 3.33,
+          "mean_grazing_dwell": 2.78,
+          "dwell_ratio": 1.198,
+          "switch_rate": 0.0707,
+          "P1": true,
+          "P2": true,
+          "P3": true,
+          "P4": false,
+          "n_switches": 87,
+          "n_at_boundary": 21,
+          "n_episodes": 192
+        },
+        {
+          "frac_loaded": 0.3244,
+          "mean_loaded_dwell": 1.59,
+          "mean_grazing_dwell": 4.33,
+          "dwell_ratio": 0.368,
+          "switch_rate": 0.1268,
+          "P1": false,
+          "P2": true,
+          "P3": true,
+          "P4": false,
+          "n_switches": 156,
+          "n_at_boundary": 45,
+          "n_episodes": 192
+        },
+        {
+          "frac_loaded": 0.2065,
+          "mean_loaded_dwell": 1.31,
+          "mean_grazing_dwell": 5.08,
+          "dwell_ratio": 0.258,
+          "switch_rate": 0.0967,
+          "P1": false,
+          "P2": true,
+          "P3": true,
+          "P4": false,
+          "n_switches": 119,
+          "n_at_boundary": 45,
+          "n_episodes": 192
+        }
+      ]
+    },
+    {
+      "geometry": "sphere",
+      "n_episodes_total": 237,
+      "thresholds": [
+        {
+          "frac_loaded": 0.0019,
+          "mean_loaded_dwell": 0.01,
+          "mean_grazing_dwell": 6.83,
+          "dwell_ratio": 0.002,
+          "switch_rate": 0.0019,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": true,
+          "n_switches": 3,
+          "n_at_boundary": 3,
+          "n_episodes": 237
+        },
+        {
+          "frac_loaded": 0.0,
+          "mean_loaded_dwell": 0.0,
+          "mean_grazing_dwell": 6.84,
+          "dwell_ratio": 0.0,
+          "switch_rate": 0.0,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 0,
+          "n_at_boundary": 0,
+          "n_episodes": 237
+        },
+        {
+          "frac_loaded": 0.0,
+          "mean_loaded_dwell": 0.0,
+          "mean_grazing_dwell": 6.84,
+          "dwell_ratio": 0.0,
+          "switch_rate": 0.0,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 0,
+          "n_at_boundary": 0,
+          "n_episodes": 237
+        },
+        {
+          "frac_loaded": 0.0,
+          "mean_loaded_dwell": 0.0,
+          "mean_grazing_dwell": 6.84,
+          "dwell_ratio": 0.0,
+          "switch_rate": 0.0,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 0,
+          "n_at_boundary": 0,
+          "n_episodes": 237
+        },
+        {
+          "frac_loaded": 0.0,
+          "mean_loaded_dwell": 0.0,
+          "mean_grazing_dwell": 6.84,
+          "dwell_ratio": 0.0,
+          "switch_rate": 0.0,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 0,
+          "n_at_boundary": 0,
+          "n_episodes": 237
+        }
+      ]
+    },
+    {
+      "geometry": "block",
+      "n_episodes_total": 700,
+      "thresholds": [
+        {
+          "frac_loaded": 0.1274,
+          "mean_loaded_dwell": 5.9,
+          "mean_grazing_dwell": 40.99,
+          "dwell_ratio": 0.144,
+          "switch_rate": 0.0117,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 393,
+          "n_at_boundary": 98,
+          "n_episodes": 700
+        },
+        {
+          "frac_loaded": 0.1092,
+          "mean_loaded_dwell": 5.08,
+          "mean_grazing_dwell": 41.49,
+          "dwell_ratio": 0.122,
+          "switch_rate": 0.0122,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 409,
+          "n_at_boundary": 163,
+          "n_episodes": 700
+        },
+        {
+          "frac_loaded": 0.0896,
+          "mean_loaded_dwell": 4.11,
+          "mean_grazing_dwell": 42.18,
+          "dwell_ratio": 0.097,
+          "switch_rate": 0.0114,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": false,
+          "n_switches": 383,
+          "n_at_boundary": 177,
+          "n_episodes": 700
+        },
+        {
+          "frac_loaded": 0.0643,
+          "mean_loaded_dwell": 2.76,
+          "mean_grazing_dwell": 43.12,
+          "dwell_ratio": 0.064,
+          "switch_rate": 0.0105,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": true,
+          "n_switches": 354,
+          "n_at_boundary": 189,
+          "n_episodes": 700
+        },
+        {
+          "frac_loaded": 0.0343,
+          "mean_loaded_dwell": 1.37,
+          "mean_grazing_dwell": 44.4,
+          "dwell_ratio": 0.031,
+          "switch_rate": 0.0095,
+          "P1": false,
+          "P2": true,
+          "P3": false,
+          "P4": true,
+          "n_switches": 319,
+          "n_at_boundary": 232,
+          "n_episodes": 700
+        }
+      ]
+    }
+  ]
+}

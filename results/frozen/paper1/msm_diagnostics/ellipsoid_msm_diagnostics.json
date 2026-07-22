@@ -1,0 +1,244 @@
+{
+  "cohort_name": "ellipsoid",
+  "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/characterization_ellipsoid/full/landscape_trajectories.json",
+  "n_episodes": 300,
+  "n_frames": 18000,
+  "states": [
+    "dwell",
+    "loaded"
+  ],
+  "estimator": "row_stochastic_MLE",
+  "reversible": false,
+  "shell_rule": "R2",
+  "fx_threshold_N": 8.0,
+  "lag_ref": 1,
+  "point_lag1": {
+    "lag": 1,
+    "n_transitions": 17700,
+    "count_matrix": [
+      [
+        16408.0,
+        261.0
+      ],
+      [
+        305.0,
+        726.0
+      ]
+    ],
+    "P": [
+      [
+        0.9843421920931069,
+        0.015657807906893036
+      ],
+      [
+        0.29582929194956353,
+        0.7041707080504365
+      ]
+    ],
+    "eigenvalues": [
+      1.0,
+      0.6885129001435434
+    ],
+    "lambda2": 0.6885129001435434,
+    "spectral_gap": 0.3114870998564566,
+    "tau2_implied": 2.6793760232033814,
+    "tau2_frames": 2.6793760232033814
+  },
+  "bootstrap": {
+    "lag": 1,
+    "n_bootstrap": 400,
+    "n_episodes": 300,
+    "ci_level": 0.95,
+    "estimator": "row_stochastic_MLE",
+    "reversible": false,
+    "lambda2_point": 0.6885129001435434,
+    "lambda2_ci": [
+      0.6544943809689842,
+      0.7267594838261129
+    ],
+    "tau2_point": 2.6793760232033814,
+    "tau2_ci": [
+      2.3590901577205643,
+      3.13322948438481
+    ],
+    "n_transitions_point": 17700,
+    "spectral_gap_point": 0.3114870998564566,
+    "lambda2_samples_summary": {
+      "mean": 0.6887821035521228,
+      "std": 0.01897090265665784,
+      "n_finite": 400
+    }
+  },
+  "its": {
+    "lags": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      15,
+      20
+    ],
+    "curve": [
+      {
+        "lag": 1,
+        "lambda2": 0.6885129001435434,
+        "tau2_implied": 2.6793760232033814,
+        "spectral_gap": 0.3114870998564566,
+        "n_transitions": 17700
+      },
+      {
+        "lag": 2,
+        "lambda2": 0.5894995976343114,
+        "tau2_implied": 3.784429498575213,
+        "spectral_gap": 0.41050040236568863,
+        "n_transitions": 17400
+      },
+      {
+        "lag": 3,
+        "lambda2": 0.5093532443954264,
+        "tau2_implied": 4.446990716959008,
+        "spectral_gap": 0.4906467556045736,
+        "n_transitions": 17100
+      },
+      {
+        "lag": 5,
+        "lambda2": 0.3393549716372139,
+        "tau2_implied": 4.626594046440429,
+        "spectral_gap": 0.660645028362786,
+        "n_transitions": 16500
+      },
+      {
+        "lag": 8,
+        "lambda2": 0.1230154722445563,
+        "tau2_implied": 3.8178045532170044,
+        "spectral_gap": 0.8769845277554437,
+        "n_transitions": 15600
+      },
+      {
+        "lag": 10,
+        "lambda2": 0.03934602593424445,
+        "tau2_implied": 3.090845861535945,
+        "spectral_gap": 0.9606539740657558,
+        "n_transitions": 15000
+      },
+      {
+        "lag": 15,
+        "lambda2": 0.023819071296816104,
+        "tau2_implied": 4.013626310349937,
+        "spectral_gap": 0.9761809287031838,
+        "n_transitions": 13500
+      },
+      {
+        "lag": 20,
+        "lambda2": 0.026682238792561316,
+        "tau2_implied": 5.519133644821415,
+        "spectral_gap": 0.9733177612074387,
+        "n_transitions": 12000
+      }
+    ],
+    "plateau": {
+      "found": true,
+      "rel_tol": 0.15,
+      "lag_lo": 3,
+      "lag_hi": 5,
+      "mean_tau2": 4.536792381699719
+    }
+  },
+  "ck": {
+    "lag": 1,
+    "ks": [
+      2,
+      3,
+      4
+    ],
+    "tests": [
+      {
+        "k": 2,
+        "lag_emp": 2,
+        "n_transitions_emp": 17400,
+        "max_abs_deviation": 0.10959886958659626,
+        "frobenius_deviation": 0.1552169003263413,
+        "P_emp": [
+          [
+            0.9794123037448836,
+            0.02058769625511638
+          ],
+          [
+            0.38991270611057227,
+            0.6100872938894277
+          ]
+        ],
+        "P_pred": [
+          [
+            0.9735615893612414,
+            0.026438410638758465
+          ],
+          [
+            0.4995115756971685,
+            0.5004884243028315
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "lag_emp": 3,
+        "n_transitions_emp": 17100,
+        "max_abs_deviation": 0.17418204530681186,
+        "frobenius_deviation": 0.24664347659275757,
+        "P_emp": [
+          [
+            0.9749206546767067,
+            0.025079345323293298
+          ],
+          [
+            0.4655674102812803,
+            0.5344325897187197
+          ]
+        ],
+        "P_pred": [
+          [
+            0.9661390053090292,
+            0.033860994690970536
+          ],
+          [
+            0.6397494555880922,
+            0.36025054441190785
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "lag_emp": 4,
+        "n_transitions_emp": 16800,
+        "max_abs_deviation": 0.18732347369176422,
+        "frobenius_deviation": 0.26527303779738653,
+        "P_emp": [
+          [
+            0.9707654258355001,
+            0.02923457416449997
+          ],
+          [
+            0.5489815712900097,
+            0.4510184287099903
+          ]
+        ],
+        "P_pred": [
+          [
+            0.9610284604366814,
+            0.03897153956331829
+          ],
+          [
+            0.7363050449817737,
+            0.2636949550182261
+          ]
+        ]
+      }
+    ],
+    "max_abs_deviation_worst": 0.18732347369176422,
+    "pass_eps_0_1": false,
+    "pass_eps_0_2": true
+  },
+  "summary": "ellipsoid: \u03bb\u2082=0.6885 CI=[0.6545,0.7268] (lag=1, N_trans=17700); ITS plateau=yes; CK max|\u0394|=0.187 (pass@0.2=yes)."
+}

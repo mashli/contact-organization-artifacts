@@ -1,0 +1,663 @@
+{
+  "note": "CORRECTED balanced operator audit: real multi-protocol replay + consecutive transitions + matched n_transitions + P-distance matrix. Supersedes mechanism_rigorous_report.json (which truncated one trajectory and shuffled frames).",
+  "design": {
+    "ramp_steps": 6,
+    "holds": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "phase_filter": "hold",
+    "matched_quantity": "n_consecutive_transitions"
+  },
+  "balanced_operator": {
+    "phase_filter": "hold",
+    "n_star": 130,
+    "n_available": {
+      "2": 130,
+      "4": 395,
+      "8": 913,
+      "16": 1796
+    },
+    "per_hold": {
+      "2": {
+        "n_transitions": 130,
+        "n_switches": 3,
+        "switch_rate": 0.023076923076923078,
+        "empirical_occupation": {
+          "grazing": 0.5343511450381679,
+          "loaded": 0.46564885496183206
+        },
+        "count_matrix": [
+          [
+            69.0,
+            3.0
+          ],
+          [
+            0.0,
+            58.0
+          ]
+        ],
+        "P": [
+          [
+            0.9583333333333334,
+            0.041666666666666664
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "lambda2": 0.9583333333333334,
+        "eta": 0.04166666666666663,
+        "pi": {
+          "grazing": 0.0,
+          "loaded": 1.0
+        },
+        "kappa": 1.1105235325224752,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->loaded"
+          ],
+          "n_edges": 3
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.5307692307692308,
+          "grazing->loaded": 0.023076923076923078,
+          "loaded->grazing": 0.0,
+          "loaded->loaded": 0.4461538461538462
+        }
+      },
+      "4": {
+        "n_transitions": 130,
+        "n_switches": 7,
+        "switch_rate": 0.05384615384615385,
+        "empirical_occupation": {
+          "grazing": 0.6030534351145038,
+          "loaded": 0.3969465648854962
+        },
+        "count_matrix": [
+          [
+            71.0,
+            0.0
+          ],
+          [
+            7.0,
+            52.0
+          ]
+        ],
+        "P": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.11864406779661017,
+            0.8813559322033898
+          ]
+        ],
+        "lambda2": 0.8813559322033898,
+        "eta": 0.11864406779661019,
+        "pi": {
+          "grazing": 1.0,
+          "loaded": 0.0
+        },
+        "kappa": 1.462962962962963,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 3
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.5461538461538461,
+          "grazing->loaded": 0.0,
+          "loaded->grazing": 0.05384615384615385,
+          "loaded->loaded": 0.4
+        }
+      },
+      "8": {
+        "n_transitions": 130,
+        "n_switches": 8,
+        "switch_rate": 0.06153846153846154,
+        "empirical_occupation": {
+          "grazing": 0.7175572519083969,
+          "loaded": 0.2824427480916031
+        },
+        "count_matrix": [
+          [
+            87.0,
+            2.0
+          ],
+          [
+            6.0,
+            35.0
+          ]
+        ],
+        "P": [
+          [
+            0.9775280898876404,
+            0.02247191011235955
+          ],
+          [
+            0.14634146341463414,
+            0.8536585365853658
+          ]
+        ],
+        "lambda2": 0.8311866264730062,
+        "eta": 0.16881337352699377,
+        "pi": {
+          "grazing": 0.8668831168831169,
+          "loaded": 0.13311688311688313
+        },
+        "kappa": 2.3910969793322736,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 4
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.6692307692307692,
+          "grazing->loaded": 0.015384615384615385,
+          "loaded->grazing": 0.046153846153846156,
+          "loaded->loaded": 0.2692307692307692
+        }
+      },
+      "16": {
+        "n_transitions": 130,
+        "n_switches": 6,
+        "switch_rate": 0.046153846153846156,
+        "empirical_occupation": {
+          "grazing": 0.8015267175572519,
+          "loaded": 0.1984732824427481
+        },
+        "count_matrix": [
+          [
+            100.0,
+            2.0
+          ],
+          [
+            4.0,
+            24.0
+          ]
+        ],
+        "P": [
+          [
+            0.9803921568627451,
+            0.0196078431372549
+          ],
+          [
+            0.14285714285714285,
+            0.8571428571428571
+          ]
+        ],
+        "lambda2": 0.8375350140056022,
+        "eta": 0.16246498599439785,
+        "pi": {
+          "grazing": 0.8793103448275861,
+          "loaded": 0.1206896551724138
+        },
+        "kappa": 3.8548951048951046,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 4
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.7692307692307693,
+          "grazing->loaded": 0.015384615384615385,
+          "loaded->grazing": 0.03076923076923077,
+          "loaded->loaded": 0.18461538461538463
+        }
+      }
+    },
+    "P_distance": {
+      "frobenius": {
+        "2_vs_2": 0.0,
+        "2_vs_4": 0.17783433827266173,
+        "2_vs_8": 0.20873074806322053,
+        "2_vs_16": 0.20442482706759402,
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.050440707134601165,
+        "4_vs_16": 0.044062240441951776,
+        "8_vs_8": 0.0,
+        "8_vs_16": 0.006378615740933363,
+        "16_vs_16": 0.0
+      },
+      "l1": {
+        "2_vs_2": 0.0,
+        "2_vs_4": 0.32062146892655363,
+        "2_vs_8": 0.33107243993788243,
+        "2_vs_16": 0.3298319327731092,
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.1003386114607671,
+        "4_vs_16": 0.08764183639557524,
+        "8_vs_8": 0.0,
+        "8_vs_16": 0.01269677506519186,
+        "16_vs_16": 0.0
+      },
+      "js": {
+        "2_vs_2": 0.0,
+        "2_vs_4": 0.02882643554562657,
+        "2_vs_8": 0.027557670989765522,
+        "2_vs_16": 0.02717689828573649,
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.004343820832438938,
+        "4_vs_16": 0.003744848608973145,
+        "8_vs_8": 0.0,
+        "8_vs_16": 3.104425450313307e-05,
+        "16_vs_16": 0.0
+      }
+    },
+    "summary": {
+      "eta_range": 0.12714670686032714,
+      "kappa_range": 2.7443715723726294,
+      "pi_grazing_range": 0.26717557251908397,
+      "switch_rate_by_hold": {
+        "2": 0.023076923076923078,
+        "4": 0.05384615384615385,
+        "8": 0.06153846153846154,
+        "16": 0.046153846153846156
+      },
+      "switch_rate_range": 0.038461538461538464,
+      "grammar_edges_identical": false,
+      "degenerate_subsamples": {
+        "2": [
+          "loaded->grazing"
+        ],
+        "4": [
+          "grazing->loaded"
+        ]
+      },
+      "max_frobenius": 0.20873074806322053,
+      "max_l1": 0.33107243993788243,
+      "max_js": 0.02882643554562657,
+      "operator_near_identical": false
+    },
+    "sampling_sanity": {
+      "matched_quantity": "all_consecutive_frame_pairs_incl_self_loops",
+      "interpretation": "n_star matches EXPOSURE (total observation), not switch count. switch_rate is a free OUTCOME; if switch_rate_range collapses to ~0 that would signal the dependent variable was accidentally pinned."
+    },
+    "mechanism_read": "INCONCLUSIVE_SMALL_N",
+    "interpretation": "n_star=130 too small: subsample(s) ['2', '4'] reducible (missing edges {'2': ['loaded->grazing'], '4': ['grazing->loaded']}). Eigenvector-pi and grammar-edge diffs are small-sample artifacts. Do NOT read a create/reveal verdict here; use the holds>=4 subset comparison and the P-distance gradient instead."
+  },
+  "balanced_operator_holds_ge_second": {
+    "phase_filter": "hold",
+    "n_star": 395,
+    "n_available": {
+      "4": 395,
+      "8": 913,
+      "16": 1796
+    },
+    "per_hold": {
+      "4": {
+        "n_transitions": 395,
+        "n_switches": 12,
+        "switch_rate": 0.030379746835443037,
+        "empirical_occupation": {
+          "grazing": 0.5732323232323232,
+          "loaded": 0.42676767676767674
+        },
+        "count_matrix": [
+          [
+            217.0,
+            3.0
+          ],
+          [
+            9.0,
+            166.0
+          ]
+        ],
+        "P": [
+          [
+            0.9863636363636363,
+            0.013636363636363636
+          ],
+          [
+            0.05142857142857143,
+            0.9485714285714286
+          ]
+        ],
+        "lambda2": 0.934935064935065,
+        "eta": 0.06506493506493505,
+        "pi": {
+          "grazing": 0.7904191616766466,
+          "loaded": 0.2095808383233535
+        },
+        "kappa": 1.3096153846153846,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 4
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.549367088607595,
+          "grazing->loaded": 0.007594936708860759,
+          "loaded->grazing": 0.02278481012658228,
+          "loaded->loaded": 0.42025316455696204
+        }
+      },
+      "8": {
+        "n_transitions": 395,
+        "n_switches": 19,
+        "switch_rate": 0.04810126582278481,
+        "empirical_occupation": {
+          "grazing": 0.6515151515151515,
+          "loaded": 0.3484848484848485
+        },
+        "count_matrix": [
+          [
+            239.0,
+            1.0
+          ],
+          [
+            18.0,
+            137.0
+          ]
+        ],
+        "P": [
+          [
+            0.9958333333333333,
+            0.004166666666666667
+          ],
+          [
+            0.11612903225806452,
+            0.8838709677419355
+          ]
+        ],
+        "lambda2": 0.8797043010752689,
+        "eta": 0.12029569892473113,
+        "pi": {
+          "grazing": 0.9653631284916201,
+          "loaded": 0.034636871508379886
+        },
+        "kappa": 1.8250517598343687,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 4
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.6050632911392405,
+          "grazing->loaded": 0.002531645569620253,
+          "loaded->grazing": 0.04556962025316456,
+          "loaded->loaded": 0.3468354430379747
+        }
+      },
+      "16": {
+        "n_transitions": 395,
+        "n_switches": 14,
+        "switch_rate": 0.035443037974683546,
+        "empirical_occupation": {
+          "grazing": 0.7828282828282829,
+          "loaded": 0.21717171717171718
+        },
+        "count_matrix": [
+          [
+            299.0,
+            4.0
+          ],
+          [
+            10.0,
+            82.0
+          ]
+        ],
+        "P": [
+          [
+            0.9867986798679867,
+            0.013201320132013201
+          ],
+          [
+            0.10869565217391304,
+            0.8913043478260869
+          ]
+        ],
+        "lambda2": 0.8781030276940737,
+        "eta": 0.12189697230592633,
+        "pi": {
+          "grazing": 0.8917010005885815,
+          "loaded": 0.1082989994114185
+        },
+        "kappa": 3.5279564571994064,
+        "grammar": {
+          "alphabet": [
+            "grazing",
+            "loaded"
+          ],
+          "edges": [
+            "grazing->grazing",
+            "grazing->loaded",
+            "loaded->grazing",
+            "loaded->loaded"
+          ],
+          "n_edges": 4
+        },
+        "trans_fractions": {
+          "grazing->grazing": 0.7569620253164557,
+          "grazing->loaded": 0.010126582278481013,
+          "loaded->grazing": 0.02531645569620253,
+          "loaded->loaded": 0.20759493670886076
+        }
+      }
+    },
+    "P_distance": {
+      "frobenius": {
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.09247512954569634,
+        "4_vs_16": 0.0809902191618736,
+        "8_vs_8": 0.0,
+        "8_vs_16": 0.016545700511876673,
+        "16_vs_16": 0.0
+      },
+      "l1": {
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.14834031559838018,
+        "4_vs_16": 0.11540424849938416,
+        "8_vs_8": 0.0,
+        "8_vs_16": 0.03293606709899601,
+        "16_vs_16": 0.0
+      },
+      "js": {
+        "4_vs_4": 0.0,
+        "4_vs_8": 0.004160139178192273,
+        "4_vs_16": 0.0028414512380318365,
+        "8_vs_8": 0.0,
+        "8_vs_16": 0.0006570951155304653,
+        "16_vs_16": 0.0
+      }
+    },
+    "summary": {
+      "eta_range": 0.056832037240991284,
+      "kappa_range": 2.218341072584022,
+      "pi_grazing_range": 0.20959595959595967,
+      "switch_rate_by_hold": {
+        "4": 0.030379746835443037,
+        "8": 0.04810126582278481,
+        "16": 0.035443037974683546
+      },
+      "switch_rate_range": 0.017721518987341773,
+      "grammar_edges_identical": true,
+      "degenerate_subsamples": {},
+      "max_frobenius": 0.09247512954569634,
+      "max_l1": 0.14834031559838018,
+      "max_js": 0.004160139178192273,
+      "operator_near_identical": false
+    },
+    "sampling_sanity": {
+      "matched_quantity": "all_consecutive_frame_pairs_incl_self_loops",
+      "interpretation": "n_star matches EXPOSURE (total observation), not switch count. switch_rate is a free OUTCOME; if switch_rate_range collapses to ~0 that would signal the dependent variable was accidentally pinned."
+    },
+    "mechanism_read": "H1_create",
+    "interpretation": "Object identifiers / grammar / occupation change under matched n (non-degenerate) \u2192 create-compatible."
+  },
+  "l1_grammar_by_hold": {
+    "2": {
+      "alphabet": [
+        "grazing_compact",
+        "grazing_dispersed",
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "edges": [
+        "grazing_compact->grazing_compact",
+        "grazing_compact->grazing_dispersed",
+        "grazing_compact->loaded_lat",
+        "grazing_dispersed->grazing_compact",
+        "loaded_ax->loaded_ax",
+        "loaded_lat->loaded_ax",
+        "loaded_lat->loaded_lat"
+      ],
+      "n_edges": 7
+    },
+    "4": {
+      "alphabet": [
+        "grazing_compact",
+        "grazing_dispersed",
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "edges": [
+        "grazing_compact->grazing_compact",
+        "grazing_compact->grazing_dispersed",
+        "grazing_compact->loaded_lat",
+        "grazing_dispersed->grazing_compact",
+        "grazing_dispersed->grazing_dispersed",
+        "loaded_ax->loaded_ax",
+        "loaded_lat->grazing_compact",
+        "loaded_lat->grazing_dispersed",
+        "loaded_lat->loaded_ax",
+        "loaded_lat->loaded_lat"
+      ],
+      "n_edges": 10
+    },
+    "8": {
+      "alphabet": [
+        "grazing_compact",
+        "grazing_dispersed",
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "edges": [
+        "grazing_compact->grazing_compact",
+        "grazing_compact->grazing_dispersed",
+        "grazing_compact->loaded_lat",
+        "grazing_dispersed->grazing_compact",
+        "grazing_dispersed->grazing_dispersed",
+        "loaded_ax->grazing_compact",
+        "loaded_ax->loaded_ax",
+        "loaded_lat->grazing_compact",
+        "loaded_lat->grazing_dispersed",
+        "loaded_lat->loaded_ax",
+        "loaded_lat->loaded_lat"
+      ],
+      "n_edges": 11
+    },
+    "16": {
+      "alphabet": [
+        "grazing_compact",
+        "grazing_dispersed",
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "edges": [
+        "grazing_compact->grazing_compact",
+        "grazing_compact->grazing_dispersed",
+        "grazing_compact->loaded_ax",
+        "grazing_compact->loaded_lat",
+        "grazing_dispersed->grazing_compact",
+        "grazing_dispersed->grazing_dispersed",
+        "loaded_ax->grazing_compact",
+        "loaded_ax->loaded_ax",
+        "loaded_lat->grazing_compact",
+        "loaded_lat->grazing_dispersed",
+        "loaded_lat->loaded_ax",
+        "loaded_lat->loaded_lat"
+      ],
+      "n_edges": 12
+    }
+  },
+  "experiment_h3_episode_scaling": {
+    "levels": [
+      {
+        "n_episodes": 40,
+        "n_available": 30,
+        "eta": null
+      },
+      {
+        "n_episodes": 80,
+        "n_available": 60,
+        "eta": null
+      },
+      {
+        "n_episodes": 120,
+        "n_available": 87,
+        "n_star": 80,
+        "eta": 0.02631578947368418,
+        "kappa": 1.135135135135135,
+        "pi_grazing": 0.0
+      },
+      {
+        "n_episodes": 180,
+        "n_available": 130,
+        "n_star": 80,
+        "eta": 0.07317073170731703,
+        "kappa": 1.1307692307692307,
+        "pi_grazing": 0.0
+      }
+    ],
+    "eta_slope_per_episode": NaN,
+    "h3_read": "REJECTED"
+  },
+  "prior_reports": {
+    "naive_sensitivity": "results/phase1/emergence_theory/protocol_parameter_sensitivity_report.json",
+    "v1_uncorrected_H1": "results/phase1/mechanism_discrimination/mechanism_discrimination_report.json",
+    "v2_buggy_balanced": "results/phase1/mechanism_discrimination/mechanism_rigorous_report.json"
+  },
+  "verdict": "INCONCLUSIVE_SMALL_N",
+  "manuscript_sentence": "See balanced_operator + holds_ge_second + P-distance gradient; no single-mechanism verdict asserted."
+}

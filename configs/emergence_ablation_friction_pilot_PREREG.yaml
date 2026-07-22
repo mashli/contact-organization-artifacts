@@ -1,0 +1,46 @@
+# Emergence Physics Ablation — friction axis pilot (PREREGISTERED)
+# See docs/EMERGENCE_PHYSICS_ABLATION_PREREG.md
+
+run_id: emergence_ablation_friction_pilot
+geometry: cylinder
+ablation_axis: friction_mu
+reference_mu: 0.6
+
+arms:
+  - tag: friction_mu_0.0
+    friction_mu: 0.0
+  - tag: friction_mu_0.2
+    friction_mu: 0.2
+  - tag: friction_mu_0.6
+    friction_mu: 0.6
+  - tag: friction_mu_1.0
+    friction_mu: 1.0
+
+collection:
+  episodes_per_u: 10
+  base_seed: 8000
+
+sweep:
+  offset_frame: world
+  push_eccentricity_m: [0.0, 0.005, 0.010, 0.015, 0.020, 0.025, 0.030]
+  mass_scales: [1.0]
+  impulse_magnitude: [0.15]
+
+env:
+  probe_budget: 8
+  prediction_steps: 40
+  fx_threshold: 8.0
+
+controller:
+  primary_axis: 0
+  ramp_steps: 6
+  hold_steps: 8
+  settle_steps: 10
+  impulse_magnitude: 0.15
+
+characterization:
+  snapshots: [approach_end, first_contact, peak_push]
+  family: push
+  min_contact_multiplicity: 1
+
+output_root: results/phase1/emergence_ablation

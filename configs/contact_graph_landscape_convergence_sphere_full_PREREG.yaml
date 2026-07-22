@@ -1,0 +1,20 @@
+run_id: contact_graph_landscape_convergence_sphere_full
+phase: full
+episode_source: labeled_csv
+replay_manifest: results/phase1/basin_validation/replay_manifest.json
+labeled_peak_csv: results/phase1/basin_audit/sphere_full/labeled_episodes_all_u.csv
+char_config: configs/sphere_contact_configuration_full_PREREG.yaml
+fx_threshold: 1.0
+force_trajectories_json: results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json
+contact_graph:
+  feature_methods:
+  - edge_binary
+output_dir: results/phase1/cross_geometry_recovery/sphere/full/contact_graph_audit
+trajectories_json: contact_graph_trajectories.json
+audit:
+  output_json: cgla_report.json
+  figures_dir: figures
+  reference_modality: force_lc
+  pi_spearman_threshold: 0.7
+  ari_threshold: 0.3
+  min_checks_passed: 5

@@ -1,0 +1,47 @@
+# Cross-engine minimal probe — PyBullet cylinder push (PREREGISTERED)
+# See docs/CROSS_ENGINE_PROBE_PREREG.md
+
+run_id: cross_engine_pybullet_probe
+geometry: cylinder
+output_dir: results/phase1/cross_engine/pybullet_probe
+
+mujoco_reference_trajectories:
+  - results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json
+  - results/phase1/landscape_analysis/landscape_trajectories.json
+
+collection:
+  episodes_per_u: 10
+  base_seed: 7000
+
+sweep:
+  push_eccentricity_m: [0.0, 0.005, 0.010, 0.015, 0.020, 0.025, 0.030]
+  mass_scales: [1.0]
+  friction_mu: [0.6]
+  impulse_magnitude: [0.15]
+
+env:
+  probe_budget: 8
+  fx_threshold: 8.0
+
+controller:
+  ramp_steps: 6
+  hold_steps: 8
+  settle_steps: 10
+  impulse_magnitude: 0.15
+
+pybullet:
+  # SI bridge from nominal impulse (frozen before collection — not outcome-tuned)
+  pusher_speed_m_s: 0.06
+  push_force_nominal_n: 55.0
+  sim_timestep: 0.0041666667
+  control_freq: 20
+  cylinder_radius_m: 0.03
+  cylinder_half_length_m: 0.03
+  cylinder_mass_kg: 0.12
+  pusher_mass_kg: 0.0
+  table_friction: 0.6
+  object_x_range: [-0.10, -0.08]
+  object_y_range: [-0.02, 0.02]
+  approach_gap_m: 0.018
+  max_approach_steps: 200
+  contact_retry_limit: 8

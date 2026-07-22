@@ -1,0 +1,30 @@
+# ToCO — organization (μ_𝒪) + feature (μ_ℱ) measure baseline (offline; Project B0/B1)
+# See docs/THEORY_OF_CONTACT_ORGANIZATION_RESEARCH_PLAN.md
+
+run_id: emergence_measure_baseline
+prereg: docs/THEORY_OF_CONTACT_ORGANIZATION_RESEARCH_PLAN.md
+
+cohorts:
+  - name: cylinder_reference
+    path: results/phase1/landscape_analysis/landscape_trajectories.json
+  - name: cylinder_heldout_full
+    path: results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json
+  - name: sphere_full
+    path: results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json
+  - name: sliding_full
+    path: results/phase1/second_task_recovery/sliding/full/landscape_trajectories.json
+  - name: pybullet_probe
+    path: results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json
+  - name: ablation_friction_mu_0.0
+    path: results/phase1/emergence_ablation/friction_mu_0.0/pilot/landscape_trajectories.json
+  - name: ablation_friction_mu_0.2
+    path: results/phase1/emergence_ablation/friction_mu_0.2/pilot/landscape_trajectories.json
+  - name: ablation_friction_mu_0.6
+    path: results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json
+  - name: ablation_friction_mu_1.0
+    path: results/phase1/emergence_ablation/friction_mu_1.0/pilot/landscape_trajectories.json
+
+analysis:
+  histogram_bins: 16
+
+output_json: results/phase1/emergence_theory/measure_baseline_report.json

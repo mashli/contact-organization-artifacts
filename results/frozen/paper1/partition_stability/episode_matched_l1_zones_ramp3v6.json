@@ -1,0 +1,32 @@
+{
+  "pair": "ramp3_vs_ramp6",
+  "L1_friction_cone_zones": {
+    "near": {
+      "n_matched": 178,
+      "n_episodes": 81,
+      "agreement": 0.7696629213483146,
+      "ci95": [
+        0.7010869565217391,
+        0.8323353293413174
+      ]
+    },
+    "mid": {
+      "n_matched": 38,
+      "n_episodes": 36,
+      "agreement": 0.868421052631579,
+      "ci95": [
+        0.7567567567567568,
+        0.972972972972973
+      ]
+    },
+    "far": {
+      "n_matched": 4,
+      "n_episodes": 4,
+      "agreement": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

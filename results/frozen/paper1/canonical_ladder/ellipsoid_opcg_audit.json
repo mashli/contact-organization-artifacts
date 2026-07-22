@@ -1,0 +1,29 @@
+{
+  "geometry": "ellipsoid",
+  "k": 2,
+  "num_episodes": 300,
+  "total_frames": 9000,
+  "guard_threshold_N": 8.0,
+  "results": {
+    "P1": {
+      "pass": true,
+      "ratio": 48.958513867166324,
+      "max_mean_fx_N": 10.415732163320673
+    },
+    "P2": {
+      "pass": true,
+      "switch_rate": 0.04689655172413793
+    },
+    "P3": {
+      "pass": true,
+      "frac_loaded": 0.08177777777777778,
+      "frac_grazing": 0.0
+    },
+    "P4": {
+      "pass": true,
+      "guard_transitions": 356
+    }
+  },
+  "partition_ARI": 0.8238114510002877,
+  "verdict": "P1:PASS / P2:PASS / P3:PASS / P4:PASS"
+}

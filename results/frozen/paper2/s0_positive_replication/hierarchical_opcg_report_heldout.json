@@ -1,0 +1,859 @@
+{
+  "protocol": "COT_HIERARCHICAL_CYLINDER_2TO4_PROTOCOL.md v1.1 + L2",
+  "route": "D \u2014 compositional emergence (avoid flat r\u22652)",
+  "cohort_name": "cylinder_heldout_full",
+  "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+  "max_level": 2,
+  "level0": {
+    "guard": "G_fx_mode",
+    "K": 2,
+    "r_slow": 1,
+    "report": {
+      "cohort_name": "cylinder_heldout_full_L0",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "fx_threshold": 8.0,
+      "guard_witness": "G_fx_mode",
+      "thresholds": {
+        "delta_1": 0.25,
+        "theta": 0.95,
+        "S_max": 0.2,
+        "sigma": 0.9,
+        "tau_ref": 6.0
+      },
+      "conditions": {
+        "C1": {
+          "test": "rel_tau2_error",
+          "threshold": "<= 0.25",
+          "tau2": 6.008298090893609,
+          "tau_ref": 6.0,
+          "relative_error": 0.0013830151489348335,
+          "pass": true
+        },
+        "C2": {
+          "test": "joint_entropy_ratio H2/H0 < theta OR u-dependent occupancy",
+          "threshold": "primary: < 0.95; alternate: pi_range>=0.15 or |pi_spearman|>=0.25",
+          "H2_H0_joint": 0.9596961480083803,
+          "H2_H0_basin": 0.9787020779178768,
+          "pi_u_range": 0.29736656062212796,
+          "pi_u_spearman": -0.39285714285714296,
+          "n_transition_edges": 4,
+          "pass_primary": false,
+          "pass_alternate": true,
+          "pass": true
+        },
+        "C3": {
+          "test": "switch_rate N_sw/T",
+          "threshold": "<= 0.2",
+          "N_sw": 87,
+          "T_frames": 1230,
+          "switch_rate": 0.07073170731707316,
+          "pass": true
+        },
+        "C4": {
+          "test": "spectrum_match",
+          "threshold": ">= 0.9",
+          "sigma_internal": 1.0,
+          "sigma_cross_ref": null,
+          "lambda2": 0.8466765940165154,
+          "ref_lambda2": null,
+          "pass_internal": true,
+          "pass_cross_ref": null,
+          "pass": true
+        }
+      },
+      "Psi_OPCG": true,
+      "guard_partition_summary": {
+        "n_states": 2,
+        "lambda2": 0.8466765940165154,
+        "tau2_implied": 6.008298090893609,
+        "ari_vs_mode": 1.0,
+        "n_regime_switches_guard": 87
+      },
+      "S0-2": {
+        "Sigma_slow_proxy": {
+          "loaded_mean_tau": 5.036496350364963,
+          "grazing_mean_tau": 3.8028169014084505,
+          "tail_separation_at_t4": 1.095165955102603,
+          "pass_proxy": true
+        }
+      },
+      "verdict": "PASS"
+    }
+  },
+  "levels": [
+    {
+      "level": 1,
+      "n_parents": 2,
+      "fibers": {
+        "grazing": {
+          "level": 1,
+          "parent_cell": "grazing",
+          "refinement_guard": "G_spread",
+          "cohort_name": "cylinder_heldout_full_L1_grazing",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 128,
+          "n_frames": 526,
+          "state_names": [
+            "grazing_compact",
+            "grazing_dispersed"
+          ],
+          "composed_state_names": [
+            "grazing_compact",
+            "grazing_dispersed"
+          ],
+          "n_states": 2,
+          "r_slow_proxy": 1,
+          "tau_ref_level": 3.7969924812030076,
+          "gap_min_used": 0.15,
+          "conditions": {
+            "C1": {
+              "tau2": 1.3583919230419492,
+              "tau_ref": 3.7969924812030076,
+              "relative_error": 0.6422452955156847,
+              "spectral_gap": 0.5210526315789474,
+              "pass_gap": true,
+              "pass_tau": false,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.9498355880092888,
+              "pass_primary": true,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.03231939163498099,
+              "S_max_level": 0.2,
+              "pass": true
+            },
+            "C4": {
+              "binary_fiber": true,
+              "lambda2": 0.4789473684210526,
+              "spectral_gap": 0.5210526315789474,
+              "pass": true
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "grazing_compact": 3.7969924812030076,
+              "grazing_dispersed": 1.75
+            },
+            "kappa_ratio": 2.1697099892588616,
+            "pass": true
+          },
+          "Psi_OPCG": true,
+          "structural_pass": true,
+          "verdict": "PASS"
+        },
+        "loaded": {
+          "level": 1,
+          "parent_cell": "loaded",
+          "refinement_guard": "G_coupling",
+          "cohort_name": "cylinder_heldout_full_L1_loaded",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 127,
+          "n_frames": 680,
+          "state_names": [
+            "loaded_ax",
+            "loaded_lat"
+          ],
+          "composed_state_names": [
+            "loaded_ax",
+            "loaded_lat"
+          ],
+          "n_states": 2,
+          "r_slow_proxy": 1,
+          "tau_ref_level": 4.0625,
+          "gap_min_used": 0.15,
+          "conditions": {
+            "C1": {
+              "tau2": 2.248152574184157,
+              "tau_ref": 4.0625,
+              "relative_error": 0.4466085971238999,
+              "spectral_gap": 0.35905374295467174,
+              "pass_gap": true,
+              "pass_tau": false,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.9580475001505352,
+              "pass_primary": false,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.1338235294117647,
+              "S_max_level": 0.2,
+              "pass": true
+            },
+            "C4": {
+              "binary_fiber": true,
+              "lambda2": 0.6409462570453283,
+              "spectral_gap": 0.35905374295467174,
+              "pass": true
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "loaded_ax": 2.377049180327869,
+              "loaded_lat": 4.0625
+            },
+            "kappa_ratio": 1.7090517241379308,
+            "pass": true
+          },
+          "Psi_OPCG": true,
+          "structural_pass": true,
+          "verdict": "PASS"
+        }
+      },
+      "K_after_level": 4,
+      "target_K": 4
+    },
+    {
+      "level": 2,
+      "n_parents": 4,
+      "fibers": {
+        "grazing_compact": {
+          "level": 2,
+          "parent_cell": "grazing_compact",
+          "refinement_guard": "G_multiplicity",
+          "cohort_name": "cylinder_heldout_full_L2_grazing_compact",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 126,
+          "n_frames": 498,
+          "state_names": [
+            "multi_patch",
+            "single_patch"
+          ],
+          "composed_state_names": [
+            "grazing_compact__multi_patch",
+            "grazing_compact__single_patch"
+          ],
+          "n_states": 2,
+          "r_slow_proxy": 1,
+          "tau_ref_level": 3.682926829268293,
+          "gap_min_used": 0.1,
+          "conditions": {
+            "C1": {
+              "tau2": 1.6778388943875466,
+              "tau_ref": 3.682926829268293,
+              "relative_error": 0.5444278498682821,
+              "spectral_gap": 0.4489913544668589,
+              "pass_gap": true,
+              "pass_tau": false,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.9402945602593195,
+              "pass_primary": true,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.05421686746987952,
+              "S_max_level": 0.3,
+              "pass": true
+            },
+            "C4": {
+              "binary_fiber": true,
+              "lambda2": 0.5510086455331411,
+              "spectral_gap": 0.4489913544668589,
+              "pass": true
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "multi_patch": 1.5,
+              "single_patch": 3.682926829268293
+            },
+            "kappa_ratio": 2.4552845528455287,
+            "pass": true
+          },
+          "Psi_OPCG": true,
+          "structural_pass": true,
+          "verdict": "PASS"
+        },
+        "grazing_dispersed": {
+          "level": 2,
+          "parent_cell": "grazing_dispersed",
+          "refinement_guard": "G_coupling",
+          "cohort_name": "cylinder_heldout_full_L2_grazing_dispersed",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 6,
+          "n_frames": 15,
+          "state_names": [
+            "grazing_ax",
+            "grazing_lat",
+            "lateral_dominant"
+          ],
+          "composed_state_names": [
+            "grazing_dispersed__grazing_ax",
+            "grazing_dispersed__grazing_lat",
+            "grazing_dispersed__lateral_dominant"
+          ],
+          "n_states": 3,
+          "r_slow_proxy": null,
+          "tau_ref_level": 2.0,
+          "gap_min_used": 0.1,
+          "conditions": {
+            "C1": {
+              "tau2": 2.4663034623764313,
+              "tau_ref": 2.0,
+              "relative_error": 0.23315173118821564,
+              "spectral_gap": 0.33333333333333337,
+              "pass_gap": true,
+              "pass_tau": true,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.8526283672194339,
+              "pass_primary": true,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.2,
+              "S_max_level": 0.3,
+              "pass": true
+            },
+            "C4": {
+              "binary_fiber": false,
+              "lambda2": 0.6666666666666666,
+              "spectral_gap": 0.33333333333333337,
+              "pass": false
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "grazing_lat": 2.0,
+              "grazing_ax": 1.6666666666666667,
+              "lateral_dominant": 1.0
+            },
+            "kappa_ratio": 2.0,
+            "pass": true
+          },
+          "Psi_OPCG": false,
+          "structural_pass": false,
+          "verdict": "FAIL"
+        },
+        "loaded_ax": {
+          "level": 2,
+          "parent_cell": "loaded_ax",
+          "refinement_guard": "G_multiplicity",
+          "cohort_name": "cylinder_heldout_full_L2_loaded_ax",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 102,
+          "n_frames": 270,
+          "state_names": [
+            "multi_patch",
+            "single_patch"
+          ],
+          "composed_state_names": [
+            "loaded_ax__multi_patch",
+            "loaded_ax__single_patch"
+          ],
+          "n_states": 2,
+          "r_slow_proxy": 1,
+          "tau_ref_level": 1.801980198019802,
+          "gap_min_used": 0.1,
+          "conditions": {
+            "C1": {
+              "tau2": 0.1337757296146812,
+              "tau_ref": 1.801980198019802,
+              "relative_error": 0.9257618203786658,
+              "spectral_gap": 0.9994330262225372,
+              "pass_gap": true,
+              "pass_tau": false,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.9705746931686188,
+              "pass_primary": false,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.3148148148148148,
+              "S_max_level": 0.3,
+              "pass": false
+            },
+            "C4": {
+              "binary_fiber": true,
+              "lambda2": 0.0005669737774628425,
+              "spectral_gap": 0.9994330262225372,
+              "pass": true
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "multi_patch": 1.0232558139534884,
+              "single_patch": 1.801980198019802
+            },
+            "kappa_ratio": 1.761026102610261,
+            "pass": true
+          },
+          "Psi_OPCG": false,
+          "structural_pass": false,
+          "verdict": "FAIL"
+        },
+        "loaded_lat": {
+          "level": 2,
+          "parent_cell": "loaded_lat",
+          "refinement_guard": "G_multiplicity",
+          "cohort_name": "cylinder_heldout_full_L2_loaded_lat",
+          "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+          "n_segments": 80,
+          "n_frames": 374,
+          "state_names": [
+            "multi_patch",
+            "single_patch"
+          ],
+          "composed_state_names": [
+            "loaded_lat__multi_patch",
+            "loaded_lat__single_patch"
+          ],
+          "n_states": 2,
+          "r_slow_proxy": 1,
+          "tau_ref_level": 4.65,
+          "gap_min_used": 0.1,
+          "conditions": {
+            "C1": {
+              "tau2": null,
+              "tau_ref": 4.65,
+              "relative_error": null,
+              "spectral_gap": 1.0,
+              "pass_gap": true,
+              "pass_tau": false,
+              "pass": true
+            },
+            "C2": {
+              "H2_H0_joint": 0.9050796154335604,
+              "pass_primary": true,
+              "pass_alternate": false,
+              "pass_s0_2_proxy": true,
+              "pass": true
+            },
+            "C3": {
+              "switch_rate": 0.0053475935828877,
+              "S_max_level": 0.3,
+              "pass": true
+            },
+            "C4": {
+              "binary_fiber": true,
+              "lambda2": 0.0,
+              "spectral_gap": 1.0,
+              "pass": true
+            }
+          },
+          "S0-2_proxy": {
+            "mean_dwell_by_state": {
+              "single_patch": 4.65,
+              "multi_patch": 1.0
+            },
+            "kappa_ratio": 4.65,
+            "pass": true
+          },
+          "Psi_OPCG": true,
+          "structural_pass": true,
+          "verdict": "PASS"
+        }
+      },
+      "K_after_level": 9,
+      "target_K": 8
+    }
+  ],
+  "all_fibers": {
+    "L1_grazing": {
+      "level": 1,
+      "parent_cell": "grazing",
+      "refinement_guard": "G_spread",
+      "cohort_name": "cylinder_heldout_full_L1_grazing",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 128,
+      "n_frames": 526,
+      "state_names": [
+        "grazing_compact",
+        "grazing_dispersed"
+      ],
+      "composed_state_names": [
+        "grazing_compact",
+        "grazing_dispersed"
+      ],
+      "n_states": 2,
+      "r_slow_proxy": 1,
+      "tau_ref_level": 3.7969924812030076,
+      "gap_min_used": 0.15,
+      "conditions": {
+        "C1": {
+          "tau2": 1.3583919230419492,
+          "tau_ref": 3.7969924812030076,
+          "relative_error": 0.6422452955156847,
+          "spectral_gap": 0.5210526315789474,
+          "pass_gap": true,
+          "pass_tau": false,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.9498355880092888,
+          "pass_primary": true,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.03231939163498099,
+          "S_max_level": 0.2,
+          "pass": true
+        },
+        "C4": {
+          "binary_fiber": true,
+          "lambda2": 0.4789473684210526,
+          "spectral_gap": 0.5210526315789474,
+          "pass": true
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "grazing_compact": 3.7969924812030076,
+          "grazing_dispersed": 1.75
+        },
+        "kappa_ratio": 2.1697099892588616,
+        "pass": true
+      },
+      "Psi_OPCG": true,
+      "structural_pass": true,
+      "verdict": "PASS"
+    },
+    "L1_loaded": {
+      "level": 1,
+      "parent_cell": "loaded",
+      "refinement_guard": "G_coupling",
+      "cohort_name": "cylinder_heldout_full_L1_loaded",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 127,
+      "n_frames": 680,
+      "state_names": [
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "composed_state_names": [
+        "loaded_ax",
+        "loaded_lat"
+      ],
+      "n_states": 2,
+      "r_slow_proxy": 1,
+      "tau_ref_level": 4.0625,
+      "gap_min_used": 0.15,
+      "conditions": {
+        "C1": {
+          "tau2": 2.248152574184157,
+          "tau_ref": 4.0625,
+          "relative_error": 0.4466085971238999,
+          "spectral_gap": 0.35905374295467174,
+          "pass_gap": true,
+          "pass_tau": false,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.9580475001505352,
+          "pass_primary": false,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.1338235294117647,
+          "S_max_level": 0.2,
+          "pass": true
+        },
+        "C4": {
+          "binary_fiber": true,
+          "lambda2": 0.6409462570453283,
+          "spectral_gap": 0.35905374295467174,
+          "pass": true
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "loaded_ax": 2.377049180327869,
+          "loaded_lat": 4.0625
+        },
+        "kappa_ratio": 1.7090517241379308,
+        "pass": true
+      },
+      "Psi_OPCG": true,
+      "structural_pass": true,
+      "verdict": "PASS"
+    },
+    "L2_grazing_compact": {
+      "level": 2,
+      "parent_cell": "grazing_compact",
+      "refinement_guard": "G_multiplicity",
+      "cohort_name": "cylinder_heldout_full_L2_grazing_compact",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 126,
+      "n_frames": 498,
+      "state_names": [
+        "multi_patch",
+        "single_patch"
+      ],
+      "composed_state_names": [
+        "grazing_compact__multi_patch",
+        "grazing_compact__single_patch"
+      ],
+      "n_states": 2,
+      "r_slow_proxy": 1,
+      "tau_ref_level": 3.682926829268293,
+      "gap_min_used": 0.1,
+      "conditions": {
+        "C1": {
+          "tau2": 1.6778388943875466,
+          "tau_ref": 3.682926829268293,
+          "relative_error": 0.5444278498682821,
+          "spectral_gap": 0.4489913544668589,
+          "pass_gap": true,
+          "pass_tau": false,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.9402945602593195,
+          "pass_primary": true,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.05421686746987952,
+          "S_max_level": 0.3,
+          "pass": true
+        },
+        "C4": {
+          "binary_fiber": true,
+          "lambda2": 0.5510086455331411,
+          "spectral_gap": 0.4489913544668589,
+          "pass": true
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "multi_patch": 1.5,
+          "single_patch": 3.682926829268293
+        },
+        "kappa_ratio": 2.4552845528455287,
+        "pass": true
+      },
+      "Psi_OPCG": true,
+      "structural_pass": true,
+      "verdict": "PASS"
+    },
+    "L2_grazing_dispersed": {
+      "level": 2,
+      "parent_cell": "grazing_dispersed",
+      "refinement_guard": "G_coupling",
+      "cohort_name": "cylinder_heldout_full_L2_grazing_dispersed",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 6,
+      "n_frames": 15,
+      "state_names": [
+        "grazing_ax",
+        "grazing_lat",
+        "lateral_dominant"
+      ],
+      "composed_state_names": [
+        "grazing_dispersed__grazing_ax",
+        "grazing_dispersed__grazing_lat",
+        "grazing_dispersed__lateral_dominant"
+      ],
+      "n_states": 3,
+      "r_slow_proxy": null,
+      "tau_ref_level": 2.0,
+      "gap_min_used": 0.1,
+      "conditions": {
+        "C1": {
+          "tau2": 2.4663034623764313,
+          "tau_ref": 2.0,
+          "relative_error": 0.23315173118821564,
+          "spectral_gap": 0.33333333333333337,
+          "pass_gap": true,
+          "pass_tau": true,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.8526283672194339,
+          "pass_primary": true,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.2,
+          "S_max_level": 0.3,
+          "pass": true
+        },
+        "C4": {
+          "binary_fiber": false,
+          "lambda2": 0.6666666666666666,
+          "spectral_gap": 0.33333333333333337,
+          "pass": false
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "grazing_lat": 2.0,
+          "grazing_ax": 1.6666666666666667,
+          "lateral_dominant": 1.0
+        },
+        "kappa_ratio": 2.0,
+        "pass": true
+      },
+      "Psi_OPCG": false,
+      "structural_pass": false,
+      "verdict": "FAIL"
+    },
+    "L2_loaded_ax": {
+      "level": 2,
+      "parent_cell": "loaded_ax",
+      "refinement_guard": "G_multiplicity",
+      "cohort_name": "cylinder_heldout_full_L2_loaded_ax",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 102,
+      "n_frames": 270,
+      "state_names": [
+        "multi_patch",
+        "single_patch"
+      ],
+      "composed_state_names": [
+        "loaded_ax__multi_patch",
+        "loaded_ax__single_patch"
+      ],
+      "n_states": 2,
+      "r_slow_proxy": 1,
+      "tau_ref_level": 1.801980198019802,
+      "gap_min_used": 0.1,
+      "conditions": {
+        "C1": {
+          "tau2": 0.1337757296146812,
+          "tau_ref": 1.801980198019802,
+          "relative_error": 0.9257618203786658,
+          "spectral_gap": 0.9994330262225372,
+          "pass_gap": true,
+          "pass_tau": false,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.9705746931686188,
+          "pass_primary": false,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.3148148148148148,
+          "S_max_level": 0.3,
+          "pass": false
+        },
+        "C4": {
+          "binary_fiber": true,
+          "lambda2": 0.0005669737774628425,
+          "spectral_gap": 0.9994330262225372,
+          "pass": true
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "multi_patch": 1.0232558139534884,
+          "single_patch": 1.801980198019802
+        },
+        "kappa_ratio": 1.761026102610261,
+        "pass": true
+      },
+      "Psi_OPCG": false,
+      "structural_pass": false,
+      "verdict": "FAIL"
+    },
+    "L2_loaded_lat": {
+      "level": 2,
+      "parent_cell": "loaded_lat",
+      "refinement_guard": "G_multiplicity",
+      "cohort_name": "cylinder_heldout_full_L2_loaded_lat",
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_segments": 80,
+      "n_frames": 374,
+      "state_names": [
+        "multi_patch",
+        "single_patch"
+      ],
+      "composed_state_names": [
+        "loaded_lat__multi_patch",
+        "loaded_lat__single_patch"
+      ],
+      "n_states": 2,
+      "r_slow_proxy": 1,
+      "tau_ref_level": 4.65,
+      "gap_min_used": 0.1,
+      "conditions": {
+        "C1": {
+          "tau2": null,
+          "tau_ref": 4.65,
+          "relative_error": null,
+          "spectral_gap": 1.0,
+          "pass_gap": true,
+          "pass_tau": false,
+          "pass": true
+        },
+        "C2": {
+          "H2_H0_joint": 0.9050796154335604,
+          "pass_primary": true,
+          "pass_alternate": false,
+          "pass_s0_2_proxy": true,
+          "pass": true
+        },
+        "C3": {
+          "switch_rate": 0.0053475935828877,
+          "S_max_level": 0.3,
+          "pass": true
+        },
+        "C4": {
+          "binary_fiber": true,
+          "lambda2": 0.0,
+          "spectral_gap": 1.0,
+          "pass": true
+        }
+      },
+      "S0-2_proxy": {
+        "mean_dwell_by_state": {
+          "single_patch": 4.65,
+          "multi_patch": 1.0
+        },
+        "kappa_ratio": 4.65,
+        "pass": true
+      },
+      "Psi_OPCG": true,
+      "structural_pass": true,
+      "verdict": "PASS"
+    }
+  },
+  "composed": {
+    "cells": [
+      "grazing_compact__multi_patch",
+      "grazing_compact__single_patch",
+      "grazing_dispersed__grazing_ax",
+      "grazing_dispersed__grazing_lat",
+      "grazing_dispersed__lateral_dominant",
+      "loaded_ax__multi_patch",
+      "loaded_ax__single_patch",
+      "loaded_lat__multi_patch",
+      "loaded_lat__single_patch"
+    ],
+    "K": 9,
+    "target_K": 8,
+    "fiber_level_opcg_pass": false,
+    "structural_composition_hold": false
+  },
+  "verdict": "PARTIAL"
+}

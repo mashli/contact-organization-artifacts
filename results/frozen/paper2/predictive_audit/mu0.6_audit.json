@@ -1,0 +1,292 @@
+{
+  "source_path": "results/phase1/friction_sweep_n50/friction_mu_0.60/n50/landscape_trajectories.json",
+  "n_episodes": 108,
+  "n_train": 76,
+  "n_test": 32,
+  "n_states": 2,
+  "labels": [
+    "loaded",
+    "grazing"
+  ],
+  "P_organizational": [
+    [
+      0.8490566037735849,
+      0.1509433962264151
+    ],
+    [
+      0.03488372093023256,
+      0.9651162790697675
+    ]
+  ],
+  "metrics": {
+    "k1": {
+      "organizational": {
+        "accuracy": 0.8941798941798942,
+        "log_likelihood": -0.32656462142886633,
+        "brier_score": 0.18511221770668912,
+        "n_predictions": 189
+      },
+      "uniform": {
+        "accuracy": 0.5185185185185185,
+        "log_likelihood": -0.6931471805599464,
+        "brier_score": 0.5,
+        "n_predictions": 189
+      },
+      "marginal": {
+        "accuracy": 0.5185185185185185,
+        "log_likelihood": -0.6929956008346139,
+        "brier_score": 0.4998484212000318,
+        "n_predictions": 189
+      },
+      "persistent": {
+        "accuracy": 0.8941798941798942,
+        "log_likelihood": -2.9239175784051374,
+        "brier_score": 0.21164021164021163,
+        "n_predictions": 189
+      }
+    },
+    "k2": {
+      "organizational": {
+        "accuracy": 0.7834394904458599,
+        "log_likelihood": -0.49350427634398,
+        "brier_score": 0.32116633287845775,
+        "n_predictions": 157
+      },
+      "uniform": {
+        "accuracy": 0.4840764331210191,
+        "log_likelihood": -0.6931471805599464,
+        "brier_score": 0.5,
+        "n_predictions": 157
+      },
+      "marginal": {
+        "accuracy": 0.4840764331210191,
+        "log_likelihood": -0.693295099116582,
+        "brier_score": 0.5001479175947922,
+        "n_predictions": 157
+      },
+      "persistent": {
+        "accuracy": 0.7834394904458599,
+        "log_likelihood": -5.983788012366691,
+        "brier_score": 0.43312101910828027,
+        "n_predictions": 157
+      }
+    },
+    "k3": {
+      "organizational": {
+        "accuracy": 0.6666666666666666,
+        "log_likelihood": -0.5876246130991155,
+        "brier_score": 0.4065230179486002,
+        "n_predictions": 126
+      },
+      "uniform": {
+        "accuracy": 0.4365079365079365,
+        "log_likelihood": -0.6931471805599462,
+        "brier_score": 0.5,
+        "n_predictions": 126
+      },
+      "marginal": {
+        "accuracy": 0.4365079365079365,
+        "log_likelihood": -0.6937087408240166,
+        "brier_score": 0.5005615566957747,
+        "n_predictions": 126
+      },
+      "persistent": {
+        "accuracy": 0.6666666666666666,
+        "log_likelihood": -9.21034037197618,
+        "brier_score": 0.6666666666666666,
+        "n_predictions": 126
+      }
+    }
+  },
+  "kmeans_markov": {
+    "all_features": {
+      "P": [
+        [
+          0.9631901840490797,
+          0.03680981595092025
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "feature_keys": null,
+      "metrics": {
+        "k1": {
+          "organizational": {
+            "accuracy": 0.9788359788359788,
+            "log_likelihood": -0.22936600321018563,
+            "brier_score": 0.042256351187812895,
+            "n_predictions": 189
+          },
+          "uniform": {
+            "accuracy": 0.8253968253968254,
+            "log_likelihood": -0.6931471805599464,
+            "brier_score": 0.5,
+            "n_predictions": 189
+          },
+          "marginal": {
+            "accuracy": 0.8253968253968254,
+            "log_likelihood": -0.46332775545852306,
+            "brier_score": 0.2883619887778663,
+            "n_predictions": 189
+          },
+          "persistent": {
+            "accuracy": 0.9788359788359788,
+            "log_likelihood": -0.5847835156810275,
+            "brier_score": 0.042328042328042326,
+            "n_predictions": 189
+          }
+        },
+        "k2": {
+          "organizational": {
+            "accuracy": 0.9681528662420382,
+            "log_likelihood": -0.30456582732851334,
+            "brier_score": 0.06517748928968241,
+            "n_predictions": 157
+          },
+          "uniform": {
+            "accuracy": 0.8280254777070064,
+            "log_likelihood": -0.6931471805599464,
+            "brier_score": 0.5,
+            "n_predictions": 157
+          },
+          "marginal": {
+            "accuracy": 0.8280254777070064,
+            "log_likelihood": -0.45938800407259595,
+            "brier_score": 0.28502474323624544,
+            "n_predictions": 157
+          },
+          "persistent": {
+            "accuracy": 0.9681528662420382,
+            "log_likelihood": -0.8799688253480429,
+            "brier_score": 0.06369426751592357,
+            "n_predictions": 157
+          }
+        },
+        "k3": {
+          "organizational": {
+            "accuracy": 0.9603174603174603,
+            "log_likelihood": -0.18177334563610859,
+            "brier_score": 0.08206627222630226,
+            "n_predictions": 126
+          },
+          "uniform": {
+            "accuracy": 0.8253968253968254,
+            "log_likelihood": -0.6931471805599462,
+            "brier_score": 0.5,
+            "n_predictions": 126
+          },
+          "marginal": {
+            "accuracy": 0.8253968253968254,
+            "log_likelihood": -0.4633277554585232,
+            "brier_score": 0.2883619887778664,
+            "n_predictions": 126
+          },
+          "persistent": {
+            "accuracy": 0.9603174603174603,
+            "log_likelihood": -1.0964690919019264,
+            "brier_score": 0.07936507936507936,
+            "n_predictions": 126
+          }
+        }
+      }
+    },
+    "force_fx_only": {
+      "P": [
+        [
+          0.9182156133828996,
+          0.08178438661710037
+        ],
+        [
+          0.008695652173913044,
+          0.991304347826087
+        ]
+      ],
+      "feature_keys": [
+        "resultant_force_f_x"
+      ],
+      "metrics": {
+        "k1": {
+          "organizational": {
+            "accuracy": 0.9576719576719577,
+            "log_likelihood": -0.16985656198937807,
+            "brier_score": 0.08110726244382152,
+            "n_predictions": 189
+          },
+          "uniform": {
+            "accuracy": 0.7248677248677249,
+            "log_likelihood": -0.6931471805599464,
+            "brier_score": 0.5,
+            "n_predictions": 189
+          },
+          "marginal": {
+            "accuracy": 0.7248677248677249,
+            "log_likelihood": -0.6057274118058434,
+            "brier_score": 0.4143257718966602,
+            "n_predictions": 189
+          },
+          "persistent": {
+            "accuracy": 0.9576719576719577,
+            "log_likelihood": -1.169567031362055,
+            "brier_score": 0.08465608465608465,
+            "n_predictions": 189
+          }
+        },
+        "k2": {
+          "organizational": {
+            "accuracy": 0.9044585987261147,
+            "log_likelihood": -0.3036854855293064,
+            "brier_score": 0.1715770527892181,
+            "n_predictions": 157
+          },
+          "uniform": {
+            "accuracy": 0.7261146496815286,
+            "log_likelihood": -0.6931471805599464,
+            "brier_score": 0.5,
+            "n_predictions": 157
+          },
+          "marginal": {
+            "accuracy": 0.7261146496815286,
+            "log_likelihood": -0.6050264171145681,
+            "brier_score": 0.41364267395518733,
+            "n_predictions": 157
+          },
+          "persistent": {
+            "accuracy": 0.9044585987261147,
+            "log_likelihood": -2.639906476044129,
+            "brier_score": 0.1910828025477707,
+            "n_predictions": 157
+          }
+        },
+        "k3": {
+          "organizational": {
+            "accuracy": 0.8968253968253969,
+            "log_likelihood": -0.3452798556663597,
+            "brier_score": 0.1984473897496227,
+            "n_predictions": 126
+          },
+          "uniform": {
+            "accuracy": 0.7380952380952381,
+            "log_likelihood": -0.6931471805599462,
+            "brier_score": 0.5,
+            "n_predictions": 126
+          },
+          "marginal": {
+            "accuracy": 0.7380952380952381,
+            "log_likelihood": -0.598291184337585,
+            "brier_score": 0.40707939508506763,
+            "n_predictions": 126
+          },
+          "persistent": {
+            "accuracy": 0.8968253968253969,
+            "log_likelihood": -2.850819638945009,
+            "brier_score": 0.20634920634920634,
+            "n_predictions": 126
+          }
+        }
+      }
+    }
+  },
+  "name": "mu0.6"
+}

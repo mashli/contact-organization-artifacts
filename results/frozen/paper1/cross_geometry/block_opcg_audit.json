@@ -1,0 +1,26 @@
+{
+  "stage": "cross_geometry_block_audit",
+  "geometry": "block",
+  "n_episodes": 700,
+  "fx_threshold_N": 8.0,
+  "K": 2,
+  "mean_loaded_dwell": 13.01,
+  "mean_grazing_dwell": 40.81,
+  "dwell_ratio": 0.319,
+  "switch_rate": 0.0106,
+  "frac_loaded": 0.1328,
+  "P1_pass": false,
+  "P2_pass": true,
+  "P3_pass": true,
+  "P4_pass": true,
+  "transitions_near_guard": 284,
+  "total_transitions": 357,
+  "all_P_pass": false,
+  "formation_verdict": "partial_P1_fail",
+  "comparison": {
+    "cylinder_frac_loaded": 0.553,
+    "cylinder_P1": true,
+    "block_frac_loaded": 0.1328,
+    "block_P1": false
+  }
+}

@@ -1,0 +1,30 @@
+# Contact graph → Landscape full cohort (180 episodes)
+# See docs/CONTACT_GRAPH_LANDSCAPE_CONVERGENCE_PREREG.md
+
+run_id: contact_graph_landscape_convergence_full
+phase: full
+
+episode_source: labeled_csv
+replay_manifest: results/phase1/basin_validation/replay_manifest.json
+labeled_peak_csv: results/phase1/basin_audit/all_u/labeled_episodes_all_u.csv
+
+char_config: configs/contact_configuration_characterization.yaml
+fx_threshold: 8.0
+force_trajectories_json: results/phase1/landscape_analysis/landscape_trajectories.json
+
+contact_graph:
+  feature_methods:
+    - edge_binary
+    - state_onehot
+    - multiplicity_only
+
+output_dir: results/phase1/contact_graph_audit/full
+trajectories_json: contact_graph_trajectories.json
+
+audit:
+  output_json: cgla_report.json
+  figures_dir: figures
+  reference_modality: force_lc
+  pi_spearman_threshold: 0.70
+  ari_threshold: 0.30
+  min_checks_passed: 5

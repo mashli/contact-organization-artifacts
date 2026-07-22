@@ -1,0 +1,402 @@
+{
+  "cohorts": {
+    "cylinder_reference_full": {
+      "source_path": "results/phase1/landscape_analysis/landscape_trajectories.json",
+      "n_episodes": 179,
+      "n_frames": 1186,
+      "n_regime_switches": 84,
+      "transition_counts": {
+        "loaded->grazing": 69,
+        "grazing->loaded": 15
+      },
+      "within_basin_steps": {
+        "loaded->loaded": 524,
+        "grazing->grazing": 399
+      },
+      "by_basin": {
+        "grazing": {
+          "basin": "grazing",
+          "n_runs": 131,
+          "n_frames": 530,
+          "mean_run_length": 4.0458015267175576,
+          "median_run_length": 4.0,
+          "max_run_length": 8,
+          "std_run_length": 1.6799790775680428,
+          "p90_run_length": 6.0,
+          "p95_run_length": 7.0,
+          "exp_decay_rate": 0.2471698113207547,
+          "survival_tail": {
+            "1": 0.9236641221374046,
+            "2": 0.8244274809160306,
+            "3": 0.6641221374045801,
+            "4": 0.33587786259541985,
+            "5": 0.16030534351145037,
+            "6": 0.09923664122137404,
+            "7": 0.03816793893129771,
+            "8": 0.0
+          },
+          "run_lengths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "run_lengths_truncated": true
+        },
+        "loaded": {
+          "basin": "loaded",
+          "n_runs": 132,
+          "n_frames": 656,
+          "mean_run_length": 4.96969696969697,
+          "median_run_length": 4.0,
+          "max_run_length": 8,
+          "std_run_length": 2.46164331026258,
+          "p90_run_length": 8.0,
+          "p95_run_length": 8.0,
+          "exp_decay_rate": 0.20121951219512196,
+          "survival_tail": {
+            "1": 0.946969696969697,
+            "2": 0.8484848484848485,
+            "3": 0.6742424242424242,
+            "4": 0.38636363636363635,
+            "5": 0.3712121212121212,
+            "6": 0.3712121212121212,
+            "7": 0.3712121212121212,
+            "8": 0.0
+          },
+          "run_lengths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "run_lengths_truncated": true
+        }
+      },
+      "metastability_ratio": 1.2283590623213263,
+      "tail_separation_at_t4": 1.150309917355372,
+      "timescale_separation_verdict": "weak_separation",
+      "metastability_verdict": "weak_metastability",
+      "survival_detail": {
+        "loaded": {
+          "1": 0.946969696969697,
+          "2": 0.8484848484848485,
+          "3": 0.6742424242424242,
+          "4": 0.38636363636363635,
+          "5": 0.3712121212121212,
+          "6": 0.3712121212121212,
+          "7": 0.3712121212121212,
+          "8": 0.0
+        },
+        "grazing": {
+          "1": 0.9236641221374046,
+          "2": 0.8244274809160306,
+          "3": 0.6641221374045801,
+          "4": 0.33587786259541985,
+          "5": 0.16030534351145037,
+          "6": 0.09923664122137404,
+          "7": 0.03816793893129771,
+          "8": 0.0
+        },
+        "loaded_p95": 8.0,
+        "grazing_p95": 7.0,
+        "loaded_max": 8,
+        "grazing_max": 8
+      }
+    },
+    "cylinder_heldout_full": {
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_episodes": 192,
+      "n_frames": 1230,
+      "n_regime_switches": 87,
+      "transition_counts": {
+        "loaded->grazing": 70,
+        "grazing->loaded": 17
+      },
+      "within_basin_steps": {
+        "grazing->grazing": 398,
+        "loaded->loaded": 553
+      },
+      "by_basin": {
+        "grazing": {
+          "basin": "grazing",
+          "n_runs": 142,
+          "n_frames": 540,
+          "mean_run_length": 3.8028169014084505,
+          "median_run_length": 4.0,
+          "max_run_length": 8,
+          "std_run_length": 1.7166928434019821,
+          "p90_run_length": 6.0,
+          "p95_run_length": 6.949999999999989,
+          "exp_decay_rate": 0.26296296296296295,
+          "survival_tail": {
+            "1": 0.9014084507042254,
+            "2": 0.7112676056338029,
+            "3": 0.5845070422535211,
+            "4": 0.3732394366197183,
+            "5": 0.16901408450704225,
+            "6": 0.056338028169014086,
+            "7": 0.007042253521126761,
+            "8": 0.0
+          },
+          "run_lengths": [
+            8,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "run_lengths_truncated": true
+        },
+        "loaded": {
+          "basin": "loaded",
+          "n_runs": 137,
+          "n_frames": 690,
+          "mean_run_length": 5.036496350364963,
+          "median_run_length": 4.0,
+          "max_run_length": 8,
+          "std_run_length": 2.524070282328261,
+          "p90_run_length": 8.0,
+          "p95_run_length": 8.0,
+          "exp_decay_rate": 0.19855072463768117,
+          "survival_tail": {
+            "1": 0.927007299270073,
+            "2": 0.8613138686131386,
+            "3": 0.656934306569343,
+            "4": 0.40875912408759124,
+            "5": 0.39416058394160586,
+            "6": 0.39416058394160586,
+            "7": 0.39416058394160586,
+            "8": 0.0
+          },
+          "run_lengths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "run_lengths_truncated": true
+        }
+      },
+      "metastability_ratio": 1.32441200324412,
+      "tail_separation_at_t4": 1.095165955102603,
+      "timescale_separation_verdict": "weak_separation",
+      "metastability_verdict": "weak_metastability",
+      "survival_detail": {
+        "loaded": {
+          "1": 0.927007299270073,
+          "2": 0.8613138686131386,
+          "3": 0.656934306569343,
+          "4": 0.40875912408759124,
+          "5": 0.39416058394160586,
+          "6": 0.39416058394160586,
+          "7": 0.39416058394160586,
+          "8": 0.0
+        },
+        "grazing": {
+          "1": 0.9014084507042254,
+          "2": 0.7112676056338029,
+          "3": 0.5845070422535211,
+          "4": 0.3732394366197183,
+          "5": 0.16901408450704225,
+          "6": 0.056338028169014086,
+          "7": 0.007042253521126761,
+          "8": 0.0
+        },
+        "loaded_p95": 8.0,
+        "grazing_p95": 6.949999999999989,
+        "loaded_max": 8,
+        "grazing_max": 8
+      }
+    },
+    "cylinder_heldout_pilot": {
+      "source_path": "results/phase1/cohort_independence/cylinder_heldout/pilot/landscape_trajectories.json",
+      "n_episodes": 23,
+      "n_frames": 138,
+      "n_regime_switches": 9,
+      "transition_counts": {
+        "loaded->grazing": 9
+      },
+      "within_basin_steps": {
+        "grazing->grazing": 56,
+        "loaded->loaded": 50
+      },
+      "by_basin": {
+        "grazing": {
+          "basin": "grazing",
+          "n_runs": 18,
+          "n_frames": 74,
+          "mean_run_length": 4.111111111111111,
+          "median_run_length": 4.0,
+          "max_run_length": 6,
+          "std_run_length": 1.523478800089121,
+          "p90_run_length": 6.0,
+          "p95_run_length": 6.0,
+          "exp_decay_rate": 0.24324324324324326,
+          "survival_tail": {
+            "1": 0.9444444444444444,
+            "2": 0.7777777777777778,
+            "3": 0.7222222222222222,
+            "4": 0.4444444444444444,
+            "5": 0.2222222222222222,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0
+          },
+          "run_lengths": [
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "loaded": {
+          "basin": "loaded",
+          "n_runs": 14,
+          "n_frames": 64,
+          "mean_run_length": 4.571428571428571,
+          "median_run_length": 4.0,
+          "max_run_length": 8,
+          "std_run_length": 2.7701027756664733,
+          "p90_run_length": 8.0,
+          "p95_run_length": 8.0,
+          "exp_decay_rate": 0.21875,
+          "survival_tail": {
+            "1": 0.7857142857142857,
+            "2": 0.7142857142857143,
+            "3": 0.6428571428571429,
+            "4": 0.35714285714285715,
+            "5": 0.35714285714285715,
+            "6": 0.35714285714285715,
+            "7": 0.35714285714285715,
+            "8": 0.0
+          },
+          "run_lengths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "metastability_ratio": 1.111969111969112,
+      "tail_separation_at_t4": 0.8035714285714286,
+      "timescale_separation_verdict": "no_clear_separation",
+      "metastability_verdict": "mixed_or_short_runs",
+      "survival_detail": {
+        "loaded": {
+          "1": 0.7857142857142857,
+          "2": 0.7142857142857143,
+          "3": 0.6428571428571429,
+          "4": 0.35714285714285715,
+          "5": 0.35714285714285715,
+          "6": 0.35714285714285715,
+          "7": 0.35714285714285715,
+          "8": 0.0
+        },
+        "grazing": {
+          "1": 0.9444444444444444,
+          "2": 0.7777777777777778,
+          "3": 0.7222222222222222,
+          "4": 0.4444444444444444,
+          "5": 0.2222222222222222,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0
+        },
+        "loaded_p95": 8.0,
+        "grazing_p95": 6.0,
+        "loaded_max": 8,
+        "grazing_max": 6
+      }
+    }
+  },
+  "note": "Full vs pilot cylinder RTD; probe_budget=8 caps many runs"
+}

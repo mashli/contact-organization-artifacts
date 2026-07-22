@@ -1,0 +1,253 @@
+{
+  "plan_version": "v0.1",
+  "phase": 0,
+  "wording": "Mechanism evidence matrix \u2014 data supports/falsifies arrows; does NOT prove Emergence Theorem (Layer \u2463 open).",
+  "parent_plan": "docs/EMERGENCE_MECHANISM_EVIDENCE_PLAN.md",
+  "sources": [
+    "results/phase1/emergence_theory/organization_signature_audit.json",
+    "results/phase1/emergence_theory/guard_partition_report.json",
+    "results/phase1/emergence_theory/transfer_operator_report.json",
+    "results/phase1/emergence_theory/measure_baseline_report.json"
+  ],
+  "necessity_matrix": [
+    {
+      "mechanism": "Persistent contact + constraint",
+      "physical_prediction": "Accessible set restricted; no org without contact",
+      "observable": "Contact frame fraction; loaded org absent when contact destroyed",
+      "arrow": 1,
+      "status": "partial",
+      "evidence": {
+        "F1_mu0_destroys_contact": true,
+        "F2_mu02_no_loaded": true,
+        "reference_P_pass": true
+      }
+    },
+    {
+      "mechanism": "Dissipation (friction)",
+      "physical_prediction": "Energy drains; longer dwell when \u03bc\u2191",
+      "observable": "\u03c4_loaded\u2191; switches\u2193; \u03bc ablation",
+      "arrow": 2,
+      "status": "supported",
+      "evidence": {
+        "H-A_F2_no_loaded_at_mu02": true,
+        "reference_metastable": true
+      }
+    },
+    {
+      "mechanism": "Relaxation / concentration",
+      "physical_prediction": "Non-uniform occupation on M_c",
+      "observable": "\u03c0(u) structured; \u03bc_O non-uniform; not \u03bc_F uniform alone",
+      "arrow": "2-3",
+      "status": "supported",
+      "evidence": {
+        "CE1_m1_falsified_on_reference": true,
+        "reference_P3": true
+      }
+    },
+    {
+      "mechanism": "Hybrid / guards",
+      "physical_prediction": "Finite sparse transitions",
+      "observable": "Transition count; guard partition; \u03bb\u2082 on MODE",
+      "arrow": 5,
+      "status": "supported",
+      "evidence": {
+        "CE2_multiplicity_wrong_spectrum": true,
+        "reference_G_fx_match": 1.0
+      }
+    },
+    {
+      "mechanism": "Bounded excitation",
+      "physical_prediction": "No uniform fill of M_c; phased revisit",
+      "observable": "Protocol phases; \u03c4 capped at probe_budget",
+      "arrow": 2,
+      "status": "partial",
+      "evidence": {
+        "note": "Implicit in pulse-probe; E7\u2013E9 prereg pending"
+      }
+    },
+    {
+      "mechanism": "Combined \u2192 P1\u2013P4",
+      "physical_prediction": "P1\u2013P4 jointly when mechanisms present",
+      "observable": "organization_signature_audit",
+      "arrow": 6,
+      "status": "supported",
+      "evidence": {
+        "reference_all_P": true,
+        "heldout_all_P": true,
+        "F2_fails": true
+      }
+    }
+  ],
+  "arrow_status": {
+    "1": {
+      "arrow": 1,
+      "status": "partial",
+      "note": "F1/F2 ablation; E1 contact fraction planned"
+    },
+    "2": {
+      "arrow": 2,
+      "status": "supported",
+      "note": "H-A friction ablation + reference RTD"
+    },
+    "3": {
+      "arrow": 3,
+      "status": "supported",
+      "note": "Frozen RTD timescale separation"
+    },
+    "4": {
+      "arrow": 4,
+      "status": "supported",
+      "note": "Frozen P(\u03c4>6) L/G tails"
+    },
+    "5": {
+      "arrow": 5,
+      "status": "supported",
+      "note": "K=2 stable; CE-2 multiplicity falsified"
+    },
+    "6": {
+      "arrow": 6,
+      "status": "supported",
+      "note": "P1\u2013P4 audit on reference cohort"
+    }
+  },
+  "k_stability_table": {
+    "cylinder_reference": {
+      "K_mode": 2,
+      "lambda2_mode": 0.8474106117261774,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": true,
+      "summary": "signatures_consistent_with_organization",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/landscape_analysis/landscape_trajectories.json",
+      "tau2_implied": 6.0397444837469445,
+      "G_fx_verdict": "reference",
+      "G_multiplicity_lambda2": 0.3717016350920572,
+      "G_multiplicity_spectrum_match": 0.505397899740555,
+      "msm_ari_vs_mode": -0.0077578477143682685,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "cylinder_heldout_full": {
+      "K_mode": 2,
+      "lambda2_mode": 0.8466765940165154,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": true,
+      "summary": "signatures_consistent_with_organization",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "msm_ari_vs_mode": 0.06083820455255309,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "sphere_full": {
+      "K_mode": 2,
+      "lambda2_mode": 0.48067380300390006,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": false,
+      "summary": "signatures_incomplete_failed_P1_P3",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json",
+      "msm_ari_vs_mode": -0.004444805647319609,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "sliding_full": {
+      "K_mode": 2,
+      "lambda2_mode": 0.5099009900990099,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": false,
+      "summary": "signatures_incomplete_failed_P1_P2",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/second_task_recovery/sliding/full/landscape_trajectories.json",
+      "msm_ari_vs_mode": -0.09714803184955839,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "pybullet_probe": {
+      "K_mode": 2,
+      "lambda2_mode": 0.7239057239057238,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": true,
+      "summary": "signatures_consistent_with_organization",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+      "msm_ari_vs_mode": 0.030519709231023845,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "ablation_friction_mu_0.0": {
+      "K_mode": 2,
+      "lambda2_mode": 0.0,
+      "G_fx_spectrum_match": NaN,
+      "all_P_pass": false,
+      "summary": "signatures_incomplete_failed_P1_P2_P4",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.0/pilot/landscape_trajectories.json",
+      "msm_ari_vs_mode": 0.0,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "ablation_friction_mu_0.2": {
+      "K_mode": 1,
+      "lambda2_mode": NaN,
+      "G_fx_spectrum_match": 0.0,
+      "all_P_pass": false,
+      "summary": "organization_signatures_absent_no_loaded_regime",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.2/pilot/landscape_trajectories.json",
+      "msm_ari_vs_mode": 0.0,
+      "natural_pi_verdict": "inconclusive"
+    },
+    "ablation_friction_mu_0.6": {
+      "K_mode": 2,
+      "lambda2_mode": 0.8227459016393442,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": true,
+      "summary": "signatures_consistent_with_organization",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json",
+      "msm_ari_vs_mode": -0.031379246714939586,
+      "natural_pi_verdict": "metastable_mode_P"
+    },
+    "ablation_friction_mu_1.0": {
+      "K_mode": 2,
+      "lambda2_mode": 0.9175084175084175,
+      "G_fx_spectrum_match": 1.0,
+      "all_P_pass": true,
+      "summary": "signatures_consistent_with_organization",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_1.0/pilot/landscape_trajectories.json",
+      "msm_ari_vs_mode": -0.04844502847130968,
+      "natural_pi_verdict": "inconclusive"
+    }
+  },
+  "destruction_table": [
+    {
+      "remove": "Friction \u03bc\u21920",
+      "predicted_loss": "Contact + loaded org",
+      "arm": "F1 ablation_friction_mu_0.0",
+      "observed": true,
+      "supports": "Dissipation / loaded"
+    },
+    {
+      "remove": "Low \u03bc=0.2",
+      "predicted_loss": "Loaded branch",
+      "arm": "F2 ablation_friction_mu_0.2",
+      "observed": true,
+      "supports": "Dissipation threshold"
+    },
+    {
+      "remove": "Wrong guard (multiplicity \u03a0)",
+      "predicted_loss": "P2 spectrum, not labels",
+      "arm": "CE-2 offline",
+      "observed": true,
+      "supports": "Hybrid guard not patch count"
+    },
+    {
+      "remove": "Raw \u2131 measure",
+      "predicted_loss": "P3 on wrong chart",
+      "arm": "CE-1 offline",
+      "observed": true,
+      "supports": "OPCG necessary"
+    },
+    {
+      "remove": "\u2131 MSM",
+      "predicted_loss": "P1\u2013P4",
+      "arm": "CE-3 offline",
+      "observed": true,
+      "supports": "Representation"
+    }
+  ],
+  "phase0_audit_summary": {
+    "reference_passes_P1_P4": true,
+    "heldout_passes_P1_P4": true,
+    "F2_fails_appropriately": true,
+    "F1_fails_appropriately": true,
+    "cylinder_K2_stable_across_mu": true
+  }
+}

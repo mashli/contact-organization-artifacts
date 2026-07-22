@@ -1,0 +1,67 @@
+{
+  "prereg": "docs/CROSS_ENGINE_PROBE_PREREG.md",
+  "fx_threshold": 8.0,
+  "mujoco_reference": {
+    "path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+    "n_episodes": 192,
+    "layers": {
+      "pi_spearman": -0.21428571428571433,
+      "occupancy": "fail",
+      "transition": "pass",
+      "transition_counts": {
+        "grazing->grazing": 398,
+        "loaded->loaded": 553,
+        "loaded->grazing": 70,
+        "grazing->loaded": 17
+      },
+      "has_loaded_to_grazing": true,
+      "n_transition_edges": 4
+    },
+    "pi_by_u": {
+      "0.0": 0.5208333333333333,
+      "0.005": 0.38400900900900903,
+      "0.01": 0.455,
+      "0.015": 0.6442307692307693,
+      "0.02": 0.34868421052631576,
+      "0.025": 0.4963235294117647,
+      "0.03": 0.3958333333333333
+    }
+  },
+  "pybullet": {
+    "path": "results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+    "n_episodes": 70,
+    "layers": {
+      "pi_spearman": -0.8214285714285715,
+      "occupancy": "fail",
+      "transition": "pass",
+      "transition_counts": {
+        "loaded->loaded": 220,
+        "loaded->grazing": 50,
+        "grazing->grazing": 200,
+        "grazing->loaded": 20
+      },
+      "has_loaded_to_grazing": true,
+      "n_transition_edges": 4
+    },
+    "pi_by_u": {
+      "0.0": 0.75,
+      "0.005": 0.75,
+      "0.01": 0.75,
+      "0.015": 0.625,
+      "0.02": 0.5,
+      "0.025": 0.0,
+      "0.03": 0.0
+    }
+  },
+  "cross_engine": {
+    "occupancy_pattern_spearman": 0.0,
+    "transition_spearman": 1.0,
+    "layer_pattern_match": "4/4",
+    "verdict": "partial",
+    "success_bands": {
+      "pass": "trans>=0.70, pi_cross>=0.50, pattern>=4/4",
+      "partial": "trans>=0.70, (pi_cross>=0.50 or |pi_internal|>=0.50), pattern>=3/4"
+    }
+  },
+  "interpretation": "Transition topology replicates; occupancy partially aligned \u2014 not solver-only artifact."
+}

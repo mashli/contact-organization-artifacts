@@ -1,0 +1,44 @@
+{
+  "geometry": "cylinder",
+  "role": "reference",
+  "matrix": {
+    "vision": {
+      "occupancy": "pass",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "duration": {
+      "occupancy": "pass",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "contact_graph": {
+      "occupancy": "fail",
+      "partition": "fail",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "energy": {
+      "occupancy": "fail",
+      "partition": "pass",
+      "transition": "fail",
+      "boundary": "fail"
+    }
+  },
+  "channels": {
+    "vision": {
+      "report_path": "results/phase1/vision_audit/full_v2/vla_report.json"
+    },
+    "duration": {
+      "report_path": "results/phase1/duration_zeta_audit/full/dzla_report.json"
+    },
+    "contact_graph": {
+      "report_path": "results/phase1/contact_graph_audit/full/cgla_report.json"
+    },
+    "energy": {
+      "report_path": "results/phase1/energy_audit/full/ela_report.json"
+    }
+  }
+}

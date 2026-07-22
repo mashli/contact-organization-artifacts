@@ -1,0 +1,76 @@
+{
+  "protocol": "COT_OPCG_THRESHOLD_PROTOCOL.md v1.1",
+  "cohorts": {
+    "friction_mu_0.6": {
+      "cohort_name": "friction_mu_0.6",
+      "source_path": "results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json",
+      "fx_threshold": 8.0,
+      "guard_witness": "G_fx_mode",
+      "thresholds": {
+        "delta_1": 0.25,
+        "theta": 0.95,
+        "S_max": 0.2,
+        "sigma": 0.9,
+        "tau_ref": 6.0
+      },
+      "conditions": {
+        "C1": {
+          "test": "rel_tau2_error",
+          "threshold": "<= 0.25",
+          "tau2": 5.12536981393494,
+          "tau_ref": 6.0,
+          "relative_error": 0.14577169767751,
+          "pass": true
+        },
+        "C2": {
+          "test": "joint_entropy_ratio H2/H0 < theta OR u-dependent occupancy",
+          "threshold": "primary: < 0.95; alternate: pi_range>=0.15 or |pi_spearman|>=0.25",
+          "H2_H0_joint": 0.8802168606283889,
+          "H2_H0_basin": 0.9215708296380867,
+          "pi_u_range": 0.8,
+          "pi_u_spearman": 0.4285714285714286,
+          "n_transition_edges": 4,
+          "pass_primary": true,
+          "pass_alternate": true,
+          "pass": true
+        },
+        "C3": {
+          "test": "switch_rate N_sw/T",
+          "threshold": "<= 0.2",
+          "N_sw": 9,
+          "T_frames": 110,
+          "switch_rate": 0.08181818181818182,
+          "pass": true
+        },
+        "C4": {
+          "test": "spectrum_match",
+          "threshold": ">= 0.9",
+          "sigma_internal": 1.0,
+          "sigma_cross_ref": null,
+          "lambda2": 0.8227459016393442,
+          "ref_lambda2": null,
+          "pass_internal": true,
+          "pass_cross_ref": null,
+          "pass": true
+        }
+      },
+      "Psi_OPCG": true,
+      "guard_partition_summary": {
+        "n_states": 2,
+        "lambda2": 0.8227459016393442,
+        "tau2_implied": 5.12536981393494,
+        "ari_vs_mode": 1.0,
+        "n_regime_switches_guard": 9
+      },
+      "S0-2": {
+        "Sigma_slow_proxy": {
+          "loaded_mean_tau": 4.857142857142857,
+          "grazing_mean_tau": 3.5,
+          "tail_separation_at_t4": 1.7142857142857142,
+          "pass_proxy": true
+        }
+      },
+      "verdict": "PASS"
+    }
+  }
+}

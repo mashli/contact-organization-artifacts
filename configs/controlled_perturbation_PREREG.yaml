@@ -1,0 +1,127 @@
+# Prediction A — Controlled Perturbation (PREREGISTERED)
+# Tests Proposition 1: weakening local stabilization dissolves / perturbs landscape organization
+# See docs/CONTROLLED_PERTURBATION_PREREG.md, docs/PROPOSITION_PREDICTIONS.md
+
+status: preregistered
+run_sim: false  # set true only when executing collection; default gate is analysis-only cohort
+
+prediction_id: A
+prediction_statement: |
+  If local stabilization weakens, metastable occupancy regimes dissolve or lose predictive
+  structure: residence falls, boundary law weakens, and perturbation response ceases to
+  cluster by landscape coordinate z = (B, region, d_in).
+
+proposition_tested: |
+  Proposition (Mesoscopic Emergence): sustained local stabilization → coarse-graining →
+  metastable occupancy. Prediction A: inverse — weakening stabilization → landscape degradation.
+
+gates:
+  required_reports:
+    - results/phase1/theory_closure/tic_report.json
+    - results/phase1/necessity_audit/lna_report.json
+  tic_min_supported_closures: 3
+  note: Gate open after TIC partial_support or supported; sim optional until cohort frozen
+
+geometry: cylinder
+protocol_family: push_open_loop_rigid
+
+# --- Reference data (no new sim for phase 0) ---
+inputs:
+  trajectories_json: results/phase1/landscape_analysis/landscape_trajectories.json
+  labeled_csv: results/phase1/basin_audit/all_u/labeled_episodes_all_u.csv
+  char_config: configs/contact_configuration_characterization.yaml
+
+landscape_coordinate:
+  fx_threshold: 8.0
+  boundary_margin_N: 2.0
+  d_in_tolerance: 1.5  # N, match |d_in_a - d_in_b| <= tol for pair matching
+  bins:
+    - {basin: grazing, region: grazing_interior}
+    - {basin: grazing, region: boundary}
+    - {basin: loaded, region: boundary}
+    - {basin: loaded, region: loaded_interior}
+
+# --- Phase 0: cohort selection (reanalysis on existing replay JSON) ---
+phase0_cohort:
+  description: Select matched frame indices from landscape_trajectories.json
+  min_frames_per_episode: 3
+  samples_per_bin: 12
+  match_keys: [basin, region, d_in_rounded]
+  d_in_round_decimals: 1
+  output_json: results/phase1/controlled_perturbation/cohort_manifest.json
+
+# --- Phase 1: controlled perturbation replay (sim — optional) ---
+phase1_collection:
+  description: Replay to match_step; apply perturbation arm; record post-perturbation window
+  episodes_source: phase0_cohort  # cohort_manifest.json
+  post_perturb_record_steps: 4
+  escape_horizon_steps: 2
+  base_seed_offset: 910000
+
+  perturbation_arms:
+    control:
+      description: Replay baseline — no perturbation at match_step
+      type: none
+    impulse_plus_5pct:
+      description: Increase primary impulse magnitude by 5% from match_step onward
+      type: impulse_scale
+      scale: 1.05
+    impulse_minus_5pct:
+      description: Decrease primary impulse magnitude by 5% from match_step onward
+      type: impulse_scale
+      scale: 0.95
+    hold_halved:
+      description: Halve remaining hold_steps from match_step (weakens stabilization)
+      type: hold_scale
+      scale: 0.5
+    stabilization_weaken:
+      description: Prediction A arm — scale impulse 0.90 and hold 0.50 from match_step
+      type: combined
+      impulse_scale: 0.90
+      hold_scale: 0.50
+    stabilization_weaken_strong:
+      description: Prediction A strong arm — scale impulse 0.70 and hold 0.30
+      type: combined
+      impulse_scale: 0.70
+      hold_scale: 0.30
+
+  output_json: results/phase1/controlled_perturbation/perturbation_trials.json
+  log_dir: results/phase1/controlled_perturbation/logs
+
+# --- Phase 2: analysis ---
+phase2_analysis:
+  metrics:
+    - basin_flip_within_horizon  # B_{t+h} != B_t
+    - delta_d_in_first_step
+    - escape_within_horizon
+    - residence_after_perturb_steps
+  stratify_by: [basin, region]
+
+  pass_criteria:
+    dynamical_object:
+      description: Response clusters by starting z (not i.i.d. across bins)
+      boundary_escape_rate_min_spread: 0.08  # max_bin_rate - min_bin_rate (control arm)
+      boundary_gt_interior_escape: true
+    prediction_A_stabilization_weaken:
+      description: stabilization_weaken arm increases escape vs control more in interior than random
+      weaken_escape_rate_ge_control_plus: 0.05
+      weaken_mean_residence_le_control: true
+    falsifier:
+      description: Perturbation outcomes independent of landscape bin
+      max_bin_escape_spread_lt: 0.03
+
+  output_json: results/phase1/controlled_perturbation/cp_report.json
+
+outputs:
+  prereg_doc: docs/CONTROLLED_PERTURBATION_PREREG.md
+  prereg_status: results/phase1/controlled_perturbation/PREREG_STATUS.json
+
+run_commands:
+  cohort_only: ./scripts/run_controlled_perturbation.sh --cohort-only
+  full: ./scripts/run_controlled_perturbation.sh
+  analyze_only: python scripts/analyze_controlled_perturbation.py --config configs/controlled_perturbation_PREREG.yaml
+
+freeze_disclaimer: |
+  The cylinder study establishes the theory within one well-defined interaction protocol.
+  Prediction A tests a consequence of the proposed emergence mechanism; a negative result
+  would weaken but not retroactively falsify empirical existence of Lc on cylinder.

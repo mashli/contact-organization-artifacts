@@ -1,0 +1,54 @@
+# Ellipsoid contact configuration — preregistered
+# Prolate spheroid: long axis 0.12m, short axes 0.05m
+# Goal: test whether partial rotational symmetry (vs cylinder's full rotational
+# symmetry) is sufficient to sustain metastable loaded/grazing organization.
+
+run_id: ellipsoid_pilot
+geometry: ellipsoid
+output_dir: results/phase1
+
+collection:
+  episodes_per_u: 100
+  base_seed: 9000
+  post_contact_only: true
+  min_table_contacts: 1
+
+sweep:
+  mass_scales: [1.0]
+  friction_mu: [0.6]
+  impulse_magnitude: [0.20]
+
+env:
+  object_attr_name: ellipsoid
+  probe_budget: 30
+  prediction_steps: 30
+  sliding_mu: 0.6
+
+controller:
+  action_magnitude: 0.20
+  ramp_steps: 6
+  hold_steps: 8
+  settle_steps: 10
+
+analysis:
+  k_range: [2, 3, 4, 5, 6, 7, 8]
+  pca_variance: 0.95
+  bootstrap_n: 50
+  train_fraction: 0.7
+  posthoc_regime_thresholds:
+    v_min: 0.02
+    omega_min: 0.05
+    v_spin: 0.08
+    omega_spin: 2.0
+    epsilon_roll: 0.015
+    sphere_radius_m: 0.03
+
+hypothesis:
+  domain_theory: >
+    Ellipsoid has 2-fold rotational symmetry (symmetric about long axis flip)
+    but NOT full continuous rotational symmetry like cylinder.
+    If organizational tissue requires full rotational symmetry: ellipsoid should
+    show P1 failure (like block: RCI=0.500, partial).
+    If organizational tissue only requires constraint structure (not full sym):
+    ellipsoid may show P1 pass like cylinder.
+  prediction: "Partial (P1 fail) — partial symmetry is insufficient for P1"

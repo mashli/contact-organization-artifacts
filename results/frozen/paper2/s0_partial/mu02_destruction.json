@@ -1,0 +1,97 @@
+{
+  "source_path": "results/phase1/friction_sweep_n50/friction_mu_0.20/n50/landscape_trajectories.json",
+  "n_episodes": 102,
+  "n_train": 71,
+  "n_test": 31,
+  "n_states": 1,
+  "labels": [
+    "grazing"
+  ],
+  "P_organizational": [
+    [
+      1.0
+    ]
+  ],
+  "metrics": {
+    "k1": {
+      "organizational": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 52
+      },
+      "uniform": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 52
+      },
+      "marginal": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 52
+      },
+      "persistent": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 52
+      }
+    },
+    "k2": {
+      "organizational": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 21
+      },
+      "uniform": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 21
+      },
+      "marginal": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 21
+      },
+      "persistent": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 21
+      }
+    },
+    "k3": {
+      "organizational": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 2
+      },
+      "uniform": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 2
+      },
+      "marginal": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 2
+      },
+      "persistent": {
+        "accuracy": 1.0,
+        "log_likelihood": 0.0,
+        "brier_score": 0.0,
+        "n_predictions": 2
+      }
+    }
+  },
+  "kmeans_markov": null,
+  "name": "mu0.2"
+}

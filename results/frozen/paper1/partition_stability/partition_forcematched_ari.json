@@ -1,0 +1,446 @@
+{
+  "experiment": "Force-matched partition ARI (T1 vs T2 discriminating test)",
+  "prereg": "docs/PARTITION_STABILITY_ARI_PREREG.md#8",
+  "design": {
+    "hold": 8,
+    "ramps": [
+      3,
+      6,
+      12
+    ],
+    "alignment_coordinate": "resultant_force_f_x (normal load)",
+    "bin_width_N": 1.0,
+    "bin_edges": "integer N (8.0 is a bin edge; no bin straddles L0)",
+    "matching_unit": "(episode_id, f_x_bin)",
+    "representative": "frame nearest bin center in f_x (tie: earliest step)",
+    "bands_steinley2004": {
+      "T1>=": 0.8,
+      "T2<": 0.65
+    },
+    "bootstrap_unit": "episode"
+  },
+  "purity_control": {
+    "n_bins": 670,
+    "frac_bins_pure": 0.9611940298507463,
+    "frame_weighted_purity": 0.9744371822803195,
+    "precision": {
+      "f_x": 0.5,
+      "f_y": 0.5,
+      "spread": 0.0005
+    },
+    "note": "Expect ~1.0: label is a fixed function of (f_x,f_y,spread). Confirms pipeline."
+  },
+  "pairwise": {
+    "ramp3_vs_ramp6": {
+      "ari_L1_full": 0.9129903156970873,
+      "steinley_band": "excellent",
+      "ci95_episode_bootstrap": [
+        0.8840375574992574,
+        0.939457686065616
+      ],
+      "coverage": {
+        "regime": "all",
+        "n_units_matched": 733,
+        "n_units_union": 1740,
+        "comparable_sample_fraction": 0.42126436781609194,
+        "representative": false
+      },
+      "boundary_drift_matrix": {
+        "cells": [
+          "grazing_compact",
+          "grazing_dispersed",
+          "loaded_ax",
+          "loaded_lat"
+        ],
+        "counts": [
+          [
+            465,
+            5,
+            0,
+            0
+          ],
+          [
+            2,
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            91,
+            12
+          ],
+          [
+            0,
+            0,
+            27,
+            122
+          ]
+        ],
+        "row_pct": [
+          [
+            98.94,
+            1.06,
+            0.0,
+            0.0
+          ],
+          [
+            18.18,
+            81.82,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            88.35,
+            11.65
+          ],
+          [
+            0.0,
+            0.0,
+            18.12,
+            81.88
+          ]
+        ],
+        "per_cell_stability_pct": {
+          "grazing_compact": 98.93617021276596,
+          "grazing_dispersed": 81.81818181818183,
+          "loaded_ax": 88.3495145631068,
+          "loaded_lat": 81.87919463087249
+        },
+        "row_support": {
+          "grazing_compact": 470,
+          "grazing_dispersed": 11,
+          "loaded_ax": 103,
+          "loaded_lat": 149
+        },
+        "low_support_cells": [
+          "grazing_dispersed"
+        ],
+        "min_cell_support": 20,
+        "max_off_diagonal_confusion": 0.18120805369127516,
+        "max_confusion_transition": "loaded_lat->loaded_ax",
+        "max_off_diagonal_confusion_raw": 0.18181818181818182,
+        "max_confusion_transition_raw": "grazing_dispersed->grazing_compact"
+      },
+      "ari_within_loaded": {
+        "ari": 0.4746717586087,
+        "steinley_band": "poor",
+        "ci95_episode_bootstrap": [
+          0.36905471691027586,
+          0.5924411543849646
+        ],
+        "coverage": {
+          "regime": "loaded",
+          "n_units_matched": 252,
+          "n_units_union": 873,
+          "comparable_sample_fraction": 0.28865979381443296,
+          "representative": false
+        },
+        "label_counts_a": {
+          "loaded_ax": 103,
+          "loaded_lat": 149
+        }
+      },
+      "ari_within_grazing": {
+        "ari": 0.7016827981618866,
+        "steinley_band": "moderate",
+        "ci95_episode_bootstrap": [
+          0.4883500133063344,
+          0.8489587058797285
+        ],
+        "coverage": {
+          "regime": "grazing",
+          "n_units_matched": 481,
+          "n_units_union": 867,
+          "comparable_sample_fraction": 0.5547866205305652,
+          "representative": true
+        },
+        "label_counts_a": {
+          "grazing_compact": 470,
+          "grazing_dispersed": 11
+        }
+      },
+      "mechanism": "NOT_REPRESENTATIVE"
+    },
+    "ramp3_vs_ramp12": {
+      "ari_L1_full": 0.873425156256534,
+      "steinley_band": "good",
+      "ci95_episode_bootstrap": [
+        0.8313197590827077,
+        0.910005009637418
+      ],
+      "coverage": {
+        "regime": "all",
+        "n_units_matched": 668,
+        "n_units_union": 1837,
+        "comparable_sample_fraction": 0.36363636363636365,
+        "representative": false
+      },
+      "boundary_drift_matrix": {
+        "cells": [
+          "grazing_compact",
+          "grazing_dispersed",
+          "loaded_ax",
+          "loaded_lat"
+        ],
+        "counts": [
+          [
+            465,
+            12,
+            0,
+            0
+          ],
+          [
+            4,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            60,
+            17
+          ],
+          [
+            0,
+            0,
+            34,
+            66
+          ]
+        ],
+        "row_pct": [
+          [
+            97.48,
+            2.52,
+            0.0,
+            0.0
+          ],
+          [
+            28.57,
+            71.43,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            77.92,
+            22.08
+          ],
+          [
+            0.0,
+            0.0,
+            34.0,
+            66.0
+          ]
+        ],
+        "per_cell_stability_pct": {
+          "grazing_compact": 97.48427672955975,
+          "grazing_dispersed": 71.42857142857143,
+          "loaded_ax": 77.92207792207793,
+          "loaded_lat": 66.0
+        },
+        "row_support": {
+          "grazing_compact": 477,
+          "grazing_dispersed": 14,
+          "loaded_ax": 77,
+          "loaded_lat": 100
+        },
+        "low_support_cells": [
+          "grazing_dispersed"
+        ],
+        "min_cell_support": 20,
+        "max_off_diagonal_confusion": 0.34,
+        "max_confusion_transition": "loaded_lat->loaded_ax",
+        "max_off_diagonal_confusion_raw": 0.34,
+        "max_confusion_transition_raw": "loaded_lat->loaded_ax"
+      },
+      "ari_within_loaded": {
+        "ari": 0.17490119723990644,
+        "steinley_band": "poor",
+        "ci95_episode_bootstrap": [
+          0.09234932079601975,
+          0.2848633701065383
+        ],
+        "coverage": {
+          "regime": "loaded",
+          "n_units_matched": 177,
+          "n_units_union": 854,
+          "comparable_sample_fraction": 0.20725995316159251,
+          "representative": false
+        },
+        "label_counts_a": {
+          "loaded_ax": 77,
+          "loaded_lat": 100
+        }
+      },
+      "ari_within_grazing": {
+        "ari": 0.5205175224144821,
+        "steinley_band": "poor",
+        "ci95_episode_bootstrap": [
+          0.3145622029287276,
+          0.7037154052740322
+        ],
+        "coverage": {
+          "regime": "grazing",
+          "n_units_matched": 491,
+          "n_units_union": 983,
+          "comparable_sample_fraction": 0.49949135300101727,
+          "representative": false
+        },
+        "label_counts_a": {
+          "grazing_compact": 477,
+          "grazing_dispersed": 14
+        }
+      },
+      "mechanism": "NOT_REPRESENTATIVE"
+    },
+    "ramp6_vs_ramp12": {
+      "ari_L1_full": 0.9183067852765399,
+      "steinley_band": "excellent",
+      "ci95_episode_bootstrap": [
+        0.8860241786821365,
+        0.9467835030263341
+      ],
+      "coverage": {
+        "regime": "all",
+        "n_units_matched": 756,
+        "n_units_union": 1644,
+        "comparable_sample_fraction": 0.45985401459854014,
+        "representative": false
+      },
+      "boundary_drift_matrix": {
+        "cells": [
+          "grazing_compact",
+          "grazing_dispersed",
+          "loaded_ax",
+          "loaded_lat"
+        ],
+        "counts": [
+          [
+            534,
+            7,
+            0,
+            0
+          ],
+          [
+            4,
+            14,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            85,
+            19
+          ],
+          [
+            0,
+            0,
+            15,
+            78
+          ]
+        ],
+        "row_pct": [
+          [
+            98.71,
+            1.29,
+            0.0,
+            0.0
+          ],
+          [
+            22.22,
+            77.78,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            81.73,
+            18.27
+          ],
+          [
+            0.0,
+            0.0,
+            16.13,
+            83.87
+          ]
+        ],
+        "per_cell_stability_pct": {
+          "grazing_compact": 98.70609981515712,
+          "grazing_dispersed": 77.77777777777779,
+          "loaded_ax": 81.73076923076923,
+          "loaded_lat": 83.87096774193549
+        },
+        "row_support": {
+          "grazing_compact": 541,
+          "grazing_dispersed": 18,
+          "loaded_ax": 104,
+          "loaded_lat": 93
+        },
+        "low_support_cells": [
+          "grazing_dispersed"
+        ],
+        "min_cell_support": 20,
+        "max_off_diagonal_confusion": 0.18269230769230765,
+        "max_confusion_transition": "loaded_ax->loaded_lat",
+        "max_off_diagonal_confusion_raw": 0.2222222222222222,
+        "max_confusion_transition_raw": "grazing_dispersed->grazing_compact"
+      },
+      "ari_within_loaded": {
+        "ari": 0.42587246321391065,
+        "steinley_band": "poor",
+        "ci95_episode_bootstrap": [
+          0.28107217848199173,
+          0.5883228346935557
+        ],
+        "coverage": {
+          "regime": "loaded",
+          "n_units_matched": 197,
+          "n_units_union": 663,
+          "comparable_sample_fraction": 0.2971342383107089,
+          "representative": false
+        },
+        "label_counts_a": {
+          "loaded_ax": 104,
+          "loaded_lat": 93
+        }
+      },
+      "ari_within_grazing": {
+        "ari": 0.69284288410981,
+        "steinley_band": "moderate",
+        "ci95_episode_bootstrap": [
+          0.48680734534382986,
+          0.8587516791003112
+        ],
+        "coverage": {
+          "regime": "grazing",
+          "n_units_matched": 559,
+          "n_units_union": 981,
+          "comparable_sample_fraction": 0.5698267074413863,
+          "representative": true
+        },
+        "label_counts_a": {
+          "grazing_compact": 541,
+          "grazing_dispersed": 18
+        }
+      },
+      "mechanism": "NOT_REPRESENTATIVE"
+    }
+  },
+  "aggregate_mechanism": "NOT_REPRESENTATIVE",
+  "comparison_to_expA": {
+    "expA_phase_matched_ari": {
+      "ramp3_vs_ramp6": 0.517,
+      "ramp6_vs_ramp12": 0.412,
+      "ramp3_vs_ramp12": 0.134
+    },
+    "note": "Exp-A aligned on protocol phase-step. This test aligns on physical load f_x. If force-matched ARI recovers to >=0.80 while phase-matched was poor, the Exp-A drift was trajectory (T1), not boundary; Paper I object stands with the clarification that protocol changes the trajectory->organization map. If it stays <0.65, the partition is coordinate-dependent (T2)."
+  }
+}

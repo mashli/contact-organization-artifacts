@@ -1,0 +1,613 @@
+{
+  "prereg": "docs/THEORY_OF_CONTACT_ORGANIZATION_RESEARCH_PLAN.md",
+  "config": "configs/emergence_measure_baseline_PREREG.yaml",
+  "theorem0_revision": "Feature occupation need not concentrate; organization occupation (\u03bc_\ud835\udcaa on basins) does.",
+  "cohorts": {
+    "cylinder_reference": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/landscape_analysis/landscape_trajectories.json",
+        "n_episodes": 179,
+        "n_frames": 1186,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 10.110893633807652,
+        "renyi2_uniform_null": 10.164906926675688,
+        "entropy_ratio": 0.994686297350516,
+        "participation_ratio": 6.50770652516248,
+        "mean_frac_loaded": 0.5531197301854974,
+        "pi_by_u": {
+          "0.0": 0.6534653465346535,
+          "0.005": 0.5924170616113744,
+          "0.01": 0.5238095238095238,
+          "0.015": 0.559748427672956,
+          "0.02": 0.6546762589928058,
+          "0.025": 0.3870967741935484,
+          "0.03": 0.47398843930635837
+        },
+        "pi_u_spearman": -0.5714285714285715,
+        "transition_counts": {
+          "loaded->loaded": 524,
+          "loaded->grazing": 69,
+          "grazing->grazing": 399,
+          "grazing->loaded": 15
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/landscape_analysis/landscape_trajectories.json",
+        "n_episodes": 179,
+        "n_frames": 1186,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.4468802698145025,
+          "loaded": 0.5531197301854974
+        },
+        "renyi2_basin": 0.9838077650276916,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.9838077650276916,
+        "renyi2_joint_u_basin": 3.713696635374884,
+        "renyi2_joint_uniform_null": 3.807354922057604,
+        "joint_entropy_ratio": 0.9754006945504033,
+        "pi_by_u": {
+          "0.0": 0.6534653465346535,
+          "0.005": 0.5924170616113744,
+          "0.01": 0.5238095238095238,
+          "0.015": 0.559748427672956,
+          "0.02": 0.6546762589928058,
+          "0.025": 0.3870967741935484,
+          "0.03": 0.47398843930635837
+        },
+        "pi_u_spearman": -0.5714285714285715,
+        "transition_counts": {
+          "loaded->loaded": 524,
+          "loaded->grazing": 69,
+          "grazing->grazing": 399,
+          "grazing->loaded": 15
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "cylinder_heldout_full": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+        "n_episodes": 192,
+        "n_frames": 1230,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 10.136567777674443,
+        "renyi2_uniform_null": 10.205793249397157,
+        "entropy_ratio": 0.993217041534052,
+        "participation_ratio": 6.364735037463161,
+        "mean_frac_loaded": 0.5609756097560976,
+        "pi_by_u": {
+          "0.0": 0.6116071428571429,
+          "0.005": 0.5209302325581395,
+          "0.01": 0.5833333333333334,
+          "0.015": 0.7282608695652174,
+          "0.02": 0.43089430894308944,
+          "0.025": 0.6026785714285714,
+          "0.03": 0.4846938775510204
+        },
+        "pi_u_spearman": -0.39285714285714296,
+        "transition_counts": {
+          "grazing->grazing": 398,
+          "loaded->loaded": 553,
+          "loaded->grazing": 70,
+          "grazing->loaded": 17
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+        "n_episodes": 192,
+        "n_frames": 1230,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.43902439024390244,
+          "loaded": 0.5609756097560976
+        },
+        "renyi2_basin": 0.9787020779178768,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.9787020779178768,
+        "renyi2_joint_u_basin": 3.65390385279943,
+        "renyi2_joint_uniform_null": 3.807354922057604,
+        "joint_entropy_ratio": 0.9596961480083803,
+        "pi_by_u": {
+          "0.0": 0.6116071428571429,
+          "0.005": 0.5209302325581395,
+          "0.01": 0.5833333333333334,
+          "0.015": 0.7282608695652174,
+          "0.02": 0.43089430894308944,
+          "0.025": 0.6026785714285714,
+          "0.03": 0.4846938775510204
+        },
+        "pi_u_spearman": -0.39285714285714296,
+        "transition_counts": {
+          "grazing->grazing": 398,
+          "loaded->loaded": 553,
+          "loaded->grazing": 70,
+          "grazing->loaded": 17
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "sphere_full": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json",
+        "n_episodes": 237,
+        "n_frames": 1621,
+        "fx_threshold": 1.0,
+        "renyi2_entropy": 10.307832349925668,
+        "renyi2_uniform_null": 10.509775004326936,
+        "entropy_ratio": 0.9807852542687044,
+        "participation_ratio": 4.048138439505645,
+        "mean_frac_loaded": 0.032078963602714373,
+        "pi_by_u": {
+          "0.0": 0.10317460317460317,
+          "0.005": 0.011811023622047244,
+          "0.01": 0.007407407407407408,
+          "0.015": 0.008928571428571428,
+          "0.02": 0.049586776859504134,
+          "0.025": 0.029239766081871343,
+          "0.03": 0.02040816326530612
+        },
+        "pi_u_spearman": 0.0,
+        "transition_counts": {
+          "grazing->grazing": 1328,
+          "loaded->grazing": 23,
+          "grazing->loaded": 11,
+          "loaded->loaded": 22
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json",
+        "n_episodes": 237,
+        "n_frames": 1621,
+        "fx_threshold": 1.0,
+        "mu_by_basin": {
+          "grazing": 0.9679210363972857,
+          "loaded": 0.032078963602714373
+        },
+        "renyi2_basin": 0.09249368951693535,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.09249368951693535,
+        "renyi2_joint_u_basin": 2.6232892298729142,
+        "renyi2_joint_uniform_null": 3.807354922057604,
+        "joint_entropy_ratio": 0.6890056964941984,
+        "pi_by_u": {
+          "0.0": 0.10317460317460317,
+          "0.005": 0.011811023622047244,
+          "0.01": 0.007407407407407408,
+          "0.015": 0.008928571428571428,
+          "0.02": 0.049586776859504134,
+          "0.025": 0.029239766081871343,
+          "0.03": 0.02040816326530612
+        },
+        "pi_u_spearman": 0.0,
+        "transition_counts": {
+          "grazing->grazing": 1328,
+          "loaded->grazing": 23,
+          "grazing->loaded": 11,
+          "loaded->loaded": 22
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "sliding_full": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/second_task_recovery/sliding/full/landscape_trajectories.json",
+        "n_episodes": 181,
+        "n_frames": 1087,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 9.959168230412711,
+        "renyi2_uniform_null": 10.047123912114026,
+        "entropy_ratio": 0.9912456855841835,
+        "participation_ratio": 6.213030074438041,
+        "mean_frac_loaded": 0.1858325666973321,
+        "pi_by_u": {
+          "0.3": 0.18309859154929578,
+          "0.35": 0.19607843137254902,
+          "0.4": 0.1888111888111888,
+          "0.45": 0.13953488372093023,
+          "0.5": 0.18699186991869918,
+          "0.55": 0.2088888888888889,
+          "0.6": 0.19123505976095617
+        },
+        "pi_u_spearman": 0.3571428571428572,
+        "transition_counts": {
+          "loaded->grazing": 99,
+          "grazing->grazing": 704,
+          "loaded->loaded": 103
+        },
+        "n_transition_edges": 3,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/second_task_recovery/sliding/full/landscape_trajectories.json",
+        "n_episodes": 181,
+        "n_frames": 1087,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.8141674333026679,
+          "loaded": 0.1858325666973321
+        },
+        "renyi2_basin": 0.5199368646413838,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.5199368646413838,
+        "renyi2_joint_u_basin": 3.1269287153627086,
+        "renyi2_joint_uniform_null": 3.807354922057604,
+        "joint_entropy_ratio": 0.8212863731844643,
+        "pi_by_u": {
+          "0.3": 0.18309859154929578,
+          "0.35": 0.19607843137254902,
+          "0.4": 0.1888111888111888,
+          "0.45": 0.13953488372093023,
+          "0.5": 0.18699186991869918,
+          "0.55": 0.2088888888888889,
+          "0.6": 0.19123505976095617
+        },
+        "pi_u_spearman": 0.3571428571428572,
+        "transition_counts": {
+          "loaded->grazing": 99,
+          "grazing->grazing": 704,
+          "loaded->loaded": 103
+        },
+        "n_transition_edges": 3,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "concentrated",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "pybullet_probe": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+        "n_episodes": 70,
+        "n_frames": 560,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 2.882644199469954,
+        "renyi2_uniform_null": 3.7004397181410917,
+        "entropy_ratio": 0.779000448335379,
+        "participation_ratio": 2.4578120007670266,
+        "mean_frac_loaded": 0.48214285714285715,
+        "pi_by_u": {
+          "0.0": 0.75,
+          "0.005": 0.75,
+          "0.01": 0.75,
+          "0.015": 0.625,
+          "0.02": 0.5,
+          "0.025": 0.0,
+          "0.03": 0.0
+        },
+        "pi_u_spearman": -0.8214285714285715,
+        "transition_counts": {
+          "loaded->loaded": 220,
+          "loaded->grazing": 50,
+          "grazing->grazing": 200,
+          "grazing->loaded": 20
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "concentrated",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+        "n_episodes": 70,
+        "n_frames": 560,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.5178571428571429,
+          "loaded": 0.48214285714285715
+        },
+        "renyi2_basin": 0.9981610003362187,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.9981610003362187,
+        "renyi2_joint_u_basin": 3.3200890952235813,
+        "renyi2_joint_uniform_null": 3.584962500721156,
+        "joint_entropy_ratio": 0.9261154320458603,
+        "pi_by_u": {
+          "0.0": 0.75,
+          "0.005": 0.75,
+          "0.01": 0.75,
+          "0.015": 0.625,
+          "0.02": 0.5,
+          "0.025": 0.0,
+          "0.03": 0.0
+        },
+        "pi_u_spearman": -0.8214285714285715,
+        "transition_counts": {
+          "loaded->loaded": 220,
+          "loaded->grazing": 50,
+          "grazing->grazing": 200,
+          "grazing->loaded": 20
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": false,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "ablation_friction_mu_0.0": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.0/pilot/landscape_trajectories.json",
+        "n_episodes": 2,
+        "n_frames": 13,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 3.7004397181410917,
+        "renyi2_uniform_null": 3.7004397181410917,
+        "entropy_ratio": 1.0,
+        "participation_ratio": 2.7037990174827984,
+        "mean_frac_loaded": 0.07692307692307693,
+        "pi_by_u": {
+          "0.005": 0.07692307692307693
+        },
+        "pi_u_spearman": NaN,
+        "transition_counts": {
+          "grazing->grazing": 10,
+          "loaded->grazing": 1
+        },
+        "n_transition_edges": 2,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.0/pilot/landscape_trajectories.json",
+        "n_episodes": 2,
+        "n_frames": 13,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.9230769230769231,
+          "loaded": 0.07692307692307693
+        },
+        "renyi2_basin": 0.22097034626724957,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.22097034626724957,
+        "renyi2_joint_u_basin": 0.22097034626724957,
+        "renyi2_joint_uniform_null": 1.0,
+        "joint_entropy_ratio": 0.22097034626724957,
+        "pi_by_u": {
+          "0.005": 0.07692307692307693
+        },
+        "pi_u_spearman": NaN,
+        "transition_counts": {
+          "grazing->grazing": 10,
+          "loaded->grazing": 1
+        },
+        "n_transition_edges": 2,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "ablation_friction_mu_0.2": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.2/pilot/landscape_trajectories.json",
+        "n_episodes": 15,
+        "n_frames": 38,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 5.247927513443585,
+        "renyi2_uniform_null": 5.247927513443585,
+        "entropy_ratio": 1.0,
+        "participation_ratio": 4.604656805668674,
+        "mean_frac_loaded": 0.0,
+        "pi_by_u": {
+          "0.0": 0.0,
+          "0.005": 0.0,
+          "0.01": 0.0,
+          "0.025": 0.0,
+          "0.03": 0.0
+        },
+        "pi_u_spearman": 0.9999999999999999,
+        "transition_counts": {
+          "grazing->grazing": 23
+        },
+        "n_transition_edges": 1,
+        "has_loaded_to_grazing": false,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.2/pilot/landscape_trajectories.json",
+        "n_episodes": 15,
+        "n_frames": 38,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 1.0
+        },
+        "renyi2_basin": -0.0,
+        "renyi2_basin_uniform_null": -0.0,
+        "basin_entropy_ratio": NaN,
+        "renyi2_joint_u_basin": 2.2479275134435857,
+        "renyi2_joint_uniform_null": 2.321928094887362,
+        "joint_entropy_ratio": 0.9681296842883645,
+        "pi_by_u": {
+          "0.0": 0.0,
+          "0.005": 0.0,
+          "0.01": 0.0,
+          "0.025": 0.0,
+          "0.03": 0.0
+        },
+        "pi_u_spearman": 0.9999999999999999,
+        "transition_counts": {
+          "grazing->grazing": 23
+        },
+        "n_transition_edges": 1,
+        "has_loaded_to_grazing": false,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "ablation_friction_mu_0.6": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json",
+        "n_episodes": 17,
+        "n_frames": 110,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 6.78135971352466,
+        "renyi2_uniform_null": 6.78135971352466,
+        "entropy_ratio": 1.0,
+        "participation_ratio": 5.026285942707768,
+        "mean_frac_loaded": 0.6181818181818182,
+        "pi_by_u": {
+          "0.0": 0.6923076923076923,
+          "0.005": 0.45161290322580644,
+          "0.01": 0.5625,
+          "0.02": 0.0,
+          "0.025": 0.8,
+          "0.03": 0.7916666666666666
+        },
+        "pi_u_spearman": 0.4285714285714286,
+        "transition_counts": {
+          "loaded->loaded": 54,
+          "loaded->grazing": 7,
+          "grazing->grazing": 30,
+          "grazing->loaded": 2
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json",
+        "n_episodes": 17,
+        "n_frames": 110,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.38181818181818183,
+          "loaded": 0.6181818181818182
+        },
+        "renyi2_basin": 0.9215708296380867,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.9215708296380867,
+        "renyi2_joint_u_basin": 3.0450500389155075,
+        "renyi2_joint_uniform_null": 3.4594316186372973,
+        "joint_entropy_ratio": 0.8802168606283889,
+        "pi_by_u": {
+          "0.0": 0.6923076923076923,
+          "0.005": 0.45161290322580644,
+          "0.01": 0.5625,
+          "0.02": 0.0,
+          "0.025": 0.8,
+          "0.03": 0.7916666666666666
+        },
+        "pi_u_spearman": 0.4285714285714286,
+        "transition_counts": {
+          "loaded->loaded": 54,
+          "loaded->grazing": 7,
+          "grazing->grazing": 30,
+          "grazing->loaded": 2
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    },
+    "ablation_friction_mu_1.0": {
+      "feature_mu_F": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_1.0/pilot/landscape_trajectories.json",
+        "n_episodes": 19,
+        "n_frames": 112,
+        "fx_threshold": 8.0,
+        "renyi2_entropy": 6.807354922057605,
+        "renyi2_uniform_null": 6.807354922057605,
+        "entropy_ratio": 1.0,
+        "participation_ratio": 4.225504896513289,
+        "mean_frac_loaded": 0.6696428571428571,
+        "pi_by_u": {
+          "0.0": 0.8148148148148148,
+          "0.005": 0.4444444444444444,
+          "0.01": 0.5625,
+          "0.02": 0.0,
+          "0.025": 0.7272727272727273,
+          "0.03": 0.9230769230769231
+        },
+        "pi_u_spearman": 0.2571428571428572,
+        "transition_counts": {
+          "loaded->loaded": 63,
+          "loaded->grazing": 3,
+          "grazing->grazing": 26,
+          "grazing->loaded": 1
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "weak_or_uniform",
+        "measure_kind": "feature_mu_F"
+      },
+      "organization_mu_O": {
+        "source_path": "results/phase1/emergence_ablation/friction_mu_1.0/pilot/landscape_trajectories.json",
+        "n_episodes": 19,
+        "n_frames": 112,
+        "fx_threshold": 8.0,
+        "mu_by_basin": {
+          "grazing": 0.33035714285714285,
+          "loaded": 0.6696428571428571
+        },
+        "renyi2_basin": 0.8428077634174919,
+        "renyi2_basin_uniform_null": 1.0,
+        "basin_entropy_ratio": 0.8428077634174919,
+        "renyi2_joint_u_basin": 2.895321023173126,
+        "renyi2_joint_uniform_null": 3.4594316186372973,
+        "joint_entropy_ratio": 0.836935468698069,
+        "pi_by_u": {
+          "0.0": 0.8148148148148148,
+          "0.005": 0.4444444444444444,
+          "0.01": 0.5625,
+          "0.02": 0.0,
+          "0.025": 0.7272727272727273,
+          "0.03": 0.9230769230769231
+        },
+        "pi_u_spearman": 0.2571428571428572,
+        "transition_counts": {
+          "loaded->loaded": 63,
+          "loaded->grazing": 3,
+          "grazing->grazing": 26,
+          "grazing->loaded": 1
+        },
+        "n_transition_edges": 4,
+        "has_loaded_to_grazing": true,
+        "concentration_verdict": "partial",
+        "measure_kind": "organization_mu_O"
+      },
+      "m1_on_feature_falsified": true,
+      "interpretation": "If m1_on_feature_falsified is true, the baseline falsifies Organization = feature occupation measure \u03bc_\u2131. Organization requires coarse-graining \u03a0 before defining \u03bc_\ud835\udcaa."
+    }
+  }
+}

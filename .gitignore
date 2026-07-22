@@ -1,0 +1,79 @@
+# Git / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env
+.numba_cache/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors / IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# LaTeX build junk (if any local notes are compiled)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# NEVER commit manuscripts or private writing
+**/main.tex
+**/main.pdf
+**/main.bbl
+docs/latex_ijrr/paper*/
+docs/latex_cot/
+**/backup*/
+**/*_COVER_LETTER*
+**/*_REBUTTAL*
+**/*_REVISION_RESPONSE*
+notes/
+
+# Large / regenerable simulation dumps (prefer Zenodo)
+results/raw/
+results/**/episodes/
+results/**/trajectories/
+results/**/*.h5
+results/**/*.hdf5
+results/**/*.npz
+results/**/*.pkl
+results/**/*.pickle
+results/**/*.mp4
+results/**/*.avi
+*.npz
+*.h5
+*.hdf5
+
+# Keep frozen summaries only under results/frozen/
+# (ignore other results trees copied by mistake)
+results/stage0/
+results/stage1/
+results/stage2/
+results/phase1/
+results/.mplconfig/
+
+# Secrets / local machine paths
+.env.*
+credentials*
+*.pem

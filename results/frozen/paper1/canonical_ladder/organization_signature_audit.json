@@ -1,0 +1,988 @@
+{
+  "project": "Phase0_organization_signature_audit",
+  "plan": "docs/EMERGENCE_MECHANISM_EVIDENCE_PLAN.md",
+  "wording": "P1\u2013P4 booleans on frozen cohorts \u2014 signatures consistent with Organization; NOT a proof of Organization or Emergence Theorem.",
+  "cohorts": {
+    "cylinder_reference": {
+      "cohort_name": "cylinder_reference",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/landscape_analysis/landscape_trajectories.json",
+      "n_episodes": 179,
+      "n_frames": 1186,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "pass",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 132,
+            "loaded_mean_tau": 4.96969696969697,
+            "grazing_mean_tau": 4.0458015267175576,
+            "P_tau_gt_6_loaded": 0.3712121212121212,
+            "P_tau_gt_6_grazing": 0.09923664122137404,
+            "tail_separation_at_t4": 1.150309917355372,
+            "metastability_ratio": 1.2283590623213263
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": true
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 84,
+            "switch_rate": 0.07082630691399663,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 69,
+              "grazing->loaded": 15
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.8474106117261774
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.4468802698145025,
+              "loaded": 0.5531197301854974
+            },
+            "mean_frac_loaded": 0.5531197301854974,
+            "pi_by_u": {
+              "0.0": 0.6534653465346535,
+              "0.005": 0.5924170616113744,
+              "0.01": 0.5238095238095238,
+              "0.015": 0.559748427672956,
+              "0.02": 0.6546762589928058,
+              "0.025": 0.3870967741935484,
+              "0.03": 0.47398843930635837
+            },
+            "pi_u_range": 0.2675794847992574,
+            "pi_u_spearman": -0.5714285714285715,
+            "joint_entropy_ratio": 0.9754006945504033,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 10.594184778003024,
+              "median_fx_grazing": 2.2214569069443435,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 8.37272787105868
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": true,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 0.994686297350516,
+          "G_multiplicity_spectrum_match": 0.505397899740555,
+          "G_multiplicity_lambda2": 0.3717016350920572,
+          "msm_ari_vs_mode": -0.0077578477143682685,
+          "mean_frac_loaded": 0.5531197301854974
+        }
+      },
+      "all_properties_pass": true,
+      "organization_signatures_consistent": true,
+      "k_mode": 2,
+      "lambda2_mode": 0.8474106117261774,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_consistent_with_organization"
+    },
+    "cylinder_heldout_full": {
+      "cohort_name": "cylinder_heldout_full",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
+      "n_episodes": 192,
+      "n_frames": 1230,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "pass",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 137,
+            "loaded_mean_tau": 5.036496350364963,
+            "grazing_mean_tau": 3.8028169014084505,
+            "P_tau_gt_6_loaded": 0.39416058394160586,
+            "P_tau_gt_6_grazing": 0.056338028169014086,
+            "tail_separation_at_t4": 1.095165955102603,
+            "metastability_ratio": 1.32441200324412
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": true
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 87,
+            "switch_rate": 0.07073170731707316,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 70,
+              "grazing->loaded": 17
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.8466765940165154
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.43902439024390244,
+              "loaded": 0.5609756097560976
+            },
+            "mean_frac_loaded": 0.5609756097560976,
+            "pi_by_u": {
+              "0.0": 0.6116071428571429,
+              "0.005": 0.5209302325581395,
+              "0.01": 0.5833333333333334,
+              "0.015": 0.7282608695652174,
+              "0.02": 0.43089430894308944,
+              "0.025": 0.6026785714285714,
+              "0.03": 0.4846938775510204
+            },
+            "pi_u_range": 0.29736656062212796,
+            "pi_u_spearman": -0.39285714285714296,
+            "joint_entropy_ratio": 0.9596961480083803,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 10.623230749250183,
+              "median_fx_grazing": 1.8569701411672348,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 8.766260608082948
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": true,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 0.993217041534052,
+          "G_multiplicity_spectrum_match": 0.4507246167684761,
+          "G_multiplicity_lambda2": 0.17203959021667614,
+          "msm_ari_vs_mode": 0.06083820455255309,
+          "mean_frac_loaded": 0.5609756097560976
+        }
+      },
+      "all_properties_pass": true,
+      "organization_signatures_consistent": true,
+      "k_mode": 2,
+      "lambda2_mode": 0.8466765940165154,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_consistent_with_organization"
+    },
+    "sphere_full": {
+      "cohort_name": "sphere_full",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json",
+      "n_episodes": 237,
+      "n_frames": 1621,
+      "fx_threshold": 1.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "fail",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 30,
+            "loaded_mean_tau": 1.7333333333333334,
+            "grazing_mean_tau": 6.5103734439834025,
+            "P_tau_gt_6_loaded": 0.0,
+            "P_tau_gt_6_grazing": 0.6970954356846473,
+            "tail_separation_at_t4": 0.08779599271402551,
+            "metastability_ratio": 0.26624176758019974
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": false
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 34,
+            "switch_rate": 0.020974706971005553,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 23,
+              "grazing->loaded": 11
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.48067380300390006
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "fail",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.9679210363972857,
+              "loaded": 0.032078963602714373
+            },
+            "mean_frac_loaded": 0.032078963602714373,
+            "pi_by_u": {
+              "0.0": 0.10317460317460317,
+              "0.005": 0.011811023622047244,
+              "0.01": 0.007407407407407408,
+              "0.015": 0.008928571428571428,
+              "0.02": 0.049586776859504134,
+              "0.025": 0.029239766081871343,
+              "0.03": 0.02040816326530612
+            },
+            "pi_u_range": 0.09576719576719576,
+            "pi_u_spearman": 0.0,
+            "joint_entropy_ratio": 0.6890056964941984,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": false
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 1.4405243678069017,
+              "median_fx_grazing": 0.7256408389618726,
+              "fx_threshold": 1.0,
+              "guard_separates": true,
+              "median_gap": 0.7148835288450291
+            },
+            "fx_threshold": 1.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": false,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 0.9807852542687044,
+          "G_multiplicity_spectrum_match": 0.6598764417739644,
+          "G_multiplicity_lambda2": 0.7629734469977438,
+          "msm_ari_vs_mode": -0.004444805647319609,
+          "mean_frac_loaded": 0.032078963602714373
+        }
+      },
+      "all_properties_pass": false,
+      "organization_signatures_consistent": false,
+      "k_mode": 2,
+      "lambda2_mode": 0.48067380300390006,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_incomplete_failed_P1_P3"
+    },
+    "sliding_full": {
+      "cohort_name": "sliding_full",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/second_task_recovery/sliding/full/landscape_trajectories.json",
+      "n_episodes": 181,
+      "n_frames": 1087,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "fail",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 99,
+            "loaded_mean_tau": 2.04040404040404,
+            "grazing_mean_tau": 4.889502762430939,
+            "P_tau_gt_6_loaded": 0.0,
+            "P_tau_gt_6_grazing": 0.3867403314917127,
+            "tail_separation_at_t4": 0.0,
+            "metastability_ratio": 0.4173029732351766
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": false
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "fail",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 99,
+            "switch_rate": 0.09107635694572216,
+            "cross_basin_edge_types": 1,
+            "transition_counts": {
+              "loaded->grazing": 99
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.5099009900990099
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": false
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.8141674333026679,
+              "loaded": 0.1858325666973321
+            },
+            "mean_frac_loaded": 0.1858325666973321,
+            "pi_by_u": {
+              "0.3": 0.18309859154929578,
+              "0.35": 0.19607843137254902,
+              "0.4": 0.1888111888111888,
+              "0.45": 0.13953488372093023,
+              "0.5": 0.18699186991869918,
+              "0.55": 0.2088888888888889,
+              "0.6": 0.19123505976095617
+            },
+            "pi_u_range": 0.06935400516795867,
+            "pi_u_spearman": 0.3571428571428572,
+            "joint_entropy_ratio": 0.8212863731844643,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 12.650269266079254,
+              "median_fx_grazing": 1.5704589980182664,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 11.079810268060989
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": false,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 0.9912456855841835,
+          "G_multiplicity_spectrum_match": 0.91180877463076,
+          "G_multiplicity_lambda2": 0.4398831873174801,
+          "msm_ari_vs_mode": -0.09714803184955839,
+          "mean_frac_loaded": 0.1858325666973321
+        }
+      },
+      "all_properties_pass": false,
+      "organization_signatures_consistent": false,
+      "k_mode": 2,
+      "lambda2_mode": 0.5099009900990099,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_incomplete_failed_P1_P2"
+    },
+    "pybullet_probe": {
+      "cohort_name": "pybullet_probe",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+      "n_episodes": 70,
+      "n_frames": 560,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "pass",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 50,
+            "loaded_mean_tau": 5.4,
+            "grazing_mean_tau": 3.2222222222222223,
+            "P_tau_gt_6_loaded": 0.0,
+            "P_tau_gt_6_grazing": 0.2222222222222222,
+            "tail_separation_at_t4": 3.6000000000000005,
+            "metastability_ratio": 1.6758620689655173
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": true
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 70,
+            "switch_rate": 0.125,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 50,
+              "grazing->loaded": 20
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.7239057239057238
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.5178571428571429,
+              "loaded": 0.48214285714285715
+            },
+            "mean_frac_loaded": 0.48214285714285715,
+            "pi_by_u": {
+              "0.0": 0.75,
+              "0.005": 0.75,
+              "0.01": 0.75,
+              "0.015": 0.625,
+              "0.02": 0.5,
+              "0.025": 0.0,
+              "0.03": 0.0
+            },
+            "pi_u_range": 0.75,
+            "pi_u_spearman": -0.8214285714285715,
+            "joint_entropy_ratio": 0.9261154320458603,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 29.027777777777775,
+              "median_fx_grazing": 0.9166666666666674,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 28.111111111111107
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": false,
+        "CE2_multiplicity_wrong_spectrum": false,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 0.779000448335379,
+          "G_multiplicity_spectrum_match": NaN,
+          "G_multiplicity_lambda2": 1.0,
+          "msm_ari_vs_mode": 0.030519709231023845,
+          "mean_frac_loaded": 0.48214285714285715
+        }
+      },
+      "all_properties_pass": true,
+      "organization_signatures_consistent": true,
+      "k_mode": 2,
+      "lambda2_mode": 0.7239057239057238,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_consistent_with_organization"
+    },
+    "ablation_friction_mu_0.0": {
+      "cohort_name": "ablation_friction_mu_0.0",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.0/pilot/landscape_trajectories.json",
+      "n_episodes": 2,
+      "n_frames": 13,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "fail",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 1,
+            "loaded_mean_tau": 1.0,
+            "grazing_mean_tau": 6.0,
+            "P_tau_gt_6_loaded": 0.0,
+            "P_tau_gt_6_grazing": 0.5,
+            "tail_separation_at_t4": 0.0,
+            "metastability_ratio": 0.16666666666666666
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": false
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "fail",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 1,
+            "switch_rate": 0.07692307692307693,
+            "cross_basin_edge_types": 1,
+            "transition_counts": {
+              "loaded->grazing": 1
+            },
+            "G_fx_spectrum_match": NaN,
+            "lambda2_mode": 0.0
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": false
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.9230769230769231,
+              "loaded": 0.07692307692307693
+            },
+            "mean_frac_loaded": 0.07692307692307693,
+            "pi_by_u": {
+              "0.005": 0.07692307692307693
+            },
+            "pi_u_range": 0.0,
+            "pi_u_spearman": NaN,
+            "joint_entropy_ratio": 0.22097034626724957,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "fail",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": NaN,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 17.506420691217485,
+              "median_fx_grazing": 1.1138030308592444,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 16.39261766035824
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": false
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": false,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 1.0,
+          "G_multiplicity_spectrum_match": NaN,
+          "G_multiplicity_lambda2": 1.0,
+          "msm_ari_vs_mode": 0.0,
+          "mean_frac_loaded": 0.07692307692307693
+        }
+      },
+      "all_properties_pass": false,
+      "organization_signatures_consistent": false,
+      "k_mode": 2,
+      "lambda2_mode": 0.0,
+      "g_fx_spectrum_match": NaN,
+      "summary": "signatures_incomplete_failed_P1_P2_P4"
+    },
+    "ablation_friction_mu_0.2": {
+      "cohort_name": "ablation_friction_mu_0.2",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.2/pilot/landscape_trajectories.json",
+      "n_episodes": 15,
+      "n_frames": 38,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "fail",
+          "metrics": {
+            "n_basins": 1,
+            "loaded_n_runs": 0,
+            "loaded_mean_tau": NaN,
+            "grazing_mean_tau": 2.533333333333333,
+            "P_tau_gt_6_loaded": NaN,
+            "P_tau_gt_6_grazing": 0.0,
+            "tail_separation_at_t4": NaN,
+            "metastability_ratio": NaN
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": false
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "fail",
+          "metrics": {
+            "k_mode": 1,
+            "n_regime_switches": 0,
+            "switch_rate": 0.0,
+            "cross_basin_edge_types": 0,
+            "transition_counts": {},
+            "G_fx_spectrum_match": 0.0,
+            "lambda2_mode": NaN
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": false
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "fail",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 1.0
+            },
+            "mean_frac_loaded": 0.0,
+            "pi_by_u": {
+              "0.0": 0.0,
+              "0.005": 0.0,
+              "0.01": 0.0,
+              "0.025": 0.0,
+              "0.03": 0.0
+            },
+            "pi_u_range": 0.0,
+            "pi_u_spearman": 0.9999999999999999,
+            "joint_entropy_ratio": 0.9681296842883645,
+            "has_loaded_to_grazing": false
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": false
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "fail",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 0.0,
+            "fx_bimodal": {
+              "has_both_basins": false,
+              "median_fx_loaded": NaN,
+              "median_fx_grazing": NaN,
+              "guard_separates": false
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": false
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": true,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": true,
+        "metrics": {
+          "feature_entropy_ratio": 1.0,
+          "G_multiplicity_spectrum_match": 0.0,
+          "G_multiplicity_lambda2": NaN,
+          "msm_ari_vs_mode": 0.0,
+          "mean_frac_loaded": 0.0
+        }
+      },
+      "all_properties_pass": false,
+      "organization_signatures_consistent": false,
+      "k_mode": 1,
+      "lambda2_mode": NaN,
+      "g_fx_spectrum_match": 0.0,
+      "summary": "organization_signatures_absent_no_loaded_regime"
+    },
+    "ablation_friction_mu_0.6": {
+      "cohort_name": "ablation_friction_mu_0.6",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_0.6/pilot/landscape_trajectories.json",
+      "n_episodes": 17,
+      "n_frames": 110,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "pass",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 14,
+            "loaded_mean_tau": 4.857142857142857,
+            "grazing_mean_tau": 3.5,
+            "P_tau_gt_6_loaded": 0.35714285714285715,
+            "P_tau_gt_6_grazing": 0.08333333333333333,
+            "tail_separation_at_t4": 1.7142857142857142,
+            "metastability_ratio": 1.3877551020408163
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": true
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 9,
+            "switch_rate": 0.08181818181818182,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 7,
+              "grazing->loaded": 2
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.8227459016393442
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.38181818181818183,
+              "loaded": 0.6181818181818182
+            },
+            "mean_frac_loaded": 0.6181818181818182,
+            "pi_by_u": {
+              "0.0": 0.6923076923076923,
+              "0.005": 0.45161290322580644,
+              "0.01": 0.5625,
+              "0.02": 0.0,
+              "0.025": 0.8,
+              "0.03": 0.7916666666666666
+            },
+            "pi_u_range": 0.8,
+            "pi_u_spearman": 0.4285714285714286,
+            "joint_entropy_ratio": 0.8802168606283889,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 10.343373407451487,
+              "median_fx_grazing": 2.3048721412489774,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 8.038501266202509
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": true,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 1.0,
+          "G_multiplicity_spectrum_match": 0.5143997435862069,
+          "G_multiplicity_lambda2": 0.30666666666666664,
+          "msm_ari_vs_mode": -0.031379246714939586,
+          "mean_frac_loaded": 0.6181818181818182
+        }
+      },
+      "all_properties_pass": true,
+      "organization_signatures_consistent": true,
+      "k_mode": 2,
+      "lambda2_mode": 0.8227459016393442,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_consistent_with_organization"
+    },
+    "ablation_friction_mu_1.0": {
+      "cohort_name": "ablation_friction_mu_1.0",
+      "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/emergence_ablation/friction_mu_1.0/pilot/landscape_trajectories.json",
+      "n_episodes": 19,
+      "n_frames": 112,
+      "fx_threshold": 8.0,
+      "properties": {
+        "P1": {
+          "property_id": "P1",
+          "label": "Multiple long-lived occupied regions",
+          "verdict": "pass",
+          "metrics": {
+            "n_basins": 2,
+            "loaded_n_runs": 12,
+            "loaded_mean_tau": 6.25,
+            "grazing_mean_tau": 3.3636363636363638,
+            "P_tau_gt_6_loaded": 0.6666666666666666,
+            "P_tau_gt_6_grazing": 0.0,
+            "tail_separation_at_t4": 2.4444444444444446,
+            "metastability_ratio": 1.8581081081081081
+          },
+          "rationale": "Requires \u22652 basins, loaded runs with \u03c4\u0304\u22652 and heavy tail (P(\u03c4>6)>0 or \u03c4\u0304\u22654), heavier than grazing.",
+          "pass": true
+        },
+        "P2": {
+          "property_id": "P2",
+          "label": "Finite guard-mediated transitions",
+          "verdict": "pass",
+          "metrics": {
+            "k_mode": 2,
+            "n_regime_switches": 4,
+            "switch_rate": 0.03571428571428571,
+            "cross_basin_edge_types": 2,
+            "transition_counts": {
+              "loaded->grazing": 3,
+              "grazing->loaded": 1
+            },
+            "G_fx_spectrum_match": 1.0,
+            "lambda2_mode": 0.9175084175084175
+          },
+          "rationale": "K=2 MODE, sparse cross-basin switches, finite transition graph, G_fx\u2248MODE.",
+          "pass": true
+        },
+        "P3": {
+          "property_id": "P3",
+          "label": "Persistent occupation imbalance",
+          "verdict": "pass",
+          "metrics": {
+            "mu_by_basin": {
+              "grazing": 0.33035714285714285,
+              "loaded": 0.6696428571428571
+            },
+            "mean_frac_loaded": 0.6696428571428571,
+            "pi_by_u": {
+              "0.0": 0.8148148148148148,
+              "0.005": 0.4444444444444444,
+              "0.01": 0.5625,
+              "0.02": 0.0,
+              "0.025": 0.7272727272727273,
+              "0.03": 0.9230769230769231
+            },
+            "pi_u_range": 0.9230769230769231,
+            "pi_u_spearman": 0.2571428571428572,
+            "joint_entropy_ratio": 0.836935468698069,
+            "has_loaded_to_grazing": true
+          },
+          "rationale": "Non-uniform basin + u occupation; structured \u03c0(u); cross-basin topology.",
+          "pass": true
+        },
+        "P4": {
+          "property_id": "P4",
+          "label": "Mechanically meaningful boundaries",
+          "verdict": "pass",
+          "metrics": {
+            "G_fx_ari_vs_mode": 1.0,
+            "G_fx_spectrum_match": 1.0,
+            "fx_bimodal": {
+              "has_both_basins": true,
+              "median_fx_loaded": 10.394465636047531,
+              "median_fx_grazing": 0.9899527768869021,
+              "fx_threshold": 8.0,
+              "guard_separates": true,
+              "median_gap": 9.40451285916063
+            },
+            "fx_threshold": 8.0
+          },
+          "rationale": "Load guard G_fx \u2261 MODE; |f_x| bimodal at threshold t*.",
+          "pass": true
+        }
+      },
+      "counterexamples": {
+        "CE1_feature_measure_uniform": true,
+        "CE2_multiplicity_wrong_spectrum": true,
+        "CE3_feature_msm_misaligned": true,
+        "CE4_no_loaded_regime": false,
+        "metrics": {
+          "feature_entropy_ratio": 1.0,
+          "G_multiplicity_spectrum_match": 0.346430813169575,
+          "G_multiplicity_lambda2": 0.1413461538461538,
+          "msm_ari_vs_mode": -0.04844502847130968,
+          "mean_frac_loaded": 0.6696428571428571
+        }
+      },
+      "all_properties_pass": true,
+      "organization_signatures_consistent": true,
+      "k_mode": 2,
+      "lambda2_mode": 0.9175084175084175,
+      "g_fx_spectrum_match": 1.0,
+      "summary": "signatures_consistent_with_organization"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "cylinder_reference": {
+    "occupancy_pi": 0.561,
+    "lambda2": 0.8467,
+    "transition_metric": 0.954,
+    "partition_ari": 0.5987,
+    "dwell_ratio": 1.324,
+    "boundary_match": true
+  },
+  "block_target": {
+    "occupancy_pi": 0.0896,
+    "lambda2": 0.8886,
+    "transition_metric": 0.9321,
+    "partition_ari": 0.2147,
+    "dwell_ratio": 0.225,
+    "boundary_match": true
+  },
+  "layer_matches": {
+    "occupancy": false,
+    "partition": false,
+    "transition": true,
+    "boundary": true
+  },
+  "RCI": 0.5
+}

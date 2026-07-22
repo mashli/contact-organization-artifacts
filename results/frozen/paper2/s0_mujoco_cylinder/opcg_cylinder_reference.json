@@ -1,0 +1,219 @@
+{
+  "protocol": "COT_OPCG_THRESHOLD_PROTOCOL.md v1.1",
+  "cohorts": {
+    "pybullet_probe": {
+      "cohort_name": "pybullet_probe",
+      "source_path": "results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json",
+      "fx_threshold": 8.0,
+      "guard_witness": "G_fx_mode",
+      "thresholds": {
+        "delta_1": 0.25,
+        "theta": 0.95,
+        "S_max": 0.2,
+        "sigma": 0.9,
+        "tau_ref": 6.0
+      },
+      "conditions": {
+        "C1": {
+          "test": "rel_tau2_error",
+          "threshold": "<= 0.25",
+          "tau2": 3.0950734382335576,
+          "tau_ref": 6.0,
+          "relative_error": 0.48415442696107375,
+          "pass": false
+        },
+        "C2": {
+          "test": "joint_entropy_ratio H2/H0 < theta OR u-dependent occupancy",
+          "threshold": "primary: < 0.95; alternate: pi_range>=0.15 or |pi_spearman|>=0.25",
+          "H2_H0_joint": 0.9261154320458603,
+          "H2_H0_basin": 0.9981610003362187,
+          "pi_u_range": 0.75,
+          "pi_u_spearman": -0.8214285714285715,
+          "n_transition_edges": 4,
+          "pass_primary": true,
+          "pass_alternate": true,
+          "pass": true
+        },
+        "C3": {
+          "test": "switch_rate N_sw/T",
+          "threshold": "<= 0.2",
+          "N_sw": 70,
+          "T_frames": 560,
+          "switch_rate": 0.125,
+          "pass": true
+        },
+        "C4": {
+          "test": "spectrum_match",
+          "threshold": ">= 0.9",
+          "sigma_internal": 1.0,
+          "sigma_cross_ref": 0.7052325471727653,
+          "lambda2": 0.7239057239057238,
+          "ref_lambda2": 0.8474106117261774,
+          "pass_internal": true,
+          "pass_cross_ref": false,
+          "pass": false
+        }
+      },
+      "Psi_OPCG": false,
+      "guard_partition_summary": {
+        "n_states": 2,
+        "lambda2": 0.7239057239057238,
+        "tau2_implied": 3.0950734382335576,
+        "ari_vs_mode": 1.0,
+        "n_regime_switches_guard": 70
+      },
+      "S0-2": {
+        "Sigma_slow_proxy": {
+          "loaded_mean_tau": 5.4,
+          "grazing_mean_tau": 3.2222222222222223,
+          "tail_separation_at_t4": 3.6000000000000005,
+          "pass_proxy": true
+        }
+      },
+      "verdict": "FAIL"
+    },
+    "cylinder_reference": {
+      "cohort_name": "cylinder_reference",
+      "source_path": "results/phase1/landscape_analysis/landscape_trajectories.json",
+      "fx_threshold": 8.0,
+      "guard_witness": "G_fx_mode",
+      "thresholds": {
+        "delta_1": 0.25,
+        "theta": 0.95,
+        "S_max": 0.2,
+        "sigma": 0.9,
+        "tau_ref": 6.0
+      },
+      "conditions": {
+        "C1": {
+          "test": "rel_tau2_error",
+          "threshold": "<= 0.25",
+          "tau2": 6.04,
+          "tau_ref": 6.0,
+          "relative_error": 0.006666666666666666,
+          "pass": true
+        },
+        "C2": {
+          "test": "joint_entropy_ratio H2/H0 < theta OR u-dependent occupancy",
+          "threshold": "primary: < 0.95; alternate: pi_range>=0.15 or |pi_spearman|>=0.25",
+          "H2_H0_joint": 0.975,
+          "H2_H0_basin": 0.984,
+          "pi_u_range": 0.268,
+          "pi_u_spearman": -0.57,
+          "n_transition_edges": 2,
+          "pass_primary": false,
+          "pass_alternate": true,
+          "pass": true
+        },
+        "C3": {
+          "test": "switch_rate N_sw/T",
+          "threshold": "<= 0.20",
+          "N_sw": 84,
+          "T_frames": 1186,
+          "switch_rate": 0.07082630691399663,
+          "pass": true
+        },
+        "C4": {
+          "test": "spectrum_match",
+          "threshold": ">= 0.90",
+          "sigma_internal": 1.0,
+          "sigma_cross_ref": null,
+          "lambda2": 0.847,
+          "ref_lambda2": null,
+          "pass_internal": true,
+          "pass_cross_ref": null,
+          "pass": true
+        }
+      },
+      "Psi_OPCG": true,
+      "guard_partition_summary": {
+        "n_states": 2,
+        "lambda2": 0.847,
+        "tau2_implied": 6.04,
+        "ari_vs_mode": 1.0,
+        "n_regime_switches_guard": 84
+      },
+      "S0-2": {
+        "Sigma_slow_proxy": {
+          "loaded_mean_tau": 5.04,
+          "grazing_mean_tau": 3.8,
+          "tail_separation_at_t4": 3.7,
+          "pass_proxy": true
+        }
+      },
+      "verdict": "PASS",
+      "provenance": "frozen MuJoCo cylinder_reference (v1.1 C2 alternate branch)"
+    },
+    "ellipsoid_full": {
+      "cohort_name": "ellipsoid_full",
+      "source_path": "results/phase1/characterization_ellipsoid/full/landscape_trajectories.json",
+      "fx_threshold": 8.0,
+      "guard_witness": "G_fx_mode",
+      "thresholds": {
+        "delta_1": 0.25,
+        "theta": 0.95,
+        "S_max": 0.2,
+        "sigma": 0.9,
+        "tau_ref": 6.0
+      },
+      "conditions": {
+        "C1": {
+          "test": "rel_tau2_error",
+          "threshold": "<= 0.25",
+          "tau2": null,
+          "tau_ref": 6.0,
+          "relative_error": null,
+          "pass": false
+        },
+        "C2": {
+          "test": "joint_entropy_ratio H2/H0 < theta OR u-dependent occupancy",
+          "threshold": "primary: < 0.95; alternate: pi_range>=0.15 or |pi_spearman|>=0.25",
+          "H2_H0_joint": 0.16503390946492366,
+          "H2_H0_basin": 0.16503390946492366,
+          "pi_u_range": 0.0,
+          "pi_u_spearman": null,
+          "n_transition_edges": 4,
+          "pass_primary": true,
+          "pass_alternate": false,
+          "pass": true
+        },
+        "C3": {
+          "test": "switch_rate N_sw/T",
+          "threshold": "<= 0.2",
+          "N_sw": 566,
+          "T_frames": 18000,
+          "switch_rate": 0.03144444444444444,
+          "pass": true
+        },
+        "C4": {
+          "test": "spectrum_match",
+          "threshold": ">= 0.9",
+          "sigma_internal": 0.0,
+          "sigma_cross_ref": null,
+          "lambda2": null,
+          "ref_lambda2": null,
+          "pass_internal": false,
+          "pass_cross_ref": null,
+          "pass": false
+        }
+      },
+      "Psi_OPCG": false,
+      "guard_partition_summary": {
+        "n_states": 1,
+        "lambda2": null,
+        "tau2_implied": null,
+        "ari_vs_mode": 1.0,
+        "n_regime_switches_guard": 0
+      },
+      "S0-2": {
+        "Sigma_slow_proxy": {
+          "loaded_mean_tau": 3.372549019607843,
+          "grazing_mean_tau": null,
+          "tail_separation_at_t4": null,
+          "pass_proxy": false
+        }
+      },
+      "verdict": "FAIL"
+    }
+  }
+}

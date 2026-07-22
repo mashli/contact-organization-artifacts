@@ -1,0 +1,173 @@
+{
+  "recovery_consistency_index": 0.8125,
+  "n_cells": 16,
+  "n_match": 13,
+  "cells": [
+    {
+      "channel": "vision",
+      "layer": "occupancy",
+      "reference": "pass",
+      "target": "partial",
+      "match": false
+    },
+    {
+      "channel": "vision",
+      "layer": "partition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "vision",
+      "layer": "transition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "vision",
+      "layer": "boundary",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "duration",
+      "layer": "occupancy",
+      "reference": "pass",
+      "target": "partial",
+      "match": false
+    },
+    {
+      "channel": "duration",
+      "layer": "partition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "duration",
+      "layer": "transition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "duration",
+      "layer": "boundary",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "contact_graph",
+      "layer": "occupancy",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "contact_graph",
+      "layer": "partition",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "contact_graph",
+      "layer": "transition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "contact_graph",
+      "layer": "boundary",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "energy",
+      "layer": "occupancy",
+      "reference": "fail",
+      "target": "pass",
+      "match": false
+    },
+    {
+      "channel": "energy",
+      "layer": "partition",
+      "reference": "pass",
+      "target": "pass",
+      "match": true
+    },
+    {
+      "channel": "energy",
+      "layer": "transition",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    },
+    {
+      "channel": "energy",
+      "layer": "boundary",
+      "reference": "fail",
+      "target": "fail",
+      "match": true
+    }
+  ],
+  "reference_matrix": {
+    "vision": {
+      "occupancy": "pass",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "duration": {
+      "occupancy": "pass",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "contact_graph": {
+      "occupancy": "fail",
+      "partition": "fail",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "energy": {
+      "occupancy": "fail",
+      "partition": "pass",
+      "transition": "fail",
+      "boundary": "fail"
+    }
+  },
+  "target_matrix": {
+    "vision": {
+      "occupancy": "partial",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "duration": {
+      "occupancy": "partial",
+      "partition": "pass",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "contact_graph": {
+      "occupancy": "fail",
+      "partition": "fail",
+      "transition": "pass",
+      "boundary": "fail"
+    },
+    "energy": {
+      "occupancy": "pass",
+      "partition": "pass",
+      "transition": "fail",
+      "boundary": "fail"
+    }
+  },
+  "reference_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cross_geometry_recovery/cylinder/summary.json",
+  "target_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/cohort_independence/cylinder_heldout/full"
+}

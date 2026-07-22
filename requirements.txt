@@ -1,0 +1,7 @@
+# Placeholder — pin deps when first syncing runnable scripts
+
+# mujoco
+# numpy
+# scipy
+# pandas
+# pyyaml

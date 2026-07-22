@@ -1,0 +1,52 @@
+# Priority 4 — Cross-geometry validation (PREREGISTERED — do not run before N1–N3)
+
+status: preregistered
+blocked_on:
+  - representation_independence_audit_RIA
+  - landscape_necessity_audit_LNA
+  - basin_cardinality_mechanism_MBA
+
+scientific_question: |
+  Does configuration landscape topology (|B|, E) deform under object shape
+  while retaining two-basin grazing/loaded organization on cylinder-like contacts?
+
+hypothesis_I5: |
+  Fixed |B|=2 and E=4 on cylinder; block/sphere may deform Pi and boundary location
+  but do not introduce a third metastable basin under C1–C2.
+
+geometries:
+  - name: cylinder
+    status: complete
+    role: reference
+  - name: block
+    status: planned
+    min_episodes_per_u: 100
+  - name: sphere
+    status: planned
+    min_episodes_per_u: 100
+
+protocol:
+  snapshot: peak_push
+  min_contact_multiplicity: 1
+  u_levels_m: [0.0, 0.005, 0.01, 0.015, 0.02, 0.025, 0.03]
+  basin_rule:
+    feature: resultant_force_f_x
+    threshold: 8.0
+    below_label: grazing
+    above_label: loaded
+
+pass_criteria:
+  cylinder_reference: "|B|=2, four transitions observed"
+  new_geometry: "no third basin with persistence >= 0.7 over 3 consecutive frames"
+  deformation: "Pi(B|u) shifts measurable; |B| unchanged"
+
+falsifiers:
+  - "Third metastable basin on block/sphere with C1–C2"
+  - "Transition graph gains new stable edge class"
+  - "RIA fails on new geometry (embedding-dependent structure)"
+
+outputs:
+  report: results/phase1/cross_geometry/cross_geometry_report.json
+  prereg_doc: docs/CROSS_GEOMETRY_PREREG.md
+
+run_command_when_unblocked: ./scripts/run_cross_geometry_validation.sh

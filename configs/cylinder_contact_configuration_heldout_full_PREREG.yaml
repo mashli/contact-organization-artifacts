@@ -1,0 +1,35 @@
+# Cylinder push-roll — held-out seed FULL (7 u × 100 ep = 700) — PREREGISTERED
+# See docs/CYLINDER_HELDOUT_SEED_PREREG.md
+# base_seed=7000 disjoint from pilot block (6000) and reference (2000)
+
+run_id: cylinder_contact_configuration_heldout_full
+geometry: cylinder
+output_dir: results/phase1/cohort_independence/cylinder_heldout/full/characterization
+
+collection:
+  episodes_per_u: 100
+  base_seed: 7000
+
+sweep:
+  offset_frame: world
+  push_eccentricity_m: [0.0, 0.005, 0.010, 0.015, 0.020, 0.025, 0.030]
+  mass_scales: [1.0]
+  friction_mu: [0.6]
+  impulse_magnitude: [0.15]
+
+env:
+  probe_budget: 8
+  prediction_steps: 40
+
+controller:
+  primary_axis: 0
+  ramp_steps: 6
+  hold_steps: 8
+  settle_steps: 10
+
+characterization:
+  snapshots: [approach_end, first_contact, peak_push]
+  family: push
+  min_contact_multiplicity: 1
+  cv_stable_threshold: 0.15
+  pca_variance_target: 0.90

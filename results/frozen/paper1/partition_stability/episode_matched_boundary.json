@@ -1,0 +1,429 @@
+{
+  "experiment": "Episode-matched boundary stability",
+  "design": {
+    "matching": "same episode_id, same f_x (\u00b1bin), compare labels",
+    "bin_width_fx_N": 0.5,
+    "L1_fc_threshold": "|f_y|/|f_z| > 0.15",
+    "L1_coup_threshold": "|f_y|/|f_x| > 0.15",
+    "bootstrap_unit": "episode",
+    "f_cmp_threshold": 0.5
+  },
+  "cohorts": {
+    "ramp3": 179,
+    "ramp6": 179,
+    "ramp12": 179
+  },
+  "pairwise": {
+    "ramp3_vs_ramp6": {
+      "L0": {
+        "ari": 0.9430096768818353,
+        "steinley": "excellent",
+        "ci95": [
+          0.9055710943590847,
+          0.9750491041185175
+        ],
+        "coverage": {
+          "regime": "L0",
+          "n_matched": 628,
+          "n_union": 15,
+          "f_cmp": 41.86666666666667
+        },
+        "drift_matrix": {
+          "cells": [
+            "grazing",
+            "loaded"
+          ],
+          "counts": [
+            [
+              401,
+              5
+            ],
+            [
+              4,
+              218
+            ]
+          ],
+          "row_pct": [
+            [
+              98.76847290640394,
+              1.2315270935960592
+            ],
+            [
+              1.8018018018018018,
+              98.1981981981982
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "grazing": 98.76847290640394,
+            "loaded": 98.1981981981982
+          }
+        },
+        "representative": true
+      },
+      "L1_friction_cone": {
+        "ari": 0.3284300853158552,
+        "steinley": "poor",
+        "ci95": [
+          0.19849228557248694,
+          0.46831122669354086
+        ],
+        "coverage": {
+          "regime": "L1_fc",
+          "n_matched": 218,
+          "n_union": 15,
+          "f_cmp": 14.533333333333333
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              116,
+              13
+            ],
+            [
+              33,
+              56
+            ]
+          ],
+          "row_pct": [
+            [
+              89.92248062015504,
+              10.077519379844961
+            ],
+            [
+              37.07865168539326,
+              62.92134831460674
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 89.92248062015504,
+            "lat": 62.92134831460674
+          }
+        },
+        "representative": true
+      },
+      "L1_coupling": {
+        "ari": 0.6348102654816508,
+        "steinley": "poor",
+        "ci95": [
+          0.5087737293245237,
+          0.7669836101794775
+        ],
+        "coverage": {
+          "regime": "L1_coup",
+          "n_matched": 218,
+          "n_union": 15,
+          "f_cmp": 14.533333333333333
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              75,
+              10
+            ],
+            [
+              12,
+              121
+            ]
+          ],
+          "row_pct": [
+            [
+              88.23529411764706,
+              11.76470588235294
+            ],
+            [
+              9.022556390977442,
+              90.97744360902256
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 88.23529411764706,
+            "lat": 90.97744360902256
+          }
+        },
+        "representative": true
+      }
+    },
+    "ramp3_vs_ramp12": {
+      "L0": {
+        "ari": 0.9478055770765814,
+        "steinley": "excellent",
+        "ci95": [
+          0.9020885992463492,
+          0.9831301684278384
+        ],
+        "coverage": {
+          "regime": "L0",
+          "n_matched": 528,
+          "n_union": 15,
+          "f_cmp": 35.2
+        },
+        "drift_matrix": {
+          "cells": [
+            "grazing",
+            "loaded"
+          ],
+          "counts": [
+            [
+              422,
+              5
+            ],
+            [
+              1,
+              100
+            ]
+          ],
+          "row_pct": [
+            [
+              98.82903981264637,
+              1.1709601873536302
+            ],
+            [
+              0.9900990099009901,
+              99.00990099009901
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "grazing": 98.82903981264637,
+            "loaded": 99.00990099009901
+          }
+        },
+        "representative": true
+      },
+      "L1_friction_cone": {
+        "ari": 0.1457776293735728,
+        "steinley": "poor",
+        "ci95": [
+          0.04694758368725608,
+          0.2735120399818265
+        ],
+        "coverage": {
+          "regime": "L1_fc",
+          "n_matched": 100,
+          "n_union": 15,
+          "f_cmp": 6.666666666666667
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              60,
+              2
+            ],
+            [
+              27,
+              11
+            ]
+          ],
+          "row_pct": [
+            [
+              96.7741935483871,
+              3.225806451612903
+            ],
+            [
+              71.05263157894737,
+              28.947368421052634
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 96.7741935483871,
+            "lat": 28.947368421052634
+          }
+        },
+        "representative": true
+      },
+      "L1_coupling": {
+        "ari": 0.20389836806692826,
+        "steinley": "poor",
+        "ci95": [
+          0.07654088319698454,
+          0.3809107757564715
+        ],
+        "coverage": {
+          "regime": "L1_coup",
+          "n_matched": 100,
+          "n_union": 15,
+          "f_cmp": 6.666666666666667
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              32,
+              7
+            ],
+            [
+              20,
+              41
+            ]
+          ],
+          "row_pct": [
+            [
+              82.05128205128204,
+              17.94871794871795
+            ],
+            [
+              32.78688524590164,
+              67.21311475409836
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 82.05128205128204,
+            "lat": 67.21311475409836
+          }
+        },
+        "representative": true
+      }
+    },
+    "ramp6_vs_ramp12": {
+      "L0": {
+        "ari": 0.9364856491904598,
+        "steinley": "excellent",
+        "ci95": [
+          0.8987430995655076,
+          0.9694738513822988
+        ],
+        "coverage": {
+          "regime": "L0",
+          "n_matched": 734,
+          "n_union": 4,
+          "f_cmp": 183.5
+        },
+        "drift_matrix": {
+          "cells": [
+            "grazing",
+            "loaded"
+          ],
+          "counts": [
+            [
+              550,
+              6
+            ],
+            [
+              5,
+              173
+            ]
+          ],
+          "row_pct": [
+            [
+              98.92086330935251,
+              1.079136690647482
+            ],
+            [
+              2.8089887640449436,
+              97.19101123595506
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "grazing": 98.92086330935251,
+            "loaded": 97.19101123595506
+          }
+        },
+        "representative": true
+      },
+      "L1_friction_cone": {
+        "ari": 0.33525799546116886,
+        "steinley": "poor",
+        "ci95": [
+          0.20533863186983853,
+          0.4844317993117701
+        ],
+        "coverage": {
+          "regime": "L1_fc",
+          "n_matched": 173,
+          "n_union": 4,
+          "f_cmp": 43.25
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              93,
+              6
+            ],
+            [
+              30,
+              44
+            ]
+          ],
+          "row_pct": [
+            [
+              93.93939393939394,
+              6.0606060606060606
+            ],
+            [
+              40.54054054054054,
+              59.45945945945946
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 93.93939393939394,
+            "lat": 59.45945945945946
+          }
+        },
+        "representative": true
+      },
+      "L1_coupling": {
+        "ari": 0.37723607554234706,
+        "steinley": "poor",
+        "ci95": [
+          0.21914794805137702,
+          0.5598816627463792
+        ],
+        "coverage": {
+          "regime": "L1_coup",
+          "n_matched": 173,
+          "n_union": 4,
+          "f_cmp": 43.25
+        },
+        "drift_matrix": {
+          "cells": [
+            "ax",
+            "lat"
+          ],
+          "counts": [
+            [
+              49,
+              14
+            ],
+            [
+              19,
+              91
+            ]
+          ],
+          "row_pct": [
+            [
+              77.77777777777779,
+              22.22222222222222
+            ],
+            [
+              17.272727272727273,
+              82.72727272727273
+            ]
+          ],
+          "per_cell_stability_pct": {
+            "ax": 77.77777777777779,
+            "lat": 82.72727272727273
+          }
+        },
+        "representative": true
+      }
+    }
+  }
+}

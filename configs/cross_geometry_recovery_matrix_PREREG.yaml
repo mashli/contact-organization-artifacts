@@ -1,0 +1,48 @@
+# Confirmatory cross-geometry Recovery Matrix — FROZEN (zero tuning)
+
+status: preregistered_confirmatory
+doc: docs/CROSS_GEOMETRY_RECOVERY_MATRIX_PREREG.md
+
+reference_geometry: cylinder
+confirmatory_geometry: sphere  # block optional
+
+# All analysis configs are COPIES of cylinder full PREREG with geometry-specific paths only.
+frozen_feature_methods:
+  vision: contact_crop_hsv
+  duration: runlength_stats
+  contact_graph: edge_binary
+  energy: kinetic_only
+
+frozen_audit_thresholds:
+  pi_spearman_threshold: 0.70
+  ari_threshold: 0.30
+  transition_spearman_threshold: 0.70
+  min_checks_passed: 5
+
+success_criteria:
+  recovery_consistency_index_min: 0.70
+  hierarchy_preserved: true  # occupancy widest; boundary force-only
+
+protocol_frozen_from: configs/contact_configuration_characterization.yaml
+
+geometries:
+  cylinder:
+    status: complete
+    output_root: results/phase1/cross_geometry_recovery/cylinder
+    # Points to existing full audits (no re-run required for reference)
+    audit_reports:
+      vision: results/phase1/vision_audit/full_v2/vla_report.json
+      duration: results/phase1/duration_zeta_audit/full/dzla_report.json
+      contact_graph: results/phase1/contact_graph_audit/full/cgla_report.json
+      energy: results/phase1/energy_audit/full/ela_report.json
+  sphere:
+    status: pilot_complete  # RCI=0.56 partial deformation; full = enhancement tier
+    pilot_output_root: results/phase1/cross_geometry_recovery/sphere/pilot
+    full_output_root: results/phase1/cross_geometry_recovery/sphere/full
+    char_config_pilot: configs/sphere_contact_configuration_PREREG.yaml
+    char_config_full: configs/sphere_contact_configuration_full_PREREG.yaml
+    run_script_pilot: scripts/run_sphere_cross_geometry_pilot.sh
+    run_script_full: scripts/run_sphere_cross_geometry_full.sh
+
+compare_script: scripts/compare_recovery_matrices.py
+run_script: scripts/run_cross_geometry_recovery_matrix_frozen.sh
