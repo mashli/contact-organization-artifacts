@@ -33,6 +33,8 @@ That runs:
 2. signature witness round (P1–P4 / Sig)  
 3. $(\mu,t^\ast)$ qualification map with self-check vs frozen friction slice (0 diffs)
 
+Also: `python3 scripts/robotica/run_friction_signature_audit.py` (canonical Sig vs P4′ proxy over the (μ,t*) grid).
+
 Individual entry points:
 
 ```bash
