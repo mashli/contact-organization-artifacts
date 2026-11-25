@@ -34,7 +34,9 @@ No geometry was dropped after scoring.
 
 ## Versions
 
-- git HEAD: `unknown`
+- artifacts repo HEAD: `95dfce48123eef81418d73bc3e562c8ef6c69446`
+  (`https://github.com/mashli/contact-organization-artifacts`)
+- one-click: `python3 scripts/robotica/run_all.py`
 - prereg sha256: `568c7af270d25451babdd4571b4dc06d31524b1d02c456f32844c3d89e59b09c`
 - trajectory map sha256: `a816d03b5147cac6f2d7f52bf79a6e085b40f0488213d0f3b9d0e1a6a98727e5`
 - scorer config sha256: `a9a38db5c923585d6a718a19e9407e617a1d25009a4e81cbd4e16349bda4b0fc`
