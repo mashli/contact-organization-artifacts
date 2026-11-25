@@ -22,19 +22,38 @@ THRESHOLDS = [4.0, 6.0, 8.0, 10.0, 12.0]
 # Geometry → search paths (first found wins); block handled via CSV in load_episodes
 GEOMETRY_PATHS: dict[str, list[str]] = {
     "cylinder": [
+        "data/robotica/cylinder.json.gz",
+        "results/phase1/landscape_analysis/landscape_trajectories.json",
         "results/phase1/cohort_independence/cylinder_heldout/full/landscape_trajectories.json",
         "results/phase1/cohort_independence/cylinder_heldout/pilot/landscape_trajectories.json",
     ],
     "sphere": [
+        "data/robotica/sphere.json.gz",
         "results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json",
         "results/phase1/cross_geometry_recovery/sphere/pilot/landscape_trajectories.json",
     ],
-    "block": [],  # special: loaded via CSV
+    "block": [],  # special: loaded via CSV or data/robotica/block.json.gz
 }
+
+
+def _load_json_episodes(p: Path) -> list[dict]:
+    if str(p).endswith(".gz"):
+        import gzip
+
+        with gzip.open(p, "rt", encoding="utf-8") as fh:
+            return list(json.load(fh).get("episodes", []))
+    return list(json.loads(p.read_text(encoding="utf-8")).get("episodes", []))
 
 
 def load_episodes(geo: str) -> list[dict]:
     if geo == "block":
+        for cand in (
+            REPO / "data/robotica/block.json.gz",
+            REPO / "data/robotica/block.json",
+        ):
+            if cand.is_file():
+                print(f"  [block] loaded {cand}")
+                return _load_json_episodes(cand)
         # Block uses states.csv; split into per-episode frame sequences
         csv_path = REPO / "results/phase1/characterization_block/full/states.csv"
         if not csv_path.is_file():
@@ -47,7 +66,7 @@ def load_episodes(geo: str) -> list[dict]:
         p = REPO / path_str
         if p.is_file():
             print(f"  [{geo}] loaded {p} ({p.stat().st_size // 1024} KB)")
-            return json.loads(p.read_text()).get("episodes", [])
+            return _load_json_episodes(p)
     print(f"  [{geo}] NOT FOUND")
     return []
 
@@ -117,13 +136,16 @@ def audit_at_threshold(episodes: list[dict], fx: float):
         ml, mg, _, _ = dwell_stats(labs)
         total_dwells_loaded.append(ml)
         total_dwells_graz.append(mg)
-        for a, b in zip(labs, labs[1:]):
+        for idx, (a, b) in enumerate(zip(labs, labs[1:]), start=1):
             if a != b:
                 n_switch += 1
-                # Check if near boundary
-                idx = labs.index(a)
+                # Check if near boundary.
+                # NOTE: idx must be the actual switch position, not labs.index(a)
+                # (the first occurrence of the label), otherwise the proximity
+                # flag is computed at the wrong frame and collapses to 0.
                 fx_prev = abs(float(ep["frames"][idx].get("fx", 0)))
-                fx_curr = abs(float(ep["frames"][idx + 1].get("fx", 0)))
+                nxt = min(idx + 1, len(ep["frames"]) - 1)
+                fx_curr = abs(float(ep["frames"][nxt].get("fx", 0)))
                 if min(abs(fx_prev - fx), abs(fx_curr - fx)) < 2.0:
                     n_at_boundary += 1
 

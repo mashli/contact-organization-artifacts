@@ -13,9 +13,8 @@ from pathlib import Path
 
 import numpy as np
 
-REPO = Path(__file__).resolve().parents[4]
-TRAJ = REPO / "results/phase1/landscape_analysis/landscape_trajectories.json"
-OUT = Path(__file__).resolve().parents[1] / "results" / "observable_substitution_cylinder.csv"
+from _paths import REPO, load_json  # noqa: E402
+OUT = REPO / "results" / "robotica" / "observable_substitution_cylinder.csv"
 
 KEYS = [
     ("|f_x|", "resultant_force_f_x", "fx"),
@@ -95,7 +94,7 @@ def audit(episodes, feat_key, fallback, thr):
 
 
 def main():
-    episodes = json.loads(TRAJ.read_text())["episodes"]
+    episodes = load_json("data/robotica/cylinder.json.gz")["episodes"]
     rows = []
     for name, key, fb in KEYS:
         all_x = np.concatenate([values(ep, key, fb) for ep in episodes])

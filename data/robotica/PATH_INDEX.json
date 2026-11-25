@@ -1,0 +1,9 @@
+{
+  "results/phase1/landscape_analysis/landscape_trajectories.json": "cylinder.json.gz",
+  "results/phase1/cross_geometry_recovery/ellipsoid/full/landscape_trajectories.json": "ellipsoid.json.gz",
+  "results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json": "sphere.json.gz",
+  "results/phase1/characterization_block/full/landscape_trajectories.json": "block.json.gz",
+  "results/phase1/cross_engine/pybullet_probe/landscape_trajectories.json": "pybullet_cylinder.json.gz",
+  "results/stage1/box_pivot_wall_pilot/landscape_tau_ref30_thr5.0.json": "wall_pivot.json.gz",
+  "results/stage1/cylinder_horizontal_pilot/landscape_trajectories.json": "cylinder_horizontal.json.gz"
+}

@@ -1,57 +1,63 @@
-# Contact Organization — Supplemental Artifacts
+# Contact Organization — Supplemental Artifacts (Robotica)
 
-**Companion code and frozen results** for the *Robotica* manuscript:
+Companion **code + frozen results + replayable trajectories** for:
 
 > Auditing Contact Organization in Contact-Rich Manipulation:
 > Qualification Criteria, Selective Failures, and a Null Predictive Result
 
 | Path | Contents |
 |------|----------|
-| `results/robotica/` | Frozen CSVs / JSON / hashes cited by the Robotica tables |
+| `data/robotica/` | Gzipped existing trajectories (~8.6 MB) for the audited cohorts + friction arms |
+| `src/cge/` | Frozen scorer surface (`organization_signature`, guards, measures, residence) |
 | `configs/robotica/` | Prereg / scorer / trajectory-map YAML |
-| `scripts/robotica/` | Readout and audit entry points |
+| `scripts/robotica/` | Path-fixed audits + `run_all.py` one-click check |
+| `results/robotica/` | Frozen CSVs/JSON cited by the manuscript tables |
 
-> **This repository does not contain the manuscript** (no `main.tex` / journal PDF).
-> Manuscripts are submitted via Cambridge ScholarOne for *Robotica*.
+**Corresponding author:** Shengli Ma (`mashli@xauat.edu.cn`)
 
-**Corresponding author:** Shengli Ma (`mashli@xauat.edu.cn`)  
-**Institution:** Xi'an University of Architecture and Technology
+This repository does **not** contain the manuscript PDF/LaTeX.
+
+---
+
+## One-click reproduce (no MuJoCo required)
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python3 scripts/robotica/run_all.py
+```
+
+That runs:
+
+1. cylinder threshold shell (`n=179`) — matches Table threshold-shell  
+2. signature witness round (P1–P4 / Sig)  
+3. $(\mu,t^\ast)$ qualification map with self-check vs frozen friction slice (0 diffs)
+
+Individual entry points:
+
+```bash
+python3 scripts/robotica/run_threshold_shell_n179.py
+python3 scripts/robotica/run_sig_witness_round.py
+python3 scripts/analyze_qualification_map_mu_threshold.py
+```
+
+Paths resolve through `scripts/robotica/_paths.py` against `data/robotica/*.json.gz`.
+Legacy `results/phase1/...` strings in configs remain accepted as aliases.
 
 ---
 
 ## Relation to other work (disclosed)
 
-Simulation tooling overlaps with a separate manuscript by the same author on
-post-contact kinematics and explicit mass (ROBOT-D-26-01372R1, under review at
-*Robotics and Autonomous Systems*). That paper does **not** reuse the Scheme D /
-OPCG / $\mathfrak{S}_0$ claims, experiments, or data packaged here.
-
-Earlier README text referred to IJRR Paper I/II stubs. Those stubs are
-superseded for the Robotica submission; use `results/robotica/` as the source
-of truth for numbers cited in the Robotica PDF.
+Simulation tooling overlaps with ROBOT-D-26-01372R1 (*Robotics and Autonomous
+Systems*, force–mass). That paper does **not** reuse Scheme~D / OPCG /
+$\mathfrak{S}_0$ claims or the Robotica data packaged here.
 
 ---
 
-## Quick start
+## Reviewer checklist
 
-```bash
-# Inspect frozen Robotica readout
-ls results/robotica/
-cat results/robotica/prereg_hash.txt
-head -20 results/robotica/sig_witness_round.csv
-```
-
-Python scripts under `scripts/robotica/` regenerate table/figure numbers from
-existing trajectory maps (no new cohorts). See `results/robotica/README.md`
-for hashes, split policy, and the B0n-null reading of the predictive audit.
-
----
-
-## What reviewers should check first
-
-1. `results/robotica/sig_witness_round.csv` — signature accepts/refuses.
-2. `results/robotica/predictive_paired_delta_ci.csv` — Org vs B0n / fx / cell.
-3. `results/robotica/*_msm_diagnostics.json` — block λ2 = 0.889 with P1 fail.
-4. `results/robotica/README.md` — label note (prereg roles ≠ signature verdicts).
-
-Raw multi-GB trajectory dumps are **not** stored here.
+1. `results/robotica/sig_witness_round.csv` — signature accepts/refuses  
+2. `results/robotica/predictive_paired_delta_ci.csv` — Org vs B0n  
+3. `results/robotica/qualification_map_mu_threshold.csv` — $(\mu,t^\ast)$ band  
+4. `results/robotica/*_msm_diagnostics.json` — block $\lambda_2=0.889$ with P1 fail  
+5. Re-run `python3 scripts/robotica/run_all.py` on a clean clone

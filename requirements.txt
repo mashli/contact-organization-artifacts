@@ -1,7 +1,5 @@
-# Placeholder — pin deps when first syncing runnable scripts
-
-# mujoco
-# numpy
-# scipy
-# pandas
-# pyyaml
+numpy>=1.22
+scipy>=1.8
+scikit-learn>=1.1
+PyYAML>=6.0
+matplotlib>=3.5

@@ -30,11 +30,12 @@ from run_predictive_readout import (  # noqa: E402
     split_episode_indices,
 )
 
-REPO = Path(__file__).resolve().parents[4]
+from _paths import REPO, load_episodes, load_json, resolve_data  # noqa: E402
+from pathlib import Path
 RAS = ROOT.parent
-MAP = RAS / "configs" / "existing_trajectory_map.yaml"
-SCORER = RAS / "configs" / "predictive_scorer.yaml"
-OUT = RAS / "results" / "alternative_guard_boundary.csv"
+MAP = REPO / "configs" / "robotica" / "existing_trajectory_map.yaml"
+SCORER = REPO / "configs" / "robotica" / "predictive_scorer.yaml"
+OUT = REPO / "results" / "robotica" / "alternative_guard_boundary.csv"
 
 CHANNELS = ("fx", "fy", "fz", "tau_z", "fxy")
 
@@ -76,7 +77,7 @@ def main() -> None:
     rows = []
     for geo in ("cylinder", "ellipsoid", "block"):
         spec = data_map["geometries"][geo]
-        episodes = json.loads((REPO / spec["path"]).read_text())["episodes"]
+        episodes = load_episodes(spec["path"])
         frame0 = episodes[0]["frames"][0]
         if not isinstance(frame0, dict) or not np.isfinite(channel_value(frame0, "fy")):
             print(f"[{geo}] missing fy/torque features; skip")

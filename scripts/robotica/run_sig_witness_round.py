@@ -2,23 +2,24 @@
 """Same-function signature status for the witness round.
 
 Sig is P1--P4 from cge.emergence.organization_signature at the frozen
-t*=8 N lock. Residence uses stored basin labels. This does not retune
-tau_ref, and it does not score OPCG. OPCG remains the separate quantitative
-witness (PyBullet C1/C4 fail at the locked tuple).
+t*=8 N lock. Residence uses stored basin labels.
 """
 from __future__ import annotations
 
 import csv
-import sys
+import tempfile
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parents[4]
-sys.path.insert(0, str(REPO / "src"))
+from _paths import PKG, ensure_src_on_path, load_json, resolve_data  # noqa: E402
 
+ensure_src_on_path()
 from cge.emergence.organization_signature import audit_from_path  # noqa: E402
 
-RAS = Path(__file__).resolve().parents[1]
-OUT = RAS / "results" / "sig_witness_round.csv"
+OUT = PKG / "results" / "sig_witness_round.csv"
+# Prefer writing under results/robotica when present
+_OUT_ALT = Path(__file__).resolve().parents[2] / "results" / "robotica" / "sig_witness_round.csv"
+if _OUT_ALT.parent.is_dir():
+    OUT = _OUT_ALT
 
 COHORTS = [
     ("cylinder_mujoco", "results/phase1/landscape_analysis/landscape_trajectories.json"),
@@ -29,10 +30,15 @@ COHORTS = [
 ]
 
 
+def _materialize(rel: str) -> Path:
+    """audit_from_path expects a real path; gzip is OK after measure.py patch."""
+    return resolve_data(rel)
+
+
 def main() -> None:
     rows = []
     for name, rel in COHORTS:
-        path = REPO / rel
+        path = _materialize(rel)
         rep = audit_from_path(path, cohort_name=name, fx_threshold=8.0)
         flags = {p.property_id: bool(p.pass_) for p in rep.properties}
         p1 = next(p for p in rep.properties if p.property_id == "P1").metrics

@@ -28,12 +28,13 @@ from sklearn.metrics import (
 )
 from sklearn.preprocessing import RobustScaler, StandardScaler
 
-ROOT = Path(__file__).resolve().parents[4]
-RAS = Path(__file__).resolve().parents[1]
-PREREG_PATH = RAS / "configs" / "predictive_prereg.yaml"
-MAP_PATH = RAS / "configs" / "existing_trajectory_map.yaml"
-SCORER_PATH = RAS / "configs" / "predictive_scorer.yaml"
-OUT_DIR = RAS / "results"
+from _paths import REPO, load_json, resolve_data  # noqa: E402
+ROOT = REPO
+RAS = REPO  # configs live under configs/robotica in the public repo
+PREREG_PATH = REPO / "configs" / "robotica" / "predictive_prereg.yaml"
+MAP_PATH = REPO / "configs" / "robotica" / "existing_trajectory_map.yaml"
+SCORER_PATH = REPO / "configs" / "robotica" / "predictive_scorer.yaml"
+OUT_DIR = REPO / "results" / "robotica"
 
 FORCE_NAME_MARKERS = (
     "force",
@@ -742,11 +743,11 @@ def run() -> dict[str, Any]:
 
     for geom in prereg["datasets"]["geometries"]:
         spec = data_map["geometries"][geom]
-        path = ROOT / spec["path"]
+        path = resolve_data(spec["path"])
         if not path.exists():
             failures.append({"geometry": geom, "reason": f"missing_trajectory_file:{spec['path']}"})
             continue
-        episodes = json.loads(path.read_text())["episodes"]
+        episodes = load_json(spec["path"])["episodes"]
         ids = [ep.get("episode_id") for ep in episodes]
         if len(ids) != len(set(ids)) or any(i is None for i in ids):
             failures.append({"geometry": geom, "reason": "episode_id_not_unique"})

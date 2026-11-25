@@ -36,9 +36,24 @@ _MU_TAGS = {
 }
 
 
+def _read_episodes(path: Path) -> list[dict]:
+    if str(path).endswith(".gz"):
+        import gzip
+
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            return list(json.load(fh).get("episodes", []))
+    return list(json.loads(path.read_text(encoding="utf-8")).get("episodes", []))
+
+
 def load_trajectories(mu: float, *, prefer_tier: str = "n50") -> tuple[list[dict] | None, str]:
     tags = _MU_TAGS.get(mu, [f"{mu:.2f}"])
-    # Also try alternate tags for each root
+    # Public artifacts layout first
+    for tag in tags:
+        for name in (f"mu_{tag}.json.gz", f"mu_{tag}.json"):
+            path = REPO / "data" / "robotica" / "friction" / name
+            if path.is_file():
+                return _read_episodes(path), f"data/robotica/friction/{name}"
+    # Private full-tree layout
     candidates: list[tuple[str, str]] = []
     for tag in tags:
         candidates.append((f"friction_sweep_n50/friction_mu_{tag}/{prefer_tier}", prefer_tier))
@@ -49,7 +64,7 @@ def load_trajectories(mu: float, *, prefer_tier: str = "n50") -> tuple[list[dict
     for subdir, src in candidates:
         path = REPO / f"results/phase1/{subdir}/landscape_trajectories.json"
         if path.is_file():
-            return json.loads(path.read_text()).get("episodes", []), f"{subdir} ({src})"
+            return _read_episodes(path), f"{subdir} ({src})"
     return None, ""
 
 

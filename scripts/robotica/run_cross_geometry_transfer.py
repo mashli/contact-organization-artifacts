@@ -29,11 +29,12 @@ from run_predictive_readout import (  # noqa: E402
     episode_escape,
 )
 
-REPO = Path(__file__).resolve().parents[4]
-MAP = RAS / "configs" / "existing_trajectory_map.yaml"
-PREREG = RAS / "configs" / "predictive_prereg.yaml"
-SCORER = RAS / "configs" / "predictive_scorer.yaml"
-OUT = RAS / "results" / "cross_geometry_transfer.csv"
+from _paths import REPO, load_episodes, load_json, resolve_data  # noqa: E402
+from pathlib import Path
+MAP = REPO / "configs" / "robotica" / "existing_trajectory_map.yaml"
+PREREG = REPO / "configs" / "robotica" / "predictive_prereg.yaml"
+SCORER = REPO / "configs" / "robotica" / "predictive_scorer.yaml"
+OUT = REPO / "results" / "robotica" / "cross_geometry_transfer.csv"
 
 
 def main() -> None:
@@ -57,8 +58,7 @@ def main() -> None:
     loaded: dict = {}
     for g in geoms:
         spec = data_map["geometries"][g]
-        path = REPO / spec["path"]
-        episodes = json.loads(path.read_text())["episodes"]
+        episodes = load_episodes(spec["path"])
         y_esc = [episode_escape(ep) for ep in episodes]
         tr, va, te = split_episode_indices(
             y_esc,

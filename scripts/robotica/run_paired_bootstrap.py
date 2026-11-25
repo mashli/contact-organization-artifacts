@@ -29,12 +29,13 @@ from run_predictive_readout import (  # noqa: E402
     split_episode_indices,
 )
 
-REPO = Path(__file__).resolve().parents[4]
+from _paths import REPO, load_episodes, load_json, resolve_data  # noqa: E402
+from pathlib import Path
 RAS = ROOT.parent
-MAP = RAS / "configs" / "existing_trajectory_map.yaml"
-PREREG = RAS / "configs" / "predictive_prereg.yaml"
-SCORER = RAS / "configs" / "predictive_scorer.yaml"
-OUT = RAS / "results" / "predictive_paired_delta_ci.csv"
+MAP = REPO / "configs" / "robotica" / "existing_trajectory_map.yaml"
+PREREG = REPO / "configs" / "robotica" / "predictive_prereg.yaml"
+SCORER = REPO / "configs" / "robotica" / "predictive_scorer.yaml"
+OUT = REPO / "results" / "robotica" / "predictive_paired_delta_ci.csv"
 
 B = 500
 SEED = 0
@@ -66,7 +67,7 @@ def main() -> None:
     rng = np.random.default_rng(SEED)
     rows = []
     for g in prereg["datasets"]["geometries"]:
-        episodes = json.loads((REPO / data_map["geometries"][g]["path"]).read_text())["episodes"]
+        episodes = load_episodes(data_map["geometries"][g]["path"])
         y_esc = [episode_escape(ep) for ep in episodes]
         tr, _, te = split_episode_indices(
             y_esc,
