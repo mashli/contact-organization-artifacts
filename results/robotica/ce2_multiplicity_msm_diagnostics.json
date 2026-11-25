@@ -1,0 +1,240 @@
+{
+  "arm": "CE-2_G_multiplicity",
+  "source_path": "/Users/mashli/robot_rl/WINDOWS/robosuite-master/contact_grammar_emergence/results/phase1/landscape_analysis/landscape_trajectories.json",
+  "n_episodes": 179,
+  "states": [
+    "multi_patch",
+    "single_patch"
+  ],
+  "estimator": "row_stochastic_MLE",
+  "reversible": false,
+  "point_lag1": {
+    "lag": 1,
+    "n_transitions": 1007,
+    "count_matrix": [
+      [
+        83.0,
+        123.0
+      ],
+      [
+        25.0,
+        776.0
+      ]
+    ],
+    "P": [
+      [
+        0.4029126213592233,
+        0.5970873786407767
+      ],
+      [
+        0.031210986267166042,
+        0.968789013732834
+      ]
+    ],
+    "eigenvalues": [
+      1.0,
+      0.3717016350920572
+    ],
+    "lambda2": 0.3717016350920572,
+    "spectral_gap": 0.6282983649079428,
+    "tau2_implied": 1.0104441500630403,
+    "tau2_frames": 1.0104441500630403
+  },
+  "bootstrap": {
+    "lag": 1,
+    "n_bootstrap": 400,
+    "n_episodes": 179,
+    "ci_level": 0.95,
+    "estimator": "row_stochastic_MLE",
+    "reversible": false,
+    "lambda2_point": 0.3717016350920572,
+    "lambda2_ci": [
+      0.2782969050943477,
+      0.4566099066457097
+    ],
+    "tau2_point": 1.0104441500630403,
+    "tau2_ci": [
+      0.7818202569113812,
+      1.2756324600112623
+    ],
+    "n_transitions_point": 1007,
+    "spectral_gap_point": 0.6282983649079428,
+    "lambda2_samples_summary": {
+      "mean": 0.36547405444548403,
+      "std": 0.0471812525672371,
+      "n_finite": 400
+    }
+  },
+  "its": {
+    "lags": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      15,
+      20
+    ],
+    "curve": [
+      {
+        "lag": 1,
+        "lambda2": 0.3717016350920572,
+        "tau2_implied": 1.0104441500630403,
+        "spectral_gap": 0.6282983649079428,
+        "n_transitions": 1007
+      },
+      {
+        "lag": 2,
+        "lambda2": 0.30900138588804427,
+        "tau2_implied": 1.7029834746870136,
+        "spectral_gap": 0.6909986141119557,
+        "n_transitions": 828
+      },
+      {
+        "lag": 3,
+        "lambda2": 0.20385993297122373,
+        "tau2_implied": 1.8864102779246366,
+        "spectral_gap": 0.7961400670287763,
+        "n_transitions": 662
+      },
+      {
+        "lag": 5,
+        "lambda2": 0.07586184188864387,
+        "tau2_implied": 1.938855130067831,
+        "spectral_gap": 0.9241381581113561,
+        "n_transitions": 372
+      },
+      {
+        "lag": 8,
+        "lambda2": 0.0,
+        "tau2_implied": NaN,
+        "spectral_gap": 0.0,
+        "n_transitions": 0
+      },
+      {
+        "lag": 10,
+        "lambda2": 0.0,
+        "tau2_implied": NaN,
+        "spectral_gap": 0.0,
+        "n_transitions": 0
+      },
+      {
+        "lag": 15,
+        "lambda2": 0.0,
+        "tau2_implied": NaN,
+        "spectral_gap": 0.0,
+        "n_transitions": 0
+      },
+      {
+        "lag": 20,
+        "lambda2": 0.0,
+        "tau2_implied": NaN,
+        "spectral_gap": 0.0,
+        "n_transitions": 0
+      }
+    ],
+    "plateau": {
+      "found": true,
+      "rel_tol": 0.15,
+      "lag_lo": 2,
+      "lag_hi": 5,
+      "mean_tau2": 1.842749627559827
+    }
+  },
+  "ck": {
+    "lag": 1,
+    "ks": [
+      2,
+      3,
+      4
+    ],
+    "tests": [
+      {
+        "k": 2,
+        "lag_emp": 2,
+        "n_transitions_emp": 828,
+        "max_abs_deviation": 0.1542212643006407,
+        "frobenius_deviation": 0.21936433994689553,
+        "P_emp": [
+          [
+            0.33519553072625696,
+            0.664804469273743
+          ],
+          [
+            0.026194144838212634,
+            0.9738058551617874
+          ]
+        ],
+        "P_pred": [
+          [
+            0.18097426642561626,
+            0.8190257335743837
+          ],
+          [
+            0.042812160895507406,
+            0.9571878391044927
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "lag_emp": 3,
+        "n_transitions_emp": 662,
+        "max_abs_deviation": 0.13681470063990564,
+        "frobenius_deviation": 0.19475339881312345,
+        "P_emp": [
+          [
+            0.23529411764705882,
+            0.7647058823529411
+          ],
+          [
+            0.03143418467583497,
+            0.9685658153241651
+          ]
+        ],
+        "P_pred": [
+          [
+            0.09847941700715321,
+            0.9015205829928468
+          ],
+          [
+            0.04712433647385038,
+            0.9528756635261497
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "lag_emp": 4,
+        "n_transitions_emp": 511,
+        "max_abs_deviation": 0.09276799501420208,
+        "frobenius_deviation": 0.1340073590183553,
+        "P_emp": [
+          [
+            0.16058394160583941,
+            0.8394160583941606
+          ],
+          [
+            0.029411764705882353,
+            0.9705882352941176
+          ]
+        ],
+        "P_pred": [
+          [
+            0.06781594659163744,
+            0.9321840534083626
+          ],
+          [
+            0.048727179187124506,
+            0.9512728208128757
+          ]
+        ]
+      }
+    ],
+    "max_abs_deviation_worst": 0.1542212643006407,
+    "pass_eps_0_1": false,
+    "pass_eps_0_2": true
+  },
+  "note": "CE-2 destruction arm: multiplicity partition on cylinder reference. Point \u03bb\u2082\u22480.372 historically; CI from episode bootstrap."
+}

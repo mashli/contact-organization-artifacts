@@ -1,0 +1,78 @@
+study:
+  name: contact_organization_predictive_utility
+  purpose: held_out_post_contact_prediction
+  data_policy: existing_trajectories_only
+  new_cohort: false
+
+datasets:
+  geometries:
+    - cylinder
+    - ellipsoid
+    - sphere
+    - block
+
+prediction_tasks:
+  - name: next_basin
+    target: future_basin_sequence
+  - name: escape_event
+    target: episode_level_escape
+  - name: boundary_event
+    target: guard_aligned_boundary_event
+
+splits:
+  unit: episode
+  leakage_control: no_episode_overlap
+  fit_on_train_only: true
+  report_validation: true
+  report_test: true
+
+representations:
+  - name: full_observation
+    description: full available post_contact observation/history
+  - name: instantaneous_contact_mode
+    description: instantaneous contact mode only
+  - name: unguarded_clustering
+    description: two-state clustering after removing force-like coordinates
+  - name: force_aware_clustering
+    description: >-
+      pre-submission fairness baseline; same k-means recipe but retains force
+      coordinates including fx (tests guard alignment vs force-seeing clustering)
+  - name: two_state_hmm
+    description: two-state HMM baseline
+  - name: scalar_fx
+    description: >-
+      critical fairness baseline; raw scalar fx at time t with the same logistic
+      readout (tests whether organization is more than a reparameterization of fx)
+  - name: scalar_fx_quadratic
+    description: >-
+      nonlinear scalar force baseline [fx, (fx-tau)^2]; controls for piecewise
+      fold that a linear readout on raw fx cannot express near the threshold
+  - name: organization_cell_only
+    description: >-
+      cell indicator only (1[fx>=tau]); isolates shared-threshold transfer
+  - name: qualified_organization
+    description: guard-aligned qualified organization representation
+
+metrics:
+  - balanced_accuracy
+  - macro_f1
+  - log_loss
+  - calibration
+  - boundary_auc
+  - escape_auc
+  - observation_dimension
+  - fitting_cost
+
+frozen_reporting:
+  primary: held_out_test_metrics
+  secondary:
+    - compactness
+    - guard_semantics
+    - failure_by_qualification_status
+
+prohibited_post_hoc_changes:
+  - threshold_tuning_on_test
+  - changing_split_after_scoring
+  - selecting_baselines_after_results
+  - excluding_failed_geometries
+  - claiming_superiority_from_one_metric

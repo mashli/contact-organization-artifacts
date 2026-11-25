@@ -1,0 +1,289 @@
+[
+  {
+    "geometry": "ellipsoid",
+    "reason": "instantaneous_contact_mode_degenerate_or_missing"
+  },
+  {
+    "geometry": "ellipsoid",
+    "representation": "instantaneous_contact_mode",
+    "task": "next_basin",
+    "reason": "mode_unavailable_or_degenerate"
+  },
+  {
+    "geometry": "ellipsoid",
+    "representation": "instantaneous_contact_mode",
+    "task": "escape_event",
+    "reason": "mode_unavailable_or_degenerate"
+  },
+  {
+    "geometry": "ellipsoid",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "reason": "mode_unavailable_or_degenerate"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "full_observation",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "unguarded_clustering",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "force_aware_clustering",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "two_state_hmm",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx_quadratic",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "organization_cell_only",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "qualified_organization",
+    "task": "boundary_event",
+    "reason": "train_labels_not_binary_or_too_few"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "full_observation",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "unguarded_clustering",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "force_aware_clustering",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "two_state_hmm",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx_quadratic",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "organization_cell_only",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "qualified_organization",
+    "task": "boundary_event",
+    "split": "train",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "full_observation",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "unguarded_clustering",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "force_aware_clustering",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "two_state_hmm",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx_quadratic",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "organization_cell_only",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "qualified_organization",
+    "task": "boundary_event",
+    "split": "val",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "full_observation",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "unguarded_clustering",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "force_aware_clustering",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "two_state_hmm",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "scalar_fx_quadratic",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "organization_cell_only",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "sphere",
+    "representation": "qualified_organization",
+    "task": "boundary_event",
+    "split": "test",
+    "reason": "no_positive_boundary_events"
+  },
+  {
+    "geometry": "block",
+    "reason": "instantaneous_contact_mode_degenerate_or_missing"
+  },
+  {
+    "geometry": "block",
+    "representation": "instantaneous_contact_mode",
+    "task": "next_basin",
+    "reason": "mode_unavailable_or_degenerate"
+  },
+  {
+    "geometry": "block",
+    "representation": "instantaneous_contact_mode",
+    "task": "escape_event",
+    "reason": "mode_unavailable_or_degenerate"
+  },
+  {
+    "geometry": "block",
+    "representation": "instantaneous_contact_mode",
+    "task": "boundary_event",
+    "reason": "mode_unavailable_or_degenerate"
+  }
+]

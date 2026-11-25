@@ -1,0 +1,16 @@
+seed: 0
+split:
+  train: 0.60
+  val: 0.20
+  test: 0.20
+fx_threshold: 8.0
+boundary_margin: 2.0
+next_horizon: 1
+hmm_em_iterations: 15
+kmeans_clusters: 2
+kmeans_fx_corr_drop: 0.95
+ece_bins: 10
+logistic:
+  C: 1.0
+  class_weight: balanced
+  max_iter: 2000

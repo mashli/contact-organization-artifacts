@@ -1,0 +1,10 @@
+geometry,source,mode,threshold,margin,test_auc,n_positive
+cylinder,fx,self,8,2,0.852,16
+cylinder,fy,self,1.28,0.585,0.909,14
+cylinder,fz,self,13.1,2.72,0.912,17
+cylinder,tau_z,self,0.126,0.0533,0.976,13
+cylinder,fxy,self,8.41,1.99,0.874,15
+cylinder,fy,predict_fx_boundary,1.28,0.585,0.707,16
+cylinder,fz,predict_fx_boundary,13.1,2.72,0.742,16
+cylinder,tau_z,predict_fx_boundary,0.126,0.0533,0.696,16
+cylinder,fxy,predict_fx_boundary,8.41,1.99,0.871,16

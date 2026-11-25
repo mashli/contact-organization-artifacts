@@ -1,0 +1,68 @@
+# Inventory freeze for Section 6. This is not a new cohort and is not a
+# substitute for predictive_prereg.yaml. Paths are relative to the
+# contact_grammar_emergence repository root. Bind these files in the
+# scorer wrapper; do not resimulate.
+
+policy: existing_trajectories_only
+new_cohort: false
+missing_ok: false
+
+geometries:
+  cylinder:
+    path: results/phase1/landscape_analysis/landscape_trajectories.json
+    n_episodes: 179
+    unique_episode_ids: true
+    frames_per_episode: 2-8
+    basin_labels: [grazing, loaded]
+    feature_schema: formation_scalar_dict
+    has_fx: true
+    has_protocol_phase: true
+    role: qualified_positive_reference
+
+  ellipsoid:
+    path: results/phase1/cross_geometry_recovery/ellipsoid/full/landscape_trajectories.json
+    n_episodes: 300
+    unique_episode_ids: true
+    frames_per_episode: 60
+    basin_labels: [grazing, loaded]
+    feature_schema: continuous_state_dict
+    has_fx: true
+    has_protocol_phase: false
+    phase_field: phase
+    role: qualified_positive_transfer
+    note: >
+      Paper I reports ellipsoid n=300. Do not use
+      results/phase1/clear_transfer_ellipsoid/landscape_trajectories.json
+      (n=84, 2 frames) as the Section 6 ellipsoid set.
+      results/phase1/characterization_ellipsoid/full/landscape_trajectories.json
+      is also n=300 but uses dwell/loaded labels and has no fx field;
+      keep it as a qualification artifact, not the predictive default.
+
+  sphere:
+    path: results/phase1/cross_geometry_recovery/sphere/full/landscape_trajectories.json
+    n_episodes: 237
+    unique_episode_ids: true
+    frames_per_episode: 2-8
+    basin_labels: [grazing, loaded]
+    feature_schema: formation_scalar_dict
+    has_fx: true
+    has_protocol_phase: false
+    role: qualification_failure_retained
+
+  block:
+    path: results/phase1/characterization_block/full/landscape_trajectories.json
+    n_episodes: 700
+    unique_episode_ids: true
+    frames_per_episode: 48
+    basin_labels: [grazing, loaded]
+    feature_schema: unnamed_feature_list_9
+    has_fx: true
+    has_protocol_phase: false
+    role: qualification_failure_or_boundary_retained
+    note: >
+      results/phase1/cross_geometry_recovery/block/vocab_full/landscape_trajectories.json
+      is missing. Use characterization_block/full; do not collect a new cohort.
+
+do_not_use_as_section6_primary:
+  - results/phase1/clear_transfer_ellipsoid/landscape_trajectories.json
+  - results/phase1/cross_geometry_recovery/block/vocab_full/landscape_trajectories.json

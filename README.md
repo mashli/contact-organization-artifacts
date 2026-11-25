@@ -1,105 +1,57 @@
 # Contact Organization — Supplemental Artifacts
 
-**Companion code and frozen results** for two IJRR submissions:
+**Companion code and frozen results** for the *Robotica* manuscript:
 
-| Manuscript (not in this repo) | Role |
-|-------------------------------|------|
-| Paper I — *Contact Organization: A Mesoscopic Object and Measurement Framework…* | Qualification, OPCG, evidence ladder |
-| Paper II — *Emergence of Contact Organization: Base-Case Existence on a Declared Witness Class* | Conditional emergence on $\mathfrak{S}_0$ |
+> Auditing Contact Organization in Contact-Rich Manipulation:
+> Qualification Criteria, Selective Failures, and a Null Predictive Result
 
-> **This repository does not contain the manuscripts** (no `main.tex` / journal PDFs).
-> Manuscripts are submitted via Sage Track. For reviewer access during peer review,
-> use the journal portal or contact the corresponding author.
+| Path | Contents |
+|------|----------|
+| `results/robotica/` | Frozen CSVs / JSON / hashes cited by the Robotica tables |
+| `configs/robotica/` | Prereg / scorer / trajectory-map YAML |
+| `scripts/robotica/` | Readout and audit entry points |
+
+> **This repository does not contain the manuscript** (no `main.tex` / journal PDF).
+> Manuscripts are submitted via Cambridge ScholarOne for *Robotica*.
 
 **Corresponding author:** Shengli Ma (`mashli@xauat.edu.cn`)  
 **Institution:** Xi'an University of Architecture and Technology
 
 ---
 
-## What is included
+## Relation to other work (disclosed)
 
-| Path | Contents |
-|------|----------|
-| `configs/` | Frozen YAML protocols used in the papers (PREREG / reference shells) |
-| `scripts/` | Analysis and audit entry points that regenerate table/figure numbers |
-| `src/` | Shared Python helpers (if released) |
-| `results/frozen/` | Compact JSON/CSV summaries cited by Paper I / II tables |
-| `docs/` | Reproducibility notes, preregistered protocol summaries, FAQ pointers |
-| `supplemental/` | Independent verification report PDF (optional mirror of Sage supplemental) |
+Simulation tooling overlaps with a separate manuscript by the same author on
+post-contact kinematics and explicit mass (ROBOT-D-26-01372R1, under review at
+*Robotics and Autonomous Systems*). That paper does **not** reuse the Scheme D /
+OPCG / $\mathfrak{S}_0$ claims, experiments, or data packaged here.
 
-Raw multi-GB trajectory dumps are **not** stored here. If released, they will be
-linked from `docs/DATA_LOCATORS.md` (Zenodo / OSF DOI).
+Earlier README text referred to IJRR Paper I/II stubs. Those stubs are
+superseded for the Robotica submission; use `results/robotica/` as the source
+of truth for numbers cited in the Robotica PDF.
 
 ---
 
 ## Quick start
 
 ```bash
-# Python 3.10+ recommended
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt   # once populated
-
-# Example: regenerate a frozen audit summary (paths TBD after first sync)
-python scripts/analyze_mechanism_discrimination.py --help
+# Inspect frozen Robotica readout
+ls results/robotica/
+cat results/robotica/prereg_hash.txt
+head -20 results/robotica/sig_witness_round.csv
 ```
 
-Exact one-command recipes for each paper table will live in:
-
-- `docs/REPRODUCE_PAPER1.md`
-- `docs/REPRODUCE_PAPER2.md`
-
----
-
-## Mapping to manuscripts
-
-### Paper I (qualification evidence)
-
-| Paper object (approx.) | Artifact |
-|------------------------|----------|
-| Cylinder / ellipsoid / sphere / block ladder | `results/frozen/paper1/canonical_ladder/` |
-| Friction sweep / CE-4 | `results/frozen/paper1/friction_sweep/` |
-| Partition stability (ARI) | `results/frozen/paper1/partition_stability/` |
-| MSM / ITS / CK diagnostics | `results/frozen/paper1/msm_diagnostics/` |
-| Cross-geometry deformation / RCI | `results/frozen/paper1/cross_geometry/` |
-
-### Paper II ($\mathfrak{S}_0$ certificates)
-
-| Paper object (approx.) | Artifact |
-|------------------------|----------|
-| MuJoCo cylinder $\in\mathfrak{S}_0$ | `results/frozen/paper2/s0_mujoco_cylinder/` |
-| Ellipsoid / PyBullet partial OPCG | `results/frozen/paper2/s0_partial/` |
-| Mechanism discrimination (MD-1–MD-3) | `results/frozen/paper2/mechanism_discrimination/` |
-| Predictive audit | `results/frozen/paper2/predictive_audit/` |
-
-Fill concrete filenames in `docs/ARTIFACT_INDEX.md` when syncing from the private
-working tree (see `MANIFEST.md`).
+Python scripts under `scripts/robotica/` regenerate table/figure numbers from
+existing trajectory maps (no new cohorts). See `results/robotica/README.md`
+for hashes, split policy, and the B0n-null reading of the predictive audit.
 
 ---
 
-## License
+## What reviewers should check first
 
-- **Code** (`scripts/`, `src/`): MIT (see `LICENSE`)
-- **Frozen numerical summaries** (`results/frozen/`): CC-BY-4.0 unless a file says otherwise
-- **Prereg / protocol docs**: CC-BY-4.0
+1. `results/robotica/sig_witness_round.csv` — signature accepts/refuses.
+2. `results/robotica/predictive_paired_delta_ci.csv` — Org vs B0n / fx / cell.
+3. `results/robotica/*_msm_diagnostics.json` — block λ2 = 0.889 with P1 fail.
+4. `results/robotica/README.md` — label note (prereg roles ≠ signature verdicts).
 
-Manuscripts remain under the journal / author copyright and are **not** licensed here.
-
----
-
-## Citation
-
-Please cite the published IJRR articles (DOI TBD). Until then, cite the Sage Track
-submission titles above and this repository URL:
-
-```text
-https://github.com/mashli/contact-organization-artifacts
-```
-
-Tagged release matching the frozen file set cited in the manuscripts:
-`ijrr-submission-2026-07`.
-
----
-
-## Contact
-
-Questions about reproducing a specific table or audit: `mashli@xauat.edu.cn`.
+Raw multi-GB trajectory dumps are **not** stored here.
